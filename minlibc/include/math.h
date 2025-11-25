@@ -14,5 +14,6 @@
 
 double modf(double x, double *iptr);
 double ldexp(double x, int exp);
+double fabs(double x);
 
 #endif

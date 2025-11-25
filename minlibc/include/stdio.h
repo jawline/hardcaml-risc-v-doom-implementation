@@ -52,4 +52,8 @@ int     fprintf(FILE *stream, const char *format, ...);
 void    perror(const char *s);
 void    pabort(const char *format, ...) __attribute__((noreturn));
 
+/** from https://github.com/tusharjois/bscanf/blob/master/bscanf.h */
+int sscanf(const char *buffer, const char *format, ...)
+          __attribute__ ((format (scanf, 2, 3)));
+
 #endif

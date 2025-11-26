@@ -94,7 +94,7 @@ static unsigned long mallock;
 
 // No locking for now
 #define _MALLOC_LOCK_INIT() { mallock = 0; }/* */
-#define _MALLOC_LOCK() while(!__sync_bool_compare_and_swap(&mallock, 0, 1)) {}
+#define _MALLOC_LOCK() if (true) {}
 #define _MALLOC_UNLOCK() mallock = 0;
 
 /*

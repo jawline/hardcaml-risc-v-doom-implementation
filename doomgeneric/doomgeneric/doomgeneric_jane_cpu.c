@@ -50,3 +50,7 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
+void _start() {
+        main(0, NULL);
+}

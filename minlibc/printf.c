@@ -92,3 +92,51 @@ int sscanf(const char *src, const char *format, ...) {
 double fabs(double x) {
 	return x < 0 ? -x : x;
 }
+
+int abs(int x) {
+  return x < 0 ? -x : x;
+}
+
+void runtime_exit() {
+  printf("Program is exiting. Looping forever\n");
+  for (;;) {
+  }
+}
+
+int     runtime_memprotect(void *addr, size_t length, int prot) {
+        printf("mprotect ignored - this CPU does not support it\n");
+}
+
+void* mmap_start_address = (void*) 16777216;
+
+void   *runtime_alloc(void *start, size_t length, int prot) {
+  void* last = mmap_start_address;
+  mmap_start_address += length;
+  return last;
+}
+
+void    runtime_free(void *start, size_t length) {
+        // Ignore free, just slab allocate
+}
+
+int system_call(int ecall_mode, void* input_pointer, unsigned int input_length) {
+  int output_mode;
+  asm volatile("addi x5, %[mode], 0\n"
+      "addi x6, %[iptr], 0\n"
+      "addi x7, %[ilength], 0\n"
+      "ecall\n"
+      "addi %[output_mode], x5, 0"
+      : [output_mode] "=r" (output_mode) 
+      : [mode] "r" (ecall_mode),
+         [iptr] "r" (input_pointer),
+         [ilength] "r" (input_length));
+  return output_mode;
+}
+
+void send_dma_l(char* msg, int len) {
+	while (!system_call(0, msg, len)) {}
+}
+
+void runtime_write(size_t len, char *buffer) {
+  send_dma_l(buffer, len);
+}

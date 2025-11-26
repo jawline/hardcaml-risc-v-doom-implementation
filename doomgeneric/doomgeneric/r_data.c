@@ -18,6 +18,7 @@
 //
 
 #include <stdio.h>
+#include <strings.h>
 
 #include "deh_main.h"
 #include "i_swap.h"

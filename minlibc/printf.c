@@ -5,7 +5,10 @@
  * terms and conditions.
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
+#include <ctype.h>
 
 int printf(const char *format, ...)
 {

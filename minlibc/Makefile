@@ -13,4 +13,4 @@ $(LIBRARY): $(O_FILES)
 	$(AR) cr $(LIBRARY) $(O_FILES)
 
 %.o: %.c
-	$(CC) -c -nostdinc -Iinclude/ -o $@ $<
+	$(CC) -c -nostdinc -ffreestanding -nostdlib -nostartfiles -march=rv32i -mabi=ilp32 -Iinclude/ -o $@ -L/home/ubuntu/gcc-riscv/riscv32-unknown-elf/lib/ -lm -lgcc $<

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+xxd -i DOOM1.WAD &> ./doom1.c

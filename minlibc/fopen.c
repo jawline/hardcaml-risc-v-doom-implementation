@@ -6,9 +6,18 @@
  */
 #include <stdio.h>
 #include <errno.h>
+#include <string.h>
+#include "doom1.h"
 
 FILE *fopen(const char *path, const char *mode) {
   printf("Fake fopen called %s\n", path);
-  errno = EACCES;
-  return NULL;
+
+  if (strcmp(path, "doom1.wad") == 0) {
+    // Just return a pointer to the start of the wad, fread will just increment after each read.
+    errno = 0;
+    return (FILE*)  DOOM1_WAD;
+  } else {
+    errno = EACCES;
+    return NULL;
+  }
 }

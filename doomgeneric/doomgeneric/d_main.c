@@ -1171,104 +1171,14 @@ void D_DoomMain (void)
 #endif
 
     I_AtExit(D_Endoom, false);
-
-    // print banner
-
     I_PrintBanner(PACKAGE_STRING);
 
     DEH_printf("Z_Init: Init zone memory allocation daemon. \n");
     Z_Init ();
-
-#ifdef FEATURE_MULTIPLAYER
-    //!
-    // @category net
-    //
-    // Start a dedicated server, routing packets but not participating
-    // in the game itself.
-    //
-
-    if (M_CheckParm("-dedicated") > 0)
-    {
-        printf("Dedicated server mode.\n");
-        NET_DedicatedServer();
-
-        // Never returns
-    }
-
-    //!
-    // @category net
-    //
-    // Query the Internet master server for a global list of active
-    // servers.
-    //
-
-    if (M_CheckParm("-search"))
-    {
-        NET_MasterQuery();
-        exit(0);
-    }
-
-    //!
-    // @arg <address>
-    // @category net
-    //
-    // Query the status of the server running on the given IP
-    // address.
-    //
-
-    p = M_CheckParmWithArgs("-query", 1);
-
-    if (p)
-    {
-        NET_QueryAddress(myargv[p+1]);
-        exit(0);
-    }
-
-    //!
-    // @category net
-    //
-    // Search the local LAN for running servers.
-    //
-
-    if (M_CheckParm("-localsearch"))
-    {
-        NET_LANQuery();
-        exit(0);
-    }
-
-#endif
-
-    //!
-    // @vanilla
-    //
-    // Disable monsters.
-    //
 	
     nomonsters = M_CheckParm ("-nomonsters");
-
-    //!
-    // @vanilla
-    //
-    // Monsters respawn after being killed.
-    //
-
     respawnparm = M_CheckParm ("-respawn");
-
-    //!
-    // @vanilla
-    //
-    // Monsters move faster.
-    //
-
     fastparm = M_CheckParm ("-fast");
-
-    //! 
-    // @vanilla
-    //
-    // Developer mode.  F1 saves a screenshot in the current working
-    // directory.
-    //
-
     devparm = M_CheckParm ("-devparm");
 
     I_DisplayFPSDots(devparm);
@@ -1298,25 +1208,6 @@ void D_DoomMain (void)
 	DEH_printf(D_DEVSTR);
     
     // find which dir to use for config files
-
-#ifdef _WIN32
-
-    //!
-    // @platform windows
-    // @vanilla
-    //
-    // Save configuration data and savegames in c:\doomdata,
-    // allowing play from CD.
-    //
-
-    if (M_ParmExists("-cdrom"))
-    {
-        printf(D_CDROM);
-
-        M_SetConfigDir("c:\\doomdata\\");
-    }
-    else
-#endif
     {
         // Auto-detect the configuration dir.
 
@@ -1364,7 +1255,7 @@ void D_DoomMain (void)
     I_AtExit(M_SaveDefaults, false);
 
     // Find main IWAD file and load it.
-    iwadfile = D_FindIWAD(IWAD_MASK_DOOM, &gamemission);
+    iwadfile = "doom1.wad";
 
     // None found?
 

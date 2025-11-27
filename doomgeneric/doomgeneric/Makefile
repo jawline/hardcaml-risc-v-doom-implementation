@@ -16,14 +16,17 @@ all:	 $(OUTPUT)
 clean:
 	rm -rf $(OBJDIR)
 	rm -f $(OUTPUT)
+	rm -f $(OUTPUT).bin
 	rm -f $(OUTPUT).gdb
 	rm -f $(OUTPUT).map
 
 $(OUTPUT):	$(OBJS)
 	@echo [Linking $@]
 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $(OUTPUT) $(LIBS) -Wl,-Map,$(OUTPUT).map -Tlink.ld
+	riscv32-unknown-elf-objcopy $(OUTPUT) -O binary $(OUTPUT).bin
 	@echo [Size]
 	-$(CROSS_COMPILE)size $(OUTPUT)
+	du -h $(OUTPUT).bin
 
 $(OBJS): | $(OBJDIR)
 

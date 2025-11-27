@@ -7,19 +7,8 @@
 #include <stdio.h>
 #include <errno.h>
 
-#ifdef PROFILING
-#include <runtime_reqs.h>
-#define MUNUSED
-#else
-#define MUNUSED __attribute((unused))
-#endif
-
-FILE *fopen(const char *path MUNUSED, const char *mode MUNUSED)
-{
-#ifdef PROFILING
-  return profile_fopen(path, mode);
-#else
+FILE *fopen(const char *path, const char *mode) {
+  printf("Fake fopen called %s\n", path);
   errno = EACCES;
   return NULL;
-#endif
 }

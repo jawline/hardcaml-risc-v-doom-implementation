@@ -41,16 +41,18 @@ void DG_SetWindowTitle(const char * title)
 
 int main(int argc, char **argv)
 {
-    doomgeneric_Create(argc, argv);
+  printf("Entering Create\n");
+  doomgeneric_Create(argc, argv);
 
-    while(1)
-    {
-      doomgeneric_Tick(); 
-    }
+  while(1) {
+    printf("Entering tick\n");
+    doomgeneric_Tick(); 
+  }
 
-    return 0;
+  return 0;
 }
 
 void _start() {
-        main(0, NULL);
+  printf("Start stub hit\n");
+  main(0, NULL);
 }

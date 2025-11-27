@@ -1,7 +1,7 @@
 CC=riscv32-unknown-elf-gcc # gcc or g++
 CFLAGS+=-O3 -I./ -ffreestanding -nostdlib -nostartfiles -march=rv32i -L../../minlibc/ -L/home/ubuntu/gcc-riscv/riscv32-unknown-elf/lib/ -Wall -DNORMALUNIX -DLINUX -DSNDSERV -D_DEFAULT_SOURCE -I../../minlibc/include
 
-LIBS= -lminlibc  -lm -lgcc
+LIBS=-lminlibc -lgcc -lm 
 
 # subdirectory for objects
 OBJDIR=build

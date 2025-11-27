@@ -15,7 +15,7 @@ FILE *fopen(const char *path, const char *mode) {
   if (strcmp(path, "doom1.wad") == 0) {
     // Just return a pointer to the start of the wad, fread will just increment after each read.
     errno = 0;
-    return (FILE*)  DOOM1_WAD;
+    return (FILE*) DOOM1_WAD;
   } else {
     errno = EACCES;
     return NULL;

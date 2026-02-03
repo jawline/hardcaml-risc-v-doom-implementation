@@ -32,7 +32,9 @@ uint32_t DG_GetTicksMs()
 
 int DG_GetKey(int* pressed, unsigned char* doomKey)
 {
-  return 0; 
+        //TODO 
+  volatile  int* FAKE_ADDR = 0x0;
+  return *FAKE_ADDR; 
 }
 
 void DG_SetWindowTitle(const char * title)
@@ -42,6 +44,9 @@ void DG_SetWindowTitle(const char * title)
 
 int main(int argc, char **argv)
 {
+  char* root_file = (char*) fopen("doom1.wad", "r");
+
+  root_file[54] = 0x0;
   printf("Entering Create\n");
   doomgeneric_Create(argc, argv);
 
@@ -53,7 +58,9 @@ int main(int argc, char **argv)
   return 0;
 }
 
+char* ARGS[] = { "FAKE_EXE_PATH" };
+
 void _start() {
   printf("Start stub hit\n");
-  main(0, NULL);
+  main(1, ARGS);
 }

@@ -6,10 +6,10 @@
  */
 #include <stdio.h>
 #include <errno.h>
+#include "doom1.h"
 
 long ftell(FILE *stream __attribute__((unused)))
 {
   printf("ftell\n");
-  errno = EBADF;
-  return -1;
+  return (long) ((void*) stream - (void*) DOOM1_WAD);
 }

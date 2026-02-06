@@ -110,8 +110,11 @@ int     runtime_memprotect(void *addr, size_t length, int prot) {
 void* mmap_start_address = (void*) 16777216;
 
 void   *runtime_alloc(void *start, size_t length, int prot) {
+        printf("runtime alloc called\n");
   void* last = mmap_start_address;
   mmap_start_address += length;
+
+        printf("runtime alloc end\n");
   return last;
 }
 

@@ -16,11 +16,21 @@ void doomgeneric_Create(int argc, char **argv)
     myargc = argc;
     myargv = argv;
 
+  printf("enter doomgeneric_Create\n");
+
 	M_FindResponseFile();
+
+  printf("found response file\n");
+
+
 
 	DG_ScreenBuffer = malloc(DOOMGENERIC_RESX * DOOMGENERIC_RESY * 4);
 
+  printf("malloc screenbuffer\n");
+
 	DG_Init();
+
+  printf ("call dg_init\n");
 
 	D_DoomMain ();
 }

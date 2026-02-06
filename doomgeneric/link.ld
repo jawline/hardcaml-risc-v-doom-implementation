@@ -1,16 +1,16 @@
-OUTPUT_ARCH( "riscv" )
-ENTRY( _start )
+ OUTPUT_ARCH( "riscv" )
+ ENTRY( _start )
+ SECTIONS
+ {
+ . = 0x0;
+ .text :
+ {
+ *(.text)
+ }
+ .data :
+ {
+ *(.data)
+ }
+ _end = .;
+ }
 
-MEMORY {
-  RAM (rwx) : ORIGIN = 0x0, LENGTH = 64M
-}
-
-SECTIONS {
-    .init : { *(.init) } > RAM
-    .text : { *(.text .text.*) } > RAM
-    .rodata : { *(.rodata) } > RAM
-    .bss : { *(.bss) } > RAM
-    .sbss : { *(.sbss) } > RAM
-    .data : { *(.data) } > RAM
-    . = ALIGN(4);
-}

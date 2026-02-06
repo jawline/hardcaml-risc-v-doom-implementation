@@ -1851,13 +1851,17 @@ malloc(size_t size)
 {
 	void		*r;
 
+  printf("malloc_lock\n");
 	_MALLOC_LOCK();
+  printf("malloc_locked\n");
 	malloc_func = " in malloc():";
 	if (malloc_active++) {
 		malloc_recurse();
 		return (NULL);
 	}
+  printf("imalloc\n");
 	r = imalloc(size);
+  printf("imalloc-\n");
 	UTRACE(0, size, r);
 	malloc_active--;
 	_MALLOC_UNLOCK();

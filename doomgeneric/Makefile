@@ -21,8 +21,10 @@ clean:
 	rm -f $(OUTPUT).map
 
 $(OUTPUT):	$(OBJS)
+	@echo "Compiling entry.s"
+	riscv32-unknown-elf-as -o entry.o entry.s -march=rv32i	
 	@echo [Linking $@]
-	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $(OUTPUT) $(LIBS) -Wl,-Map,$(OUTPUT).map -Tlink.ld
+	$(CC) $(CFLAGS) $(LDFLAGS) entry.o $(OBJS) -o $(OUTPUT) $(LIBS) -Wl,-Map,$(OUTPUT).map -Tlink.ld
 	riscv32-unknown-elf-objcopy $(OUTPUT) -O binary $(OUTPUT).bin
 	@echo [Size]
 	-$(CROSS_COMPILE)size $(OUTPUT)

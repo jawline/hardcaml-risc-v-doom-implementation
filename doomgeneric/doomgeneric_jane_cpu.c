@@ -44,9 +44,6 @@ void DG_SetWindowTitle(const char * title)
 
 int main(int argc, char **argv)
 {
-  char* root_file = (char*) fopen("doom1.wad", "r");
-
-  root_file[54] = 0x0;
   printf("Entering Create\n");
   doomgeneric_Create(argc, argv);
 
@@ -60,7 +57,7 @@ int main(int argc, char **argv)
 
 char* ARGS[] = { "FAKE_EXE_PATH" };
 
-void _start() {
+void c_start() {
   printf("Start stub hit\n");
   main(1, ARGS);
 }

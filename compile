@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euvx
+cd minlibc
+make clean
+make
+cd ../doomgeneric
+make clean
+make

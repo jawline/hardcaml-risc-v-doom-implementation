@@ -139,6 +139,7 @@ static void ExtendLumpInfo(int newnumlumps)
 
 wad_file_t *W_AddFile (char *filename)
 {
+    printf("start of of W_AddFile %p\n", __builtin_return_address(0));
     wadinfo_t header;
     lumpinfo_t *lump_p;
     unsigned int i;
@@ -182,28 +183,30 @@ wad_file_t *W_AddFile (char *filename)
     }
     else 
     {
+         
+      printf("start parsing wad %p %i\n", __builtin_return_address(0), sizeof(header));
     	// WAD file
-        W_Read(wad_file, 0, &header, sizeof(header));
+      W_Read(wad_file, 0, &header, sizeof(header));
 
-		if (strncmp(header.identification,"IWAD",4))
-		{
-			// Homebrew levels?
-			if (strncmp(header.identification,"PWAD",4))
-			{
-			I_Error ("Wad file %s doesn't have IWAD "
-				 "or PWAD id\n", filename);
-			}
+		  if (strncmp(header.identification,"IWAD",4))
+		  {
+		  	// Homebrew levels?
+		  	if (strncmp(header.identification,"PWAD",4))
+		  	{
+		  	I_Error ("Wad file %s doesn't have IWAD "
+		  		 "or PWAD id\n", filename);
+		  	}
 
-			// ???modifiedgame = true;
-		}
+		  	// ???modifiedgame = true;
+		  }
 
-		header.numlumps = LONG(header.numlumps);
-		header.infotableofs = LONG(header.infotableofs);
-		length = header.numlumps*sizeof(filelump_t);
-		fileinfo = Z_Malloc(length, PU_STATIC, 0);
+		  header.numlumps = LONG(header.numlumps);
+		  header.infotableofs = LONG(header.infotableofs);
+		  length = header.numlumps*sizeof(filelump_t);
+		  fileinfo = Z_Malloc(length, PU_STATIC, 0);
 
-        W_Read(wad_file, header.infotableofs, fileinfo, length);
-        newnumlumps += header.numlumps;
+      W_Read(wad_file, header.infotableofs, fileinfo, length);
+      newnumlumps += header.numlumps;
     }
 
     // Increase size of numlumps array to accomodate the new file.
@@ -214,25 +217,29 @@ wad_file_t *W_AddFile (char *filename)
 
     filerover = fileinfo;
 
+    printf("start parsing lumps (%i) wad %p\n", numlumps, __builtin_return_address(0));
     for (i=startlump; i<numlumps; ++i)
     {
-		lump_p->wad_file = wad_file;
-		lump_p->position = LONG(filerover->filepos);
-		lump_p->size = LONG(filerover->size);
+		  lump_p->wad_file = wad_file;
+		  lump_p->position = LONG(filerover->filepos);
+		  lump_p->size = LONG(filerover->size);
 			lump_p->cache = NULL;
-		strncpy(lump_p->name, filerover->name, 8);
-
+		  strncpy(lump_p->name, filerover->name, 8);
 			++lump_p;
 			++filerover;
     }
 
     Z_Free(fileinfo);
+    printf("after zfree file info %p\n", i, __builtin_return_address(0));
 
     if (lumphash != NULL)
-    {
+    { 
+        printf("freeing lump hash %p\n", i, __builtin_return_address(0));
         Z_Free(lumphash);
         lumphash = NULL;
     }
+
+    printf("end of W_AddFile %p\n", __builtin_return_address(0));
 
     return wad_file;
 }
@@ -342,6 +349,7 @@ int W_LumpLength (unsigned int lump)
 //
 void W_ReadLump(unsigned int lump, void *dest)
 {
+    printf("W_ReadLump\n");
     int c;
     lumpinfo_t *l;
 	

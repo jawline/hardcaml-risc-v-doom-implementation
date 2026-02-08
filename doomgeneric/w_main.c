@@ -187,9 +187,12 @@ boolean W_ParseCommandLine(void)
             filename = D_TryFindWADByName(myargv[p]);
 
             printf(" adding %s\n", filename);
-	    W_AddFile(filename);
+	          W_AddFile(filename);
+            printf("exit W_AddFile\n");
         }
     }
+
+    printf ("exit this method\n");
 
 //    W_PrintDirectory();
 

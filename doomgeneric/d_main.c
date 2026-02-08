@@ -1404,8 +1404,12 @@ void D_DoomMain (void)
 
     I_AtExit((atexit_func_t) G_CheckDemoStatus, true);
 
+    printf("Generating WAD hash table\n");
+
     // Generate the WAD hash table.  Speed things up a bit.
     W_GenerateHashTable();
+
+    printf("Done with that\n");
 
     // Load DEHACKED lumps from WAD files - but only if we give the right
     // command line parameter.

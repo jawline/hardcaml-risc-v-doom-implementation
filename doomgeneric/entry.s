@@ -1,6 +1,6 @@
 .global _start
 _start:
-  li sp, 8388608
+  li sp, 0x1800000
   call c_start
 loop:
   j loop

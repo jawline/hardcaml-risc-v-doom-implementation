@@ -1,5 +1,5 @@
 CC=riscv32-unknown-elf-gcc # gcc or g++
-CFLAGS+=-O3 -I./ -ffreestanding -nostdlib -nostartfiles -march=rv32i -L../minlibc/ -L/home/ubuntu/gcc-riscv/riscv32-unknown-elf/lib/ -Wall -DNORMALUNIX -DLINUX -DSNDSERV -D_DEFAULT_SOURCE -I../minlibc/include
+CFLAGS+=-O3 -I./ -ffreestanding -nostdlib -nostartfiles -march=rv32i_zmmul -L../minlibc/ -L/home/ubuntu/gcc-riscv/riscv32-unknown-elf/lib/ -Wall -DNORMALUNIX -DLINUX -DSNDSERV -D_DEFAULT_SOURCE -I../minlibc/include
 
 LIBS=-lminlibc -lgcc -lm 
 
@@ -22,7 +22,7 @@ clean:
 
 $(OUTPUT):	$(OBJS)
 	@echo "Compiling entry.s"
-	riscv32-unknown-elf-as -o entry.o entry.s -march=rv32i	
+	riscv32-unknown-elf-as -o entry.o entry.s -march=rv32i_zmmul
 	@echo [Linking $@]
 	$(CC) $(CFLAGS) $(LDFLAGS) entry.o $(OBJS) -o $(OUTPUT) $(LIBS) -Wl,-Map,$(OUTPUT).map -Tlink.ld
 	riscv32-unknown-elf-objcopy $(OUTPUT) -O binary $(OUTPUT).bin

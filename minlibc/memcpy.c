@@ -12,7 +12,6 @@ void  *memcpy(void *dest, const void *src, size_t count)
   /* This would be a prime candidate for reimplementation in assembly */
   char *in_src = (char*)src;
   char *in_dest = (char*)dest;
-  printf("memcpy %x %x %i\n", dest, src, count);
 
   while(count--) {
     *in_dest++ = *in_src++;

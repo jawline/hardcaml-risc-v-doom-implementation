@@ -350,7 +350,6 @@ int W_LumpLength (unsigned int lump)
 //
 void W_ReadLump(unsigned int lump, void *dest)
 {
-    printf("W_ReadLump\n");
     int c;
     lumpinfo_t *l;
 	

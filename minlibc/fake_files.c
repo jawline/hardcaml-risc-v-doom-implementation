@@ -107,7 +107,7 @@ size_t fread(void *ptr    __attribute__((unused)),
 
     unsigned long max_bytes = max_chunks * size;
 
-    printf("fread DOOM1_WAD can %i %i %i %i\nstack pos %p ptr %p", size, nmemb, max_chunks, max_bytes,  &remaining_bytes, ptr);
+    printf("fread DOOM1_WAD can %i %i %i %i\nstack pos %p ptr %p\n", size, nmemb, max_chunks, max_bytes,  &remaining_bytes, ptr);
 
     memcpy(ptr, CUR_POS, max_bytes);
     CUR_POS += max_bytes;

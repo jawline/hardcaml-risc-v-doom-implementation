@@ -225,7 +225,7 @@ LOAD /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a
 LOAD /home/ubuntu/gcc-riscv/riscv32-unknown-elf/lib//libm.a
                 0x00000000                        . = 0x0
 
-.text           0x00000000    0x5248c
+.text           0x00000000    0x52518
  *(.text)
  .text          0x00000000        0xc entry.o
                 0x00000000                _start
@@ -872,1651 +872,1649 @@ LOAD /home/ubuntu/gcc-riscv/riscv32-unknown-elf/lib//libm.a
                 0x000311fc                R_CheckBBox
                 0x000313fc                R_Subsector
                 0x0003169c                R_RenderBSPNode
- .text          0x00031784     0x15ec build/r_data.o
+ .text          0x00031784     0x1644 build/r_data.o
                 0x00031784                R_DrawColumnInCache
                 0x00031850                R_GenerateComposite
                 0x00031abc                R_GenerateLookup
                 0x00031d24                R_GetColumn
                 0x00031dec                R_InitTextures
-                0x00032474                R_InitFlats
-                0x00032510                R_InitSpriteLumps
-                0x0003269c                R_InitColormaps
-                0x000326cc                R_InitData
-                0x000327b0                R_FlatNumForName
-                0x00032834                R_CheckTextureNumForName
-                0x000328d4                R_TextureNumForName
-                0x0003297c                R_PrecacheLevel
- .text          0x00032d70      0xfe8 build/r_draw.o
-                0x00032d70                R_DrawColumn
-                0x00032e78                R_DrawColumnLow
-                0x00032f94                R_DrawFuzzColumn
-                0x000330d4                R_DrawFuzzColumnLow
-                0x0003325c                R_DrawTranslatedColumn
-                0x00033370                R_DrawTranslatedColumnLow
-                0x000334c8                R_InitTranslationTables
-                0x00033578                R_DrawSpan
-                0x000336b8                R_DrawSpanLow
-                0x00033828                R_InitBuffer
-                0x000338c0                R_FillBackScreen
-                0x00033be8                R_VideoErase
-                0x00033c10                R_DrawViewBorder
- .text          0x00033d58     0x12b8 build/r_main.o
-                0x00033d58                R_AddPointToBox
-                0x00033d8c                R_PointOnSide
-                0x00033e3c                R_PointOnSegSide
-                0x00033f04                R_PointToAngle
-                0x000340c8                R_PointToAngle2
-                0x00034290                R_PointToDist
-                0x00034344                R_InitPointToAngle
-                0x00034348                R_ScaleFromGlobalAngle
-                0x00034428                R_InitTables
-                0x0003442c                R_InitTextureMapping
-                0x0003466c                R_InitLightTables
-                0x0003476c                R_SetViewSize
-                0x0003478c                R_ExecuteSetViewSize
-                0x00034bd4                R_Init
-                0x00034d54                R_PointInSubsector
-                0x00034ebc                R_SetupFrame
-                0x00034fc4                R_RenderPlayerView
- .text          0x00035010      0x9b4 build/r_plane.o
-                0x00035010                R_InitPlanes
-                0x00035014                R_MapPlane
-                0x00035254                R_ClearPlanes
-                0x00035398                R_FindPlane
-                0x00035498                R_CheckPlane
-                0x00035550                R_MakeSpans
-                0x00035690                R_DrawPlanes
- .text          0x000359c4     0x1298 build/r_segs.o
-                0x000359c4                R_RenderMaskedSegRange
-                0x00035ccc                R_RenderSegLoop
-                0x000361a0                R_StoreWallRange
- .text          0x00036c5c       0x10 build/r_sky.o
-                0x00036c5c                R_InitSkyMap
- .text          0x00036c6c     0x17bc build/r_things.o
-                0x00036c6c                R_InstallSpriteLump
-                0x00036ed4                R_InitSpriteDefs
-                0x000372b8                R_InitSprites
-                0x000372dc                R_ClearSprites
-                0x000372f0                R_NewVisSprite
-                0x0003731c                R_DrawMaskedColumn
-                0x00037494                R_DrawVisSprite
-                0x00037668                R_ProjectSprite
-                0x00037a10                R_AddSprites
-                0x00037ab4                R_DrawPSprite
-                0x00037d24                R_DrawPlayerSprites
-                0x00037e08                R_SortVisSprites
-                0x00037ef0                R_DrawSprite
-                0x000382c8                R_DrawMasked
- .text          0x00038428     0x2200 build/sha1.o
-                0x00039d40                SHA1_Init
-                0x00039d88                SHA1_Update
-                0x00039f28                SHA1_Final
-                0x0003a42c                SHA1_UpdateInt32
-                0x0003a5f0                SHA1_UpdateString
- .text          0x0003a628        0x0 build/sounds.o
- .text          0x0003a628       0x80 build/statdump.o
-                0x0003a628                StatCopy
-                0x0003a6a4                StatDump
- .text          0x0003a6a8      0x5f4 build/st_lib.o
-                0x0003a6a8                STlib_init
-                0x0003a6d4                STlib_initNum
-                0x0003a6f4                STlib_drawNum
-                0x0003a8f8                STlib_updateNum
-                0x0003a90c                STlib_initPercent
-                0x0003a934                STlib_updatePercent
-                0x0003a9a8                STlib_initMultIcon
-                0x0003a9c8                STlib_updateMultIcon
-                0x0003ab24                STlib_initBinIcon
-                0x0003ab40                STlib_updateBinIcon
- .text          0x0003ac9c     0x1fc0 build/st_stuff.o
-                0x0003b370                ST_refreshBackground
-                0x0003b3fc                ST_Responder
-                0x0003b9b8                ST_calcPainOffset
-                0x0003ba24                ST_updateFaceWidget
-                0x0003c06c                ST_updateWidgets
-                0x0003c220                ST_Ticker
-                0x0003c268                ST_doPaletteStuff
-                0x0003c388                ST_drawWidgets
-                0x0003c4b4                ST_doRefresh
-                0x0003c554                ST_diffDraw
-                0x0003c55c                ST_Drawer
-                0x0003c63c                ST_loadGraphics
-                0x0003c640                ST_loadData
-                0x0003c668                ST_unloadGraphics
-                0x0003c66c                ST_unloadData
-                0x0003c670                ST_initData
-                0x0003c73c                ST_createWidgets
-                0x0003cab4                ST_Start
-                0x0003cbd0                ST_Stop
-                0x0003cc14                ST_Init
- .text          0x0003cc5c      0xd44 build/s_sound.o
-                0x0003cc5c                S_Shutdown
-                0x0003ce04                S_Init
-                0x0003cf24                S_StopSound
-                0x0003cfac                S_StartSound
-                0x0003d414                S_PauseSound
-                0x0003d454                S_ResumeSound
-                0x0003d490                S_UpdateSounds
-                0x0003d5e8                S_SetMusicVolume
-                0x0003d624                S_SetSfxVolume
-                0x0003d66c                S_ChangeMusic
-                0x0003d7d8                S_Start
-                0x0003d930                S_StartMusic
-                0x0003d938                S_MusicPlaying
-                0x0003d93c                S_StopMusic
- .text          0x0003d9a0       0x48 build/tables.o
-                0x0003d9a0                SlopeDiv
- .text          0x0003d9e8     0x2240 build/v_video.o
-                0x0003d9e8                V_MarkRect
-                0x0003da60                V_CopyRect
-                0x0003dbb0                V_SetPatchClipCallback
-                0x0003dbbc                V_DrawPatch
-                0x0003de38                V_DrawPatchFlipped
-                0x0003e084                V_DrawPatchDirect
-                0x0003e088                V_DrawTLPatch
-                0x0003e23c                V_DrawXlaPatch
-                0x0003e3ac                V_DrawAltTLPatch
-                0x0003e560                V_DrawShadowedPatch
-                0x0003e72c                V_LoadTintTable
-                0x0003e758                V_LoadXlaTable
-                0x0003e784                V_DrawBlock
-                0x0003e8a0                V_DrawFilledBox
-                0x0003ea00                V_DrawHorizLine
-                0x0003eb0c                V_DrawVertLine
-                0x0003eb44                V_DrawBox
-                0x0003ee1c                V_DrawRawScreen
-                0x0003ee34                V_Init
-                0x0003ee38                V_UseBuffer
-                0x0003ee44                V_RestoreBuffer
-                0x0003ee58                WritePCXfile
-                0x0003f03c                V_ScreenShot
-                0x0003f25c                V_DrawMouseSpeedBox
- .text          0x0003fc28     0x670c build/wi_stuff.o
-                0x00040c00                WI_slamBackground
-                0x00040c14                WI_Responder
-                0x00040c1c                WI_drawLF
-                0x00040da8                WI_drawEL
-                0x00040e7c                WI_drawOnLnode
-                0x00040ff4                WI_initAnimatedBack
-                0x0004101c                WI_updateAnimatedBack
-                0x00041044                WI_drawAnimatedBack
-                0x00041138                WI_drawNum
-                0x00041308                WI_drawPercent
-                0x00041460                WI_drawTime
-                0x000416b0                WI_End
-                0x000416b4                WI_initNoState
-                0x000416d8                WI_updateNoState
-                0x0004174c                WI_initShowNextLoc
-                0x00041794                WI_updateShowNextLoc
-                0x00041820                WI_drawShowNextLoc
-                0x00041abc                WI_drawNoState
-                0x00041acc                WI_fragSum
-                0x00041b68                WI_initDeathmatchStats
-                0x00041dac                WI_updateDeathmatchStats
-                0x00042bf8                WI_drawDeathmatchStats
-                0x00043418                WI_initNetgameStats
-                0x00043860                WI_updateNetgameStats
-                0x0004472c                WI_drawNetgameStats
-                0x00045040                WI_initStats
-                0x000450b8                WI_updateStats
-                0x000455ec                WI_drawStats
-                0x00045b18                WI_checkForAccelerate
-                0x00045cb8                WI_Ticker
-                0x00045fc8                WI_loadData
-                0x0004605c                WI_unloadData
-                0x00046060                WI_Drawer
-                0x000460b0                WI_initVariables
-                0x00046140                WI_Start
- .text          0x00046334      0x148 build/w_checksum.o
-                0x00046334                W_Checksum
- .text          0x0004647c       0x74 build/w_file.o
-                0x0004647c                W_OpenFile
-                0x00046488                W_CloseFile
-                0x00046494                W_Read
- .text          0x000464f0       0xec build/w_main.o
-                0x000464f0                W_ParseCommandLine
- .text          0x000465dc      0xfac build/w_wad.o
-                0x000465dc                W_LumpNameHash
-                0x0004663c                W_AddFile
-                0x00046a14                W_NumLumps
-                0x00046a20                W_CheckNumForName
-                0x00046ba0                W_GetNumForName
-                0x00046bfc                W_LumpLength
-                0x00046c70                W_ReadLump
-                0x00046d34                W_CacheLumpNum
-                0x00046f34                W_CacheLumpName
-                0x00047140                W_ReleaseLumpNum
-                0x000471c0                W_ReleaseLumpName
-                0x00047278                W_GenerateHashTable
-                0x000473a4                W_CheckCorrectIWAD
- .text          0x00047588      0x868 build/z_zone.o
-                0x00047588                Z_ClearZone
-                0x000475c8                Z_Init
-                0x0004762c                Z_Free
-                0x00047734                Z_Malloc
-                0x000478c4                Z_FreeTags
-                0x00047954                Z_DumpHeap
-                0x00047aa0                Z_FileDumpHeap
-                0x00047bc4                Z_CheckHeap
-                0x00047ca8                Z_ChangeTag2
-                0x00047d40                Z_ChangeUser
-                0x00047d94                Z_FreeMemory
-                0x00047de0                Z_ZoneSize
- .text          0x00047df0       0xf0 build/w_file_stdc.o
-                0x00047df0                W_StdC_Read
- .text          0x00047ee0      0x14c build/i_input.o
-                0x00047ee0                I_GetEvent
-                0x00048028                I_InitInput
- .text          0x0004802c      0x60c build/i_video.o
-                0x0004802c                cmap_to_rgb565
-                0x00048094                cmap_to_fb
-                0x00048178                I_InitGraphics
-                0x0004830c                I_ShutdownGraphics
-                0x00048318                I_StartFrame
-                0x0004831c                I_StartTic
-                0x00048320                I_UpdateNoBlit
-                0x00048324                I_FinishUpdate
-                0x00048508                I_ReadScreen
-                0x0004851c                I_SetPalette
-                0x00048590                I_GetPaletteIndex
-                0x00048614                I_BeginRead
-                0x00048618                I_EndRead
-                0x0004861c                I_SetWindowTitle
-                0x00048620                I_GraphicsCheckCommandLine
-                0x00048624                I_SetGrabMouseCallback
-                0x00048628                I_EnableLoadingDisk
-                0x0004862c                I_BindVideoVariables
-                0x00048630                I_DisplayFPSDots
-                0x00048634                I_CheckIsScreensaver
- .text          0x00048638       0x70 build/doomgeneric.o
-                0x00048638                doomgeneric_Create
- .text          0x000486a8       0x88 build/doomgeneric_jane_cpu.o
-                0x000486a8                DG_Init
-                0x000486b4                DG_DrawFrame
-                0x000486c0                DG_SleepMs
-                0x000486cc                DG_GetTicksMs
-                0x000486f0                DG_GetKey
-                0x000486fc                DG_SetWindowTitle
-                0x0004870c                c_start
- .text          0x00048730      0x314 ../minlibc//libminlibc.a(atof.o)
-                0x00048730                atof
- .text          0x00048a44       0x90 ../minlibc//libminlibc.a(atoi.o)
-                0x00048a44                atoi
- .text          0x00048ad4       0x2c ../minlibc//libminlibc.a(errno.o)
-                0x00048ad4                __errno_location
- .text          0x00048b00       0x28 ../minlibc//libminlibc.a(exit.o)
-                0x00048b00                exit
- .text          0x00048b28      0x4c8 ../minlibc//libminlibc.a(fake_files.o)
-                0x00048b28                fopen
-                0x00048bcc                ftell
-                0x00048c4c                fseek
-                0x00048e88                fread
-                0x00048fac                feof
- .text          0x00048ff0       0x38 ../minlibc//libminlibc.a(fclose.o)
-                0x00048ff0                fclose
- .text          0x00049028       0x70 ../minlibc//libminlibc.a(fflush.o)
-                0x00049028                fflush
- .text          0x00049098       0x74 ../minlibc//libminlibc.a(fprintf.o)
-                0x00049098                fprintf
- .text          0x0004910c       0xa4 ../minlibc//libminlibc.a(fwrite.o)
-                0x0004910c                fwrite
- .text          0x000491b0       0x4c ../minlibc//libminlibc.a(isdigit.o)
-                0x000491b0                isdigit
- .text          0x000491fc     0x35f4 ../minlibc//libminlibc.a(malloc.o)
-                0x0004c550                malloc
-                0x0004c634                free
-                0x0004c6bc                realloc
-                0x0004c790                calloc
- .text          0x0004c7f0       0x78 ../minlibc//libminlibc.a(memcpy.o)
-                0x0004c7f0                memcpy
- .text          0x0004c868       0x68 ../minlibc//libminlibc.a(memset.o)
-                0x0004c868                memset
- .text          0x0004c8d0       0x48 ../minlibc//libminlibc.a(mkdir.o)
-                0x0004c8d0                mkdir
- .text          0x0004c918       0x64 ../minlibc//libminlibc.a(mmap.o)
-                0x0004c918                mmap
- .text          0x0004c97c       0x44 ../minlibc//libminlibc.a(mprotect.o)
-                0x0004c97c                mprotect
- .text          0x0004c9c0       0x3c ../minlibc//libminlibc.a(munmap.o)
-                0x0004c9c0                munmap
- .text          0x0004c9fc      0x604 ../minlibc//libminlibc.a(printf.o)
-                0x0004c9fc                printf
-                0x0004ca78                sscanf
-                0x0004cd64                fabs
-                0x0004cde4                abs
-                0x0004ce20                runtime_exit
-                0x0004ce40                runtime_memprotect
-                0x0004ce80                runtime_alloc
-                0x0004cef0                runtime_free
-                0x0004cf1c                system_call
-                0x0004cf74                send_dma_l
-                0x0004cfc4                runtime_write
- .text          0x0004d000       0x3c ../minlibc//libminlibc.a(putchar.o)
-                0x0004d000                putchar
- .text          0x0004d03c       0x5c ../minlibc//libminlibc.a(puts.o)
-                0x0004d03c                puts
- .text          0x0004d098       0x78 ../minlibc//libminlibc.a(snprintf.o)
-                0x0004d098                snprintf
- .text          0x0004d110        0x0 ../minlibc//libminlibc.a(stdio_values.o)
- .text          0x0004d110      0x180 ../minlibc//libminlibc.a(strcasecmp.o)
-                0x0004d110                strcasecmp
-                0x0004d1a8                strncasecmp
- .text          0x0004d290       0x7c ../minlibc//libminlibc.a(strcmp.o)
-                0x0004d290                strcmp
- .text          0x0004d30c       0x64 ../minlibc//libminlibc.a(strdup.o)
-                0x0004d30c                strdup
- .text          0x0004d370       0x58 ../minlibc//libminlibc.a(strlen.o)
-                0x0004d370                strlen
- .text          0x0004d3c8       0xa0 ../minlibc//libminlibc.a(strncmp.o)
-                0x0004d3c8                strncmp
- .text          0x0004d468       0x78 ../minlibc//libminlibc.a(strncpy.o)
-                0x0004d468                strncpy
- .text          0x0004d4e0       0x74 ../minlibc//libminlibc.a(strrchr.o)
-                0x0004d4e0                strrchr
- .text          0x0004d554       0x94 ../minlibc//libminlibc.a(strstr.o)
-                0x0004d554                strstr
- .text          0x0004d5e8       0x50 ../minlibc//libminlibc.a(tolower.o)
-                0x0004d5e8                tolower
- .text          0x0004d638       0x50 ../minlibc//libminlibc.a(toupper.o)
-                0x0004d638                toupper
- .text          0x0004d688       0x9c ../minlibc//libminlibc.a(vfprintf.o)
-                0x0004d688                vfprintf
- .text          0x0004d724     0x1114 ../minlibc//libminlibc.a(vsnprintf.o)
-                0x0004dd40                vsnprintf
- .text          0x0004e838       0x20 ../minlibc//libminlibc.a(abort.o)
-                0x0004e838                abort
- .text          0x0004e858       0x68 ../minlibc//libminlibc.a(bzero.o)
-                0x0004e858                bzero
- .text          0x0004e8c0        0x0 ../minlibc//libminlibc.a(doom1.o)
- .text          0x0004e8c0       0x54 ../minlibc//libminlibc.a(fputc.o)
-                0x0004e8c0                fputc
- .text          0x0004e914       0x58 ../minlibc//libminlibc.a(isspace.o)
-                0x0004e914                isspace
- .text          0x0004e96c       0x70 ../minlibc//libminlibc.a(strchr.o)
-                0x0004e96c                strchr
- .text          0x0004e9dc       0x6c ../minlibc//libminlibc.a(strnlen.o)
-                0x0004e9dc                strnlen
- .text          0x0004ea48      0x5a4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
-                0x0004ea48                __divdi3
- .text          0x0004efec      0x5b4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
-                0x0004efec                __udivdi3
- .text          0x0004f5a0      0x5a4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
-                0x0004f5a0                __umoddi3
- .text          0x0004fb44      0x74c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(adddf3.o)
-                0x0004fb44                __adddf3
- .text          0x00050290       0xd8 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(ledf2.o)
-                0x00050290                __ltdf2
-                0x00050290                __ledf2
- .text          0x00050368      0x69c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldf3.o)
-                0x00050368                __muldf3
- .text          0x00050a04      0x760 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subdf3.o)
-                0x00050a04                __subdf3
- .text          0x00051164       0xa0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsidf.o)
-                0x00051164                __floatsidf
- .text          0x00051204       0xa4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixunsdfdi.o)
-                0x00051204                __fixunsdfdi
- .text          0x000512a8      0x1b0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatundidf.o)
-                0x000512a8                __floatundidf
- .text          0x00051458      0x374 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
-                0x00051458                __divsf3
- .text          0x000517cc      0x348 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(mulsf3.o)
-                0x000517cc                __mulsf3
- .text          0x00051b14      0x444 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subsf3.o)
-                0x00051b14                __subsf3
- .text          0x00051f58       0x70 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixsfsi.o)
-                0x00051f58                __fixsfsi
- .text          0x00051fc8      0x10c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsisf.o)
-                0x00051fc8                __floatsisf
- .text          0x000520d4       0xd8 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(extendsfdf2.o)
-                0x000520d4                __extendsfdf2
- .text          0x000521ac      0x144 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(truncdfsf2.o)
-                0x000521ac                __truncdfsf2
- .text          0x000522f0       0x24 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldi3.o)
-                0x000522f0                __mulsi3
- .text          0x00052314       0xb4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(div.o)
-                0x00052314                __divsi3
-                0x0005231c                __hidden___udivsi3
-                0x0005231c                __udivsi3
-                0x00052364                __umodsi3
-                0x00052398                __modsi3
- .text          0x000523c8       0x3c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_lshrdi3.o)
-                0x000523c8                __lshrdi3
- .text          0x00052404       0x3c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_ashldi3.o)
-                0x00052404                __ashldi3
- .text          0x00052440        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
- .text          0x00052440       0x4c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clzsi2.o)
-                0x00052440                __clzsi2
+                0x000324cc                R_InitFlats
+                0x00032568                R_InitSpriteLumps
+                0x000326f4                R_InitColormaps
+                0x00032724                R_InitData
+                0x00032808                R_FlatNumForName
+                0x0003288c                R_CheckTextureNumForName
+                0x0003292c                R_TextureNumForName
+                0x000329d4                R_PrecacheLevel
+ .text          0x00032dc8      0xfe8 build/r_draw.o
+                0x00032dc8                R_DrawColumn
+                0x00032ed0                R_DrawColumnLow
+                0x00032fec                R_DrawFuzzColumn
+                0x0003312c                R_DrawFuzzColumnLow
+                0x000332b4                R_DrawTranslatedColumn
+                0x000333c8                R_DrawTranslatedColumnLow
+                0x00033520                R_InitTranslationTables
+                0x000335d0                R_DrawSpan
+                0x00033710                R_DrawSpanLow
+                0x00033880                R_InitBuffer
+                0x00033918                R_FillBackScreen
+                0x00033c40                R_VideoErase
+                0x00033c68                R_DrawViewBorder
+ .text          0x00033db0     0x12b8 build/r_main.o
+                0x00033db0                R_AddPointToBox
+                0x00033de4                R_PointOnSide
+                0x00033e94                R_PointOnSegSide
+                0x00033f5c                R_PointToAngle
+                0x00034120                R_PointToAngle2
+                0x000342e8                R_PointToDist
+                0x0003439c                R_InitPointToAngle
+                0x000343a0                R_ScaleFromGlobalAngle
+                0x00034480                R_InitTables
+                0x00034484                R_InitTextureMapping
+                0x000346c4                R_InitLightTables
+                0x000347c4                R_SetViewSize
+                0x000347e4                R_ExecuteSetViewSize
+                0x00034c2c                R_Init
+                0x00034dac                R_PointInSubsector
+                0x00034f14                R_SetupFrame
+                0x0003501c                R_RenderPlayerView
+ .text          0x00035068      0x9b4 build/r_plane.o
+                0x00035068                R_InitPlanes
+                0x0003506c                R_MapPlane
+                0x000352ac                R_ClearPlanes
+                0x000353f0                R_FindPlane
+                0x000354f0                R_CheckPlane
+                0x000355a8                R_MakeSpans
+                0x000356e8                R_DrawPlanes
+ .text          0x00035a1c     0x1298 build/r_segs.o
+                0x00035a1c                R_RenderMaskedSegRange
+                0x00035d24                R_RenderSegLoop
+                0x000361f8                R_StoreWallRange
+ .text          0x00036cb4       0x10 build/r_sky.o
+                0x00036cb4                R_InitSkyMap
+ .text          0x00036cc4     0x17bc build/r_things.o
+                0x00036cc4                R_InstallSpriteLump
+                0x00036f2c                R_InitSpriteDefs
+                0x00037310                R_InitSprites
+                0x00037334                R_ClearSprites
+                0x00037348                R_NewVisSprite
+                0x00037374                R_DrawMaskedColumn
+                0x000374ec                R_DrawVisSprite
+                0x000376c0                R_ProjectSprite
+                0x00037a68                R_AddSprites
+                0x00037b0c                R_DrawPSprite
+                0x00037d7c                R_DrawPlayerSprites
+                0x00037e60                R_SortVisSprites
+                0x00037f48                R_DrawSprite
+                0x00038320                R_DrawMasked
+ .text          0x00038480     0x2200 build/sha1.o
+                0x00039d98                SHA1_Init
+                0x00039de0                SHA1_Update
+                0x00039f80                SHA1_Final
+                0x0003a484                SHA1_UpdateInt32
+                0x0003a648                SHA1_UpdateString
+ .text          0x0003a680        0x0 build/sounds.o
+ .text          0x0003a680       0x80 build/statdump.o
+                0x0003a680                StatCopy
+                0x0003a6fc                StatDump
+ .text          0x0003a700      0x5f4 build/st_lib.o
+                0x0003a700                STlib_init
+                0x0003a72c                STlib_initNum
+                0x0003a74c                STlib_drawNum
+                0x0003a950                STlib_updateNum
+                0x0003a964                STlib_initPercent
+                0x0003a98c                STlib_updatePercent
+                0x0003aa00                STlib_initMultIcon
+                0x0003aa20                STlib_updateMultIcon
+                0x0003ab7c                STlib_initBinIcon
+                0x0003ab98                STlib_updateBinIcon
+ .text          0x0003acf4     0x1fc0 build/st_stuff.o
+                0x0003b3c8                ST_refreshBackground
+                0x0003b454                ST_Responder
+                0x0003ba10                ST_calcPainOffset
+                0x0003ba7c                ST_updateFaceWidget
+                0x0003c0c4                ST_updateWidgets
+                0x0003c278                ST_Ticker
+                0x0003c2c0                ST_doPaletteStuff
+                0x0003c3e0                ST_drawWidgets
+                0x0003c50c                ST_doRefresh
+                0x0003c5ac                ST_diffDraw
+                0x0003c5b4                ST_Drawer
+                0x0003c694                ST_loadGraphics
+                0x0003c698                ST_loadData
+                0x0003c6c0                ST_unloadGraphics
+                0x0003c6c4                ST_unloadData
+                0x0003c6c8                ST_initData
+                0x0003c794                ST_createWidgets
+                0x0003cb0c                ST_Start
+                0x0003cc28                ST_Stop
+                0x0003cc6c                ST_Init
+ .text          0x0003ccb4      0xd44 build/s_sound.o
+                0x0003ccb4                S_Shutdown
+                0x0003ce5c                S_Init
+                0x0003cf7c                S_StopSound
+                0x0003d004                S_StartSound
+                0x0003d46c                S_PauseSound
+                0x0003d4ac                S_ResumeSound
+                0x0003d4e8                S_UpdateSounds
+                0x0003d640                S_SetMusicVolume
+                0x0003d67c                S_SetSfxVolume
+                0x0003d6c4                S_ChangeMusic
+                0x0003d830                S_Start
+                0x0003d988                S_StartMusic
+                0x0003d990                S_MusicPlaying
+                0x0003d994                S_StopMusic
+ .text          0x0003d9f8       0x48 build/tables.o
+                0x0003d9f8                SlopeDiv
+ .text          0x0003da40     0x2240 build/v_video.o
+                0x0003da40                V_MarkRect
+                0x0003dab8                V_CopyRect
+                0x0003dc08                V_SetPatchClipCallback
+                0x0003dc14                V_DrawPatch
+                0x0003de90                V_DrawPatchFlipped
+                0x0003e0dc                V_DrawPatchDirect
+                0x0003e0e0                V_DrawTLPatch
+                0x0003e294                V_DrawXlaPatch
+                0x0003e404                V_DrawAltTLPatch
+                0x0003e5b8                V_DrawShadowedPatch
+                0x0003e784                V_LoadTintTable
+                0x0003e7b0                V_LoadXlaTable
+                0x0003e7dc                V_DrawBlock
+                0x0003e8f8                V_DrawFilledBox
+                0x0003ea58                V_DrawHorizLine
+                0x0003eb64                V_DrawVertLine
+                0x0003eb9c                V_DrawBox
+                0x0003ee74                V_DrawRawScreen
+                0x0003ee8c                V_Init
+                0x0003ee90                V_UseBuffer
+                0x0003ee9c                V_RestoreBuffer
+                0x0003eeb0                WritePCXfile
+                0x0003f094                V_ScreenShot
+                0x0003f2b4                V_DrawMouseSpeedBox
+ .text          0x0003fc80     0x670c build/wi_stuff.o
+                0x00040c58                WI_slamBackground
+                0x00040c6c                WI_Responder
+                0x00040c74                WI_drawLF
+                0x00040e00                WI_drawEL
+                0x00040ed4                WI_drawOnLnode
+                0x0004104c                WI_initAnimatedBack
+                0x00041074                WI_updateAnimatedBack
+                0x0004109c                WI_drawAnimatedBack
+                0x00041190                WI_drawNum
+                0x00041360                WI_drawPercent
+                0x000414b8                WI_drawTime
+                0x00041708                WI_End
+                0x0004170c                WI_initNoState
+                0x00041730                WI_updateNoState
+                0x000417a4                WI_initShowNextLoc
+                0x000417ec                WI_updateShowNextLoc
+                0x00041878                WI_drawShowNextLoc
+                0x00041b14                WI_drawNoState
+                0x00041b24                WI_fragSum
+                0x00041bc0                WI_initDeathmatchStats
+                0x00041e04                WI_updateDeathmatchStats
+                0x00042c50                WI_drawDeathmatchStats
+                0x00043470                WI_initNetgameStats
+                0x000438b8                WI_updateNetgameStats
+                0x00044784                WI_drawNetgameStats
+                0x00045098                WI_initStats
+                0x00045110                WI_updateStats
+                0x00045644                WI_drawStats
+                0x00045b70                WI_checkForAccelerate
+                0x00045d10                WI_Ticker
+                0x00046020                WI_loadData
+                0x000460b4                WI_unloadData
+                0x000460b8                WI_Drawer
+                0x00046108                WI_initVariables
+                0x00046198                WI_Start
+ .text          0x0004638c      0x148 build/w_checksum.o
+                0x0004638c                W_Checksum
+ .text          0x000464d4       0x74 build/w_file.o
+                0x000464d4                W_OpenFile
+                0x000464e0                W_CloseFile
+                0x000464ec                W_Read
+ .text          0x00046548       0xec build/w_main.o
+                0x00046548                W_ParseCommandLine
+ .text          0x00046634      0xfe0 build/w_wad.o
+                0x00046634                W_LumpNameHash
+                0x00046694                W_AddFile
+                0x00046a6c                W_NumLumps
+                0x00046a78                W_CheckNumForName
+                0x00046c08                W_GetNumForName
+                0x00046c64                W_LumpLength
+                0x00046cd8                W_ReadLump
+                0x00046d9c                W_CacheLumpNum
+                0x00046f9c                W_CacheLumpName
+                0x000471a8                W_ReleaseLumpNum
+                0x00047228                W_ReleaseLumpName
+                0x000472e0                W_GenerateHashTable
+                0x00047430                W_CheckCorrectIWAD
+ .text          0x00047614      0x868 build/z_zone.o
+                0x00047614                Z_ClearZone
+                0x00047654                Z_Init
+                0x000476b8                Z_Free
+                0x000477c0                Z_Malloc
+                0x00047950                Z_FreeTags
+                0x000479e0                Z_DumpHeap
+                0x00047b2c                Z_FileDumpHeap
+                0x00047c50                Z_CheckHeap
+                0x00047d34                Z_ChangeTag2
+                0x00047dcc                Z_ChangeUser
+                0x00047e20                Z_FreeMemory
+                0x00047e6c                Z_ZoneSize
+ .text          0x00047e7c       0xf0 build/w_file_stdc.o
+                0x00047e7c                W_StdC_Read
+ .text          0x00047f6c      0x14c build/i_input.o
+                0x00047f6c                I_GetEvent
+                0x000480b4                I_InitInput
+ .text          0x000480b8      0x60c build/i_video.o
+                0x000480b8                cmap_to_rgb565
+                0x00048120                cmap_to_fb
+                0x00048204                I_InitGraphics
+                0x00048398                I_ShutdownGraphics
+                0x000483a4                I_StartFrame
+                0x000483a8                I_StartTic
+                0x000483ac                I_UpdateNoBlit
+                0x000483b0                I_FinishUpdate
+                0x00048594                I_ReadScreen
+                0x000485a8                I_SetPalette
+                0x0004861c                I_GetPaletteIndex
+                0x000486a0                I_BeginRead
+                0x000486a4                I_EndRead
+                0x000486a8                I_SetWindowTitle
+                0x000486ac                I_GraphicsCheckCommandLine
+                0x000486b0                I_SetGrabMouseCallback
+                0x000486b4                I_EnableLoadingDisk
+                0x000486b8                I_BindVideoVariables
+                0x000486bc                I_DisplayFPSDots
+                0x000486c0                I_CheckIsScreensaver
+ .text          0x000486c4       0x70 build/doomgeneric.o
+                0x000486c4                doomgeneric_Create
+ .text          0x00048734       0x88 build/doomgeneric_jane_cpu.o
+                0x00048734                DG_Init
+                0x00048740                DG_DrawFrame
+                0x0004874c                DG_SleepMs
+                0x00048758                DG_GetTicksMs
+                0x0004877c                DG_GetKey
+                0x00048788                DG_SetWindowTitle
+                0x00048798                c_start
+ .text          0x000487bc      0x314 ../minlibc//libminlibc.a(atof.o)
+                0x000487bc                atof
+ .text          0x00048ad0       0x90 ../minlibc//libminlibc.a(atoi.o)
+                0x00048ad0                atoi
+ .text          0x00048b60       0x2c ../minlibc//libminlibc.a(errno.o)
+                0x00048b60                __errno_location
+ .text          0x00048b8c       0x28 ../minlibc//libminlibc.a(exit.o)
+                0x00048b8c                exit
+ .text          0x00048bb4      0x4c8 ../minlibc//libminlibc.a(fake_files.o)
+                0x00048bb4                fopen
+                0x00048c58                ftell
+                0x00048cd8                fseek
+                0x00048f14                fread
+                0x00049038                feof
+ .text          0x0004907c       0x38 ../minlibc//libminlibc.a(fclose.o)
+                0x0004907c                fclose
+ .text          0x000490b4       0x70 ../minlibc//libminlibc.a(fflush.o)
+                0x000490b4                fflush
+ .text          0x00049124       0x74 ../minlibc//libminlibc.a(fprintf.o)
+                0x00049124                fprintf
+ .text          0x00049198       0xa4 ../minlibc//libminlibc.a(fwrite.o)
+                0x00049198                fwrite
+ .text          0x0004923c       0x4c ../minlibc//libminlibc.a(isdigit.o)
+                0x0004923c                isdigit
+ .text          0x00049288     0x35f4 ../minlibc//libminlibc.a(malloc.o)
+                0x0004c5dc                malloc
+                0x0004c6c0                free
+                0x0004c748                realloc
+                0x0004c81c                calloc
+ .text          0x0004c87c       0x78 ../minlibc//libminlibc.a(memcpy.o)
+                0x0004c87c                memcpy
+ .text          0x0004c8f4       0x68 ../minlibc//libminlibc.a(memset.o)
+                0x0004c8f4                memset
+ .text          0x0004c95c       0x48 ../minlibc//libminlibc.a(mkdir.o)
+                0x0004c95c                mkdir
+ .text          0x0004c9a4       0x64 ../minlibc//libminlibc.a(mmap.o)
+                0x0004c9a4                mmap
+ .text          0x0004ca08       0x44 ../minlibc//libminlibc.a(mprotect.o)
+                0x0004ca08                mprotect
+ .text          0x0004ca4c       0x3c ../minlibc//libminlibc.a(munmap.o)
+                0x0004ca4c                munmap
+ .text          0x0004ca88      0x604 ../minlibc//libminlibc.a(printf.o)
+                0x0004ca88                printf
+                0x0004cb04                sscanf
+                0x0004cdf0                fabs
+                0x0004ce70                abs
+                0x0004ceac                runtime_exit
+                0x0004cecc                runtime_memprotect
+                0x0004cf0c                runtime_alloc
+                0x0004cf7c                runtime_free
+                0x0004cfa8                system_call
+                0x0004d000                send_dma_l
+                0x0004d050                runtime_write
+ .text          0x0004d08c       0x3c ../minlibc//libminlibc.a(putchar.o)
+                0x0004d08c                putchar
+ .text          0x0004d0c8       0x5c ../minlibc//libminlibc.a(puts.o)
+                0x0004d0c8                puts
+ .text          0x0004d124       0x78 ../minlibc//libminlibc.a(snprintf.o)
+                0x0004d124                snprintf
+ .text          0x0004d19c        0x0 ../minlibc//libminlibc.a(stdio_values.o)
+ .text          0x0004d19c      0x180 ../minlibc//libminlibc.a(strcasecmp.o)
+                0x0004d19c                strcasecmp
+                0x0004d234                strncasecmp
+ .text          0x0004d31c       0x7c ../minlibc//libminlibc.a(strcmp.o)
+                0x0004d31c                strcmp
+ .text          0x0004d398       0x64 ../minlibc//libminlibc.a(strdup.o)
+                0x0004d398                strdup
+ .text          0x0004d3fc       0x58 ../minlibc//libminlibc.a(strlen.o)
+                0x0004d3fc                strlen
+ .text          0x0004d454       0xa0 ../minlibc//libminlibc.a(strncmp.o)
+                0x0004d454                strncmp
+ .text          0x0004d4f4       0x78 ../minlibc//libminlibc.a(strncpy.o)
+                0x0004d4f4                strncpy
+ .text          0x0004d56c       0x74 ../minlibc//libminlibc.a(strrchr.o)
+                0x0004d56c                strrchr
+ .text          0x0004d5e0       0x94 ../minlibc//libminlibc.a(strstr.o)
+                0x0004d5e0                strstr
+ .text          0x0004d674       0x50 ../minlibc//libminlibc.a(tolower.o)
+                0x0004d674                tolower
+ .text          0x0004d6c4       0x50 ../minlibc//libminlibc.a(toupper.o)
+                0x0004d6c4                toupper
+ .text          0x0004d714       0x9c ../minlibc//libminlibc.a(vfprintf.o)
+                0x0004d714                vfprintf
+ .text          0x0004d7b0     0x1114 ../minlibc//libminlibc.a(vsnprintf.o)
+                0x0004ddcc                vsnprintf
+ .text          0x0004e8c4       0x20 ../minlibc//libminlibc.a(abort.o)
+                0x0004e8c4                abort
+ .text          0x0004e8e4       0x68 ../minlibc//libminlibc.a(bzero.o)
+                0x0004e8e4                bzero
+ .text          0x0004e94c        0x0 ../minlibc//libminlibc.a(doom1.o)
+ .text          0x0004e94c       0x54 ../minlibc//libminlibc.a(fputc.o)
+                0x0004e94c                fputc
+ .text          0x0004e9a0       0x58 ../minlibc//libminlibc.a(isspace.o)
+                0x0004e9a0                isspace
+ .text          0x0004e9f8       0x70 ../minlibc//libminlibc.a(strchr.o)
+                0x0004e9f8                strchr
+ .text          0x0004ea68       0x6c ../minlibc//libminlibc.a(strnlen.o)
+                0x0004ea68                strnlen
+ .text          0x0004ead4      0x5a4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
+                0x0004ead4                __divdi3
+ .text          0x0004f078      0x5b4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
+                0x0004f078                __udivdi3
+ .text          0x0004f62c      0x5a4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
+                0x0004f62c                __umoddi3
+ .text          0x0004fbd0      0x74c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(adddf3.o)
+                0x0004fbd0                __adddf3
+ .text          0x0005031c       0xd8 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(ledf2.o)
+                0x0005031c                __ltdf2
+                0x0005031c                __ledf2
+ .text          0x000503f4      0x69c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldf3.o)
+                0x000503f4                __muldf3
+ .text          0x00050a90      0x760 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subdf3.o)
+                0x00050a90                __subdf3
+ .text          0x000511f0       0xa0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsidf.o)
+                0x000511f0                __floatsidf
+ .text          0x00051290       0xa4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixunsdfdi.o)
+                0x00051290                __fixunsdfdi
+ .text          0x00051334      0x1b0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatundidf.o)
+                0x00051334                __floatundidf
+ .text          0x000514e4      0x374 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
+                0x000514e4                __divsf3
+ .text          0x00051858      0x348 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(mulsf3.o)
+                0x00051858                __mulsf3
+ .text          0x00051ba0      0x444 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subsf3.o)
+                0x00051ba0                __subsf3
+ .text          0x00051fe4       0x70 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixsfsi.o)
+                0x00051fe4                __fixsfsi
+ .text          0x00052054      0x10c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsisf.o)
+                0x00052054                __floatsisf
+ .text          0x00052160       0xd8 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(extendsfdf2.o)
+                0x00052160                __extendsfdf2
+ .text          0x00052238      0x144 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(truncdfsf2.o)
+                0x00052238                __truncdfsf2
+ .text          0x0005237c       0x24 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldi3.o)
+                0x0005237c                __mulsi3
+ .text          0x000523a0       0xb4 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(div.o)
+                0x000523a0                __divsi3
+                0x000523a8                __hidden___udivsi3
+                0x000523a8                __udivsi3
+                0x000523f0                __umodsi3
+                0x00052424                __modsi3
+ .text          0x00052454       0x3c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_lshrdi3.o)
+                0x00052454                __lshrdi3
+ .text          0x00052490       0x3c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_ashldi3.o)
+                0x00052490                __ashldi3
+ .text          0x000524cc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
+ .text          0x000524cc       0x4c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clzsi2.o)
+                0x000524cc                __clzsi2
 
-.text.startup   0x0005248c       0x44
- .text.startup  0x0005248c       0x44 build/doomgeneric_jane_cpu.o
-                0x0005248c                main
+.text.startup   0x00052518       0x44
+ .text.startup  0x00052518       0x44 build/doomgeneric_jane_cpu.o
+                0x00052518                main
 
-.rodata.str1.4  0x000524d0     0x76b6
+.rodata.str1.4  0x0005255c     0x7742
  .rodata.str1.4
-                0x000524d0     0x76b6 build/am_map.o
+                0x0005255c     0x7742 build/am_map.o
                                  0x72 (size before relaxing)
  .rodata.str1.4
-                0x00059b86      0x33b build/dstrings.o
+                0x00059c9e      0x33b build/dstrings.o
  .rodata.str1.4
-                0x00059b86       0x2e build/d_iwad.o
+                0x00059c9e       0x2e build/d_iwad.o
  .rodata.str1.4
-                0x00059b86       0x73 build/d_loop.o
+                0x00059c9e       0x73 build/d_loop.o
  .rodata.str1.4
-                0x00059b86      0xa31 build/d_main.o
+                0x00059c9e      0xa31 build/d_main.o
  .rodata.str1.4
-                0x00059b86       0x4f build/d_mode.o
+                0x00059c9e       0x4f build/d_mode.o
  .rodata.str1.4
-                0x00059b86      0x187 build/d_net.o
+                0x00059c9e      0x187 build/d_net.o
  .rodata.str1.4
-                0x00059b86     0x1f63 build/f_finale.o
+                0x00059c9e     0x1f63 build/f_finale.o
  .rodata.str1.4
-                0x00059b86      0x301 build/g_game.o
+                0x00059c9e      0x301 build/g_game.o
  .rodata.str1.4
-                0x00059b86      0xd00 build/hu_stuff.o
+                0x00059c9e      0xd00 build/hu_stuff.o
  .rodata.str1.4
-                0x00059b86      0x44d build/info.o
+                0x00059c9e      0x44d build/info.o
  .rodata.str1.4
-                0x00059b86       0xb3 build/i_joystick.o
+                0x00059c9e       0xb3 build/i_joystick.o
  .rodata.str1.4
-                0x00059b86       0xd9 build/i_scale.o
+                0x00059c9e       0xd9 build/i_scale.o
  .rodata.str1.4
-                0x00059b86       0xb5 build/i_sound.o
+                0x00059c9e       0xb5 build/i_sound.o
  .rodata.str1.4
-                0x00059b86      0x1cb build/i_system.o
+                0x00059c9e      0x1cb build/i_system.o
  .rodata.str1.4
-                0x00059b86       0x29 build/memio.o
+                0x00059c9e       0x29 build/memio.o
  .rodata.str1.4
-                0x00059b86      0xd54 build/m_config.o
+                0x00059c9e      0xd54 build/m_config.o
  .rodata.str1.4
-                0x00059b86      0x6c6 build/m_controls.o
+                0x00059c9e      0x6c6 build/m_controls.o
  .rodata.str1.4
-                0x00059b86      0x455 build/m_menu.o
+                0x00059c9e      0x455 build/m_menu.o
  .rodata.str1.4
-                0x00059b86      0x101 build/m_misc.o
+                0x00059c9e      0x101 build/m_misc.o
  .rodata.str1.4
-                0x00059b86      0x13f build/p_doors.o
+                0x00059c9e      0x13f build/p_doors.o
  .rodata.str1.4
-                0x00059b86       0x3d build/p_enemy.o
+                0x00059c9e       0x3d build/p_enemy.o
  .rodata.str1.4
-                0x00059b86      0x417 build/p_inter.o
+                0x00059c9e      0x417 build/p_inter.o
  .rodata.str1.4
-                0x00059b86       0x77 build/p_map.o
+                0x00059c9e       0x77 build/p_map.o
  .rodata.str1.4
-                0x00059b86       0x2d build/p_mobj.o
+                0x00059c9e       0x2d build/p_mobj.o
  .rodata.str1.4
-                0x00059b86       0x48 build/p_plats.o
+                0x00059c9e       0x48 build/p_plats.o
  .rodata.str1.4
-                0x00059b86       0xf2 build/p_saveg.o
+                0x00059c9e       0xf2 build/p_saveg.o
  .rodata.str1.4
-                0x00059b86       0x60 build/p_setup.o
+                0x00059c9e       0x60 build/p_setup.o
  .rodata.str1.4
-                0x00059b86       0x28 build/p_sight.o
+                0x00059c9e       0x28 build/p_sight.o
  .rodata.str1.4
-                0x00059b86      0x244 build/p_spec.o
+                0x00059c9e      0x244 build/p_spec.o
  .rodata.str1.4
-                0x00059b86       0x25 build/p_switch.o
+                0x00059c9e       0x25 build/p_switch.o
  .rodata.str1.4
-                0x00059b86       0x23 build/r_bsp.o
+                0x00059c9e       0x23 build/r_bsp.o
  .rodata.str1.4
-                0x00059b86      0x15a build/r_data.o
+                0x00059c9e      0x1a6 build/r_data.o
  .rodata.str1.4
-                0x00059b86       0xb4 build/r_draw.o
+                0x00059c9e       0xb4 build/r_draw.o
  .rodata.str1.4
-                0x00059b86        0x2 build/r_main.o
+                0x00059c9e        0x2 build/r_main.o
  .rodata.str1.4
-                0x00059b86       0xb0 build/r_plane.o
+                0x00059c9e       0xb0 build/r_plane.o
  .rodata.str1.4
-                0x00059b86       0x20 build/r_segs.o
+                0x00059c9e       0x20 build/r_segs.o
  .rodata.str1.4
-                0x00059b86      0x1df build/r_things.o
+                0x00059c9e      0x1df build/r_things.o
  .rodata.str1.4
-                0x00059b86      0x217 build/sounds.o
+                0x00059c9e      0x217 build/sounds.o
  .rodata.str1.4
-                0x00059b86        0xa build/statdump.o
+                0x00059c9e        0xa build/statdump.o
  .rodata.str1.4
-                0x00059b86       0x64 build/st_lib.o
+                0x00059c9e       0x64 build/st_lib.o
  .rodata.str1.4
-                0x00059b86      0x1f8 build/st_stuff.o
+                0x00059c9e      0x1f8 build/st_stuff.o
  .rodata.str1.4
-                0x00059b86       0x6d build/s_sound.o
+                0x00059c9e       0x6d build/s_sound.o
  .rodata.str1.4
-                0x00059b86      0x110 build/v_video.o
+                0x00059c9e      0x110 build/v_video.o
  .rodata.str1.4
-                0x00059b86      0x125 build/wi_stuff.o
+                0x00059c9e      0x125 build/wi_stuff.o
  .rodata.str1.4
-                0x00059b86       0x2a build/w_file.o
+                0x00059c9e       0x2b build/w_file.o
  .rodata.str1.4
-                0x00059b86       0x36 build/w_main.o
+                0x00059c9e       0x36 build/w_main.o
  .rodata.str1.4
-                0x00059b86      0x2a3 build/w_wad.o
+                0x00059c9e      0x2e3 build/w_wad.o
  .rodata.str1.4
-                0x00059b86      0x2b6 build/z_zone.o
+                0x00059c9e      0x2b6 build/z_zone.o
  .rodata.str1.4
-                0x00059b86        0x3 build/w_file_stdc.o
+                0x00059c9e        0x3 build/w_file_stdc.o
  .rodata.str1.4
-                0x00059b86      0x167 build/i_video.o
+                0x00059c9e      0x167 build/i_video.o
  .rodata.str1.4
-                0x00059b86       0x5a build/doomgeneric.o
+                0x00059c9e       0x5a build/doomgeneric.o
  .rodata.str1.4
-                0x00059b86       0xb6 build/doomgeneric_jane_cpu.o
+                0x00059c9e       0xb6 build/doomgeneric_jane_cpu.o
 
-.rodata         0x00059b88   0x41502c
- .rodata        0x00059b88       0x20 build/am_map.o
- .rodata        0x00059ba8      0x164 build/d_main.o
- .rodata        0x00059d0c       0xf4 build/d_mode.o
- .rodata        0x00059e00       0x18 build/f_wipe.o
- .rodata        0x00059e18       0x84 build/g_game.o
- .rodata        0x00059e9c       0x22 build/i_system.o
- *fill*         0x00059ebe        0x2 
- .rodata        0x00059ec0      0x200 build/m_config.o
- .rodata        0x0005a0c0      0x100 build/m_random.o
- .rodata        0x0005a1c0       0x30 build/p_ceilng.o
- .rodata        0x0005a1f0       0x20 build/p_doors.o
- .rodata        0x0005a210       0x34 build/p_floor.o
- .rodata        0x0005a244       0xb4 build/p_inter.o
- .rodata        0x0005a2f8      0x114 build/p_maputl.o
- .rodata        0x0005a40c       0x14 build/p_plats.o
- .rodata        0x0005a420       0x20 build/p_saveg.o
- .rodata        0x0005a440      0x2b4 build/p_spec.o
- .rodata        0x0005a6f4      0x210 build/p_switch.o
- .rodata        0x0005a904       0x24 build/s_sound.o
- .rodata        0x0005a928    0x10504 build/tables.o
-                0x0005a928                gammatable
-                0x0005ae28                tantoangle
-                0x0005ce2c                finesine
-                0x00066e2c                finetangent
- .rodata        0x0006ae2c      0x1c0 build/wi_stuff.o
- .rodata        0x0006afec       0x80 build/i_input.o
- *fill*         0x0006b06c        0x4 
- .rodata        0x0006b070       0x10 ../minlibc//libminlibc.a(atof.o)
- .rodata        0x0006b080       0x15 ../minlibc//libminlibc.a(exit.o)
- *fill*         0x0006b095        0x3 
- .rodata        0x0006b098      0x149 ../minlibc//libminlibc.a(fake_files.o)
- *fill*         0x0006b1e1        0x3 
- .rodata        0x0006b1e4      0x2bb ../minlibc//libminlibc.a(malloc.o)
- *fill*         0x0006b49f        0x1 
- .rodata        0x0006b4a0        0x7 ../minlibc//libminlibc.a(mkdir.o)
- *fill*         0x0006b4a7        0x1 
- .rodata        0x0006b4a8       0x87 ../minlibc//libminlibc.a(printf.o)
- *fill*         0x0006b52f        0x1 
- .rodata        0x0006b530        0x2 ../minlibc//libminlibc.a(puts.o)
- *fill*         0x0006b532        0x6 
- .rodata        0x0006b538       0x60 ../minlibc//libminlibc.a(vsnprintf.o)
- .rodata        0x0006b598        0xf ../minlibc//libminlibc.a(abort.o)
- *fill*         0x0006b5a7        0x1 
- .rodata        0x0006b5a8   0x4034cb ../minlibc//libminlibc.a(doom1.o)
-                0x0006b5a8                DOOM1_WAD
- *fill*         0x0046ea73        0x1 
- .rodata        0x0046ea74        0x3 ../minlibc//libminlibc.a(fputc.o)
- *fill*         0x0046ea77        0x1 
- .rodata        0x0046ea78       0x3c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
- .rodata        0x0046eab4      0x100 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
-                0x0046eab4                __clz_tab
+.rodata         0x00059ca0    0x11b60
+ .rodata        0x00059ca0       0x20 build/am_map.o
+ .rodata        0x00059cc0      0x164 build/d_main.o
+ .rodata        0x00059e24       0xf4 build/d_mode.o
+ .rodata        0x00059f18       0x18 build/f_wipe.o
+ .rodata        0x00059f30       0x84 build/g_game.o
+ .rodata        0x00059fb4       0x22 build/i_system.o
+ *fill*         0x00059fd6        0x2 
+ .rodata        0x00059fd8      0x200 build/m_config.o
+ .rodata        0x0005a1d8      0x100 build/m_random.o
+ .rodata        0x0005a2d8       0x30 build/p_ceilng.o
+ .rodata        0x0005a308       0x20 build/p_doors.o
+ .rodata        0x0005a328       0x34 build/p_floor.o
+ .rodata        0x0005a35c       0xb4 build/p_inter.o
+ .rodata        0x0005a410      0x114 build/p_maputl.o
+ .rodata        0x0005a524       0x14 build/p_plats.o
+ .rodata        0x0005a538       0x20 build/p_saveg.o
+ .rodata        0x0005a558      0x2b4 build/p_spec.o
+ .rodata        0x0005a80c      0x210 build/p_switch.o
+ .rodata        0x0005aa1c       0x24 build/s_sound.o
+ .rodata        0x0005aa40    0x10504 build/tables.o
+                0x0005aa40                gammatable
+                0x0005af40                tantoangle
+                0x0005cf44                finesine
+                0x00066f44                finetangent
+ .rodata        0x0006af44      0x1c0 build/wi_stuff.o
+ .rodata        0x0006b104       0x80 build/i_input.o
+ *fill*         0x0006b184        0x4 
+ .rodata        0x0006b188       0x10 ../minlibc//libminlibc.a(atof.o)
+ .rodata        0x0006b198       0x15 ../minlibc//libminlibc.a(exit.o)
+ *fill*         0x0006b1ad        0x3 
+ .rodata        0x0006b1b0      0x14d ../minlibc//libminlibc.a(fake_files.o)
+ *fill*         0x0006b2fd        0x3 
+ .rodata        0x0006b300      0x2bb ../minlibc//libminlibc.a(malloc.o)
+ *fill*         0x0006b5bb        0x1 
+ .rodata        0x0006b5bc        0x7 ../minlibc//libminlibc.a(mkdir.o)
+ *fill*         0x0006b5c3        0x1 
+ .rodata        0x0006b5c4       0x87 ../minlibc//libminlibc.a(printf.o)
+ *fill*         0x0006b64b        0x1 
+ .rodata        0x0006b64c        0x2 ../minlibc//libminlibc.a(puts.o)
+ *fill*         0x0006b64e        0x2 
+ .rodata        0x0006b650       0x60 ../minlibc//libminlibc.a(vsnprintf.o)
+ .rodata        0x0006b6b0        0xf ../minlibc//libminlibc.a(abort.o)
+ *fill*         0x0006b6bf        0x1 
+ .rodata        0x0006b6c0        0x3 ../minlibc//libminlibc.a(fputc.o)
+ *fill*         0x0006b6c3        0x1 
+ .rodata        0x0006b6c4       0x3c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
+ .rodata        0x0006b700      0x100 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
+                0x0006b700                __clz_tab
 
-.srodata.cst4   0x0046ebb4        0x8
- .srodata.cst4  0x0046ebb4        0x8 build/g_game.o
+.srodata.cst4   0x0006b800        0x8
+ .srodata.cst4  0x0006b800        0x8 build/g_game.o
                                   0x4 (size before relaxing)
- .srodata.cst4  0x0046ebbc        0x4 build/v_video.o
+ .srodata.cst4  0x0006b808        0x4 build/v_video.o
 
-.srodata        0x0046ebbc       0x10
- .srodata       0x0046ebbc       0x10 build/m_menu.o
+.srodata        0x0006b808       0x10
+ .srodata       0x0006b808       0x10 build/m_menu.o
 
-.srodata.cst8   0x0046ebd0        0x8
- .srodata.cst8  0x0046ebd0        0x8 build/v_video.o
+.srodata.cst8   0x0006b818        0x8
+ .srodata.cst8  0x0006b818        0x8 build/v_video.o
 
-.eh_frame       0x0046ebd8      0x104
- .eh_frame      0x0046ebd8       0x64 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
- .eh_frame      0x0046ec3c       0x4c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
+.eh_frame       0x0006b820      0x104
+ .eh_frame      0x0006b820       0x64 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
+ .eh_frame      0x0006b884       0x4c /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
                                  0x60 (size before relaxing)
- .eh_frame      0x0046ec88       0x54 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
+ .eh_frame      0x0006b8d0       0x54 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
                                  0x68 (size before relaxing)
 
-.data           0x0046ecdc     0xe82c
+.data           0x0006b924   0x1e65d8
  *(.data)
- .data          0x0046ecdc        0x0 entry.o
- .data          0x0046ecdc        0x0 build/dummy.o
- .data          0x0046ecdc      0x22c build/am_map.o
-                0x0046ed04                cheat_amap
-                0x0046ed38                player_arrow
-                0x0046eda8                cheat_player_arrow
-                0x0046eea8                thintriangle_guy
-                0x0046eed8                triangle_guy
- .data          0x0046ef08        0x0 build/doomdef.o
- .data          0x0046ef08        0x0 build/doomstat.o
- .data          0x0046ef08       0x40 build/dstrings.o
-                0x0046ef08                doom2_endmsg
-                0x0046ef28                doom1_endmsg
- .data          0x0046ef48        0x0 build/d_event.o
- .data          0x0046ef48       0xd8 build/d_items.o
-                0x0046ef48                weaponinfo
- .data          0x0046f020        0x0 build/d_iwad.o
- .data          0x0046f020        0x0 build/d_loop.o
- .data          0x0046f020        0x0 build/d_main.o
- .data          0x0046f020        0x0 build/d_mode.o
- .data          0x0046f020       0x10 build/d_net.o
- .data          0x0046f030      0x248 build/f_finale.o
-                0x0046f1e8                castorder
- .data          0x0046f278        0x0 build/f_wipe.o
- .data          0x0046f278      0x12c build/g_game.o
-                0x0046f278                angleturn
-                0x0046f284                cpars
-                0x0046f304                pars
- .data          0x0046f3a4        0x0 build/hu_lib.o
- .data          0x0046f3a4      0x26c build/hu_stuff.o
-                0x0046f3a4                mapnames
-                0x0046f458                mapnames_commercial
-                0x0046f5d8                player_names
-                0x0046f5e8                chat_macros
- .data          0x0046f610     0x9d2c build/info.o
-                0x0046f610                mobjinfo
-                0x0047274c                states
-                0x00479110                sprnames
- .data          0x0047933c        0x0 build/i_cdmus.o
- .data          0x0047933c        0x0 build/i_endoom.o
- .data          0x0047933c       0x28 build/i_joystick.o
- .data          0x00479364      0x12c build/i_scale.o
-                0x00479364                mode_squash_5x
-                0x00479378                mode_squash_4x
-                0x0047938c                mode_squash_3x
-                0x004793a0                mode_squash_2x
-                0x004793b4                mode_squash_1x
-                0x004793c8                mode_stretch_5x
-                0x004793dc                mode_stretch_4x
-                0x004793f0                mode_stretch_3x
-                0x00479404                mode_stretch_2x
-                0x00479418                mode_stretch_1x
-                0x0047942c                mode_scale_5x
-                0x00479440                mode_scale_4x
-                0x00479454                mode_scale_3x
-                0x00479468                mode_scale_2x
-                0x0047947c                mode_scale_1x
- .data          0x00479490        0x0 build/i_sound.o
- .data          0x00479490        0x0 build/i_system.o
- .data          0x00479490        0x0 build/i_timer.o
- .data          0x00479490        0x0 build/memio.o
- .data          0x00479490        0x0 build/m_argv.o
- .data          0x00479490        0x0 build/m_bbox.o
- .data          0x00479490        0x0 build/m_cheat.o
- .data          0x00479490     0x1260 build/m_config.o
- .data          0x0047a6f0        0x0 build/m_controls.o
- .data          0x0047a6f0        0x0 build/m_fixed.o
- .data          0x0047a6f0      0x4d0 build/m_menu.o
-                0x0047a6f0                SoundDef
-                0x0047a708                OptionsDef
-                0x0047a720                ReadDef1
-                0x0047a738                MainDef
-                0x0047a750                NewDef
-                0x0047a768                EpiDef
-                0x0047a780                ReadDef2
-                0x0047a798                quitsounds2
-                0x0047a7b8                quitsounds
-                0x0047a7d8                LoadDef
-                0x0047a7f0                LoadMenu
-                0x0047a868                SaveDef
-                0x0047a880                gammamsg
-                0x0047a904                MainMenu
-                0x0047a97c                SaveMenu
-                0x0047a9f4                SoundMenu
-                0x0047aa44                ReadMenu2
-                0x0047aa58                ReadMenu1
-                0x0047aa6c                OptionsMenu
-                0x0047ab0c                NewGameMenu
-                0x0047ab70                EpisodeMenu
- .data          0x0047abc0        0x0 build/m_misc.o
- .data          0x0047abc0        0x0 build/m_random.o
- .data          0x0047abc0        0x0 build/p_ceilng.o
- .data          0x0047abc0        0x0 build/p_doors.o
- .data          0x0047abc0       0x74 build/p_enemy.o
-                0x0047abc0                yspeed
-                0x0047abe0                xspeed
-                0x0047ac00                opposite
-                0x0047ac24                diags
- .data          0x0047ac34        0x0 build/p_floor.o
- .data          0x0047ac34       0x20 build/p_inter.o
-                0x0047ac34                clipammo
-                0x0047ac44                maxammo
- .data          0x0047ac54        0x0 build/p_lights.o
- .data          0x0047ac54        0x0 build/p_map.o
- .data          0x0047ac54        0x0 build/p_maputl.o
- .data          0x0047ac54        0x0 build/p_mobj.o
- .data          0x0047ac54        0x0 build/p_plats.o
- .data          0x0047ac54        0x0 build/p_pspr.o
- .data          0x0047ac54        0x0 build/p_saveg.o
- .data          0x0047ac54        0x0 build/p_setup.o
- .data          0x0047ac54        0x0 build/p_sight.o
- .data          0x0047ac54      0x284 build/p_spec.o
-                0x0047ac54                animdefs
- .data          0x0047aed8      0x334 build/p_switch.o
-                0x0047aed8                alphSwitchList
- .data          0x0047b20c        0x0 build/p_telept.o
- .data          0x0047b20c        0x0 build/p_tick.o
- .data          0x0047b20c        0x0 build/p_user.o
- .data          0x0047b20c       0xc0 build/r_bsp.o
-                0x0047b20c                checkcoord
- .data          0x0047b2cc        0x0 build/r_data.o
- .data          0x0047b2cc       0xc8 build/r_draw.o
-                0x0047b2cc                fuzzoffset
- .data          0x0047b394        0x0 build/r_main.o
- .data          0x0047b394        0x0 build/r_plane.o
- .data          0x0047b394        0x0 build/r_segs.o
- .data          0x0047b394        0x0 build/r_sky.o
- .data          0x0047b394        0x0 build/r_things.o
- .data          0x0047b394        0x0 build/sha1.o
- .data          0x0047b394     0x18b0 build/sounds.o
-                0x0047b394                S_sfx
-                0x0047c804                S_music
- .data          0x0047cc44        0x0 build/statdump.o
- .data          0x0047cc44        0x0 build/st_lib.o
- .data          0x0047cc44      0x340 build/st_stuff.o
-                0x0047cc44                cheat_clev
-                0x0047cc78                cheat_god
-                0x0047ccac                cheat_ammonokey
-                0x0047cce0                cheat_powerup
-                0x0047ce4c                cheat_ammo
-                0x0047ce80                cheat_mus
-                0x0047ceb4                cheat_commercial_noclip
-                0x0047cee8                cheat_noclip
-                0x0047cf1c                cheat_choppers
-                0x0047cf50                cheat_mypos
- .data          0x0047cf84        0x0 build/s_sound.o
- .data          0x0047cf84        0x0 build/tables.o
- .data          0x0047cf84        0x0 build/v_video.o
- .data          0x0047cf84      0x578 build/wi_stuff.o
- .data          0x0047d4fc        0x0 build/w_checksum.o
- .data          0x0047d4fc        0x0 build/w_file.o
- .data          0x0047d4fc        0x0 build/w_main.o
- .data          0x0047d4fc        0x0 build/w_wad.o
- .data          0x0047d4fc        0x0 build/z_zone.o
- .data          0x0047d4fc        0xc build/w_file_stdc.o
-                0x0047d4fc                stdc_wad_file
- .data          0x0047d508        0x0 build/i_input.o
- .data          0x0047d508        0x0 build/i_video.o
- .data          0x0047d508        0x0 build/doomgeneric.o
- .data          0x0047d508        0x0 build/doomgeneric_jane_cpu.o
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(atof.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(atoi.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(errno.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(exit.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(fake_files.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(fclose.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(fflush.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(fprintf.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(fwrite.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(isdigit.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(malloc.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(memcpy.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(memset.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(mkdir.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(mmap.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(mprotect.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(munmap.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(printf.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(putchar.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(puts.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(snprintf.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(stdio_values.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strcasecmp.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strcmp.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strdup.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strlen.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strncmp.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strncpy.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strrchr.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strstr.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(tolower.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(toupper.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(vfprintf.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(vsnprintf.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(abort.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(bzero.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(doom1.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(fputc.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(isspace.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strchr.o)
- .data          0x0047d508        0x0 ../minlibc//libminlibc.a(strnlen.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(adddf3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(ledf2.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldf3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subdf3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsidf.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixunsdfdi.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatundidf.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(mulsf3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subsf3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixsfsi.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsisf.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(extendsfdf2.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(truncdfsf2.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldi3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(div.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_lshrdi3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_ashldi3.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
- .data          0x0047d508        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clzsi2.o)
-                0x0047d508                        _end = .
+ .data          0x0006b924        0x0 entry.o
+ .data          0x0006b924        0x0 build/dummy.o
+ .data          0x0006b924      0x22c build/am_map.o
+                0x0006b94c                cheat_amap
+                0x0006b980                player_arrow
+                0x0006b9f0                cheat_player_arrow
+                0x0006baf0                thintriangle_guy
+                0x0006bb20                triangle_guy
+ .data          0x0006bb50        0x0 build/doomdef.o
+ .data          0x0006bb50        0x0 build/doomstat.o
+ .data          0x0006bb50       0x40 build/dstrings.o
+                0x0006bb50                doom2_endmsg
+                0x0006bb70                doom1_endmsg
+ .data          0x0006bb90        0x0 build/d_event.o
+ .data          0x0006bb90       0xd8 build/d_items.o
+                0x0006bb90                weaponinfo
+ .data          0x0006bc68        0x0 build/d_iwad.o
+ .data          0x0006bc68        0x0 build/d_loop.o
+ .data          0x0006bc68        0x0 build/d_main.o
+ .data          0x0006bc68        0x0 build/d_mode.o
+ .data          0x0006bc68       0x10 build/d_net.o
+ .data          0x0006bc78      0x248 build/f_finale.o
+                0x0006be30                castorder
+ .data          0x0006bec0        0x0 build/f_wipe.o
+ .data          0x0006bec0      0x12c build/g_game.o
+                0x0006bec0                angleturn
+                0x0006becc                cpars
+                0x0006bf4c                pars
+ .data          0x0006bfec        0x0 build/hu_lib.o
+ .data          0x0006bfec      0x26c build/hu_stuff.o
+                0x0006bfec                mapnames
+                0x0006c0a0                mapnames_commercial
+                0x0006c220                player_names
+                0x0006c230                chat_macros
+ .data          0x0006c258     0x9d2c build/info.o
+                0x0006c258                mobjinfo
+                0x0006f394                states
+                0x00075d58                sprnames
+ .data          0x00075f84        0x0 build/i_cdmus.o
+ .data          0x00075f84        0x0 build/i_endoom.o
+ .data          0x00075f84       0x28 build/i_joystick.o
+ .data          0x00075fac      0x12c build/i_scale.o
+                0x00075fac                mode_squash_5x
+                0x00075fc0                mode_squash_4x
+                0x00075fd4                mode_squash_3x
+                0x00075fe8                mode_squash_2x
+                0x00075ffc                mode_squash_1x
+                0x00076010                mode_stretch_5x
+                0x00076024                mode_stretch_4x
+                0x00076038                mode_stretch_3x
+                0x0007604c                mode_stretch_2x
+                0x00076060                mode_stretch_1x
+                0x00076074                mode_scale_5x
+                0x00076088                mode_scale_4x
+                0x0007609c                mode_scale_3x
+                0x000760b0                mode_scale_2x
+                0x000760c4                mode_scale_1x
+ .data          0x000760d8        0x0 build/i_sound.o
+ .data          0x000760d8        0x0 build/i_system.o
+ .data          0x000760d8        0x0 build/i_timer.o
+ .data          0x000760d8        0x0 build/memio.o
+ .data          0x000760d8        0x0 build/m_argv.o
+ .data          0x000760d8        0x0 build/m_bbox.o
+ .data          0x000760d8        0x0 build/m_cheat.o
+ .data          0x000760d8     0x1260 build/m_config.o
+ .data          0x00077338        0x0 build/m_controls.o
+ .data          0x00077338        0x0 build/m_fixed.o
+ .data          0x00077338      0x4d0 build/m_menu.o
+                0x00077338                SoundDef
+                0x00077350                OptionsDef
+                0x00077368                ReadDef1
+                0x00077380                MainDef
+                0x00077398                NewDef
+                0x000773b0                EpiDef
+                0x000773c8                ReadDef2
+                0x000773e0                quitsounds2
+                0x00077400                quitsounds
+                0x00077420                LoadDef
+                0x00077438                LoadMenu
+                0x000774b0                SaveDef
+                0x000774c8                gammamsg
+                0x0007754c                MainMenu
+                0x000775c4                SaveMenu
+                0x0007763c                SoundMenu
+                0x0007768c                ReadMenu2
+                0x000776a0                ReadMenu1
+                0x000776b4                OptionsMenu
+                0x00077754                NewGameMenu
+                0x000777b8                EpisodeMenu
+ .data          0x00077808        0x0 build/m_misc.o
+ .data          0x00077808        0x0 build/m_random.o
+ .data          0x00077808        0x0 build/p_ceilng.o
+ .data          0x00077808        0x0 build/p_doors.o
+ .data          0x00077808       0x74 build/p_enemy.o
+                0x00077808                yspeed
+                0x00077828                xspeed
+                0x00077848                opposite
+                0x0007786c                diags
+ .data          0x0007787c        0x0 build/p_floor.o
+ .data          0x0007787c       0x20 build/p_inter.o
+                0x0007787c                clipammo
+                0x0007788c                maxammo
+ .data          0x0007789c        0x0 build/p_lights.o
+ .data          0x0007789c        0x0 build/p_map.o
+ .data          0x0007789c        0x0 build/p_maputl.o
+ .data          0x0007789c        0x0 build/p_mobj.o
+ .data          0x0007789c        0x0 build/p_plats.o
+ .data          0x0007789c        0x0 build/p_pspr.o
+ .data          0x0007789c        0x0 build/p_saveg.o
+ .data          0x0007789c        0x0 build/p_setup.o
+ .data          0x0007789c        0x0 build/p_sight.o
+ .data          0x0007789c      0x284 build/p_spec.o
+                0x0007789c                animdefs
+ .data          0x00077b20      0x334 build/p_switch.o
+                0x00077b20                alphSwitchList
+ .data          0x00077e54        0x0 build/p_telept.o
+ .data          0x00077e54        0x0 build/p_tick.o
+ .data          0x00077e54        0x0 build/p_user.o
+ .data          0x00077e54       0xc0 build/r_bsp.o
+                0x00077e54                checkcoord
+ .data          0x00077f14        0x0 build/r_data.o
+ .data          0x00077f14       0xc8 build/r_draw.o
+                0x00077f14                fuzzoffset
+ .data          0x00077fdc        0x0 build/r_main.o
+ .data          0x00077fdc        0x0 build/r_plane.o
+ .data          0x00077fdc        0x0 build/r_segs.o
+ .data          0x00077fdc        0x0 build/r_sky.o
+ .data          0x00077fdc        0x0 build/r_things.o
+ .data          0x00077fdc        0x0 build/sha1.o
+ .data          0x00077fdc     0x18b0 build/sounds.o
+                0x00077fdc                S_sfx
+                0x0007944c                S_music
+ .data          0x0007988c        0x0 build/statdump.o
+ .data          0x0007988c        0x0 build/st_lib.o
+ .data          0x0007988c      0x340 build/st_stuff.o
+                0x0007988c                cheat_clev
+                0x000798c0                cheat_god
+                0x000798f4                cheat_ammonokey
+                0x00079928                cheat_powerup
+                0x00079a94                cheat_ammo
+                0x00079ac8                cheat_mus
+                0x00079afc                cheat_commercial_noclip
+                0x00079b30                cheat_noclip
+                0x00079b64                cheat_choppers
+                0x00079b98                cheat_mypos
+ .data          0x00079bcc        0x0 build/s_sound.o
+ .data          0x00079bcc        0x0 build/tables.o
+ .data          0x00079bcc        0x0 build/v_video.o
+ .data          0x00079bcc      0x578 build/wi_stuff.o
+ .data          0x0007a144        0x0 build/w_checksum.o
+ .data          0x0007a144        0x0 build/w_file.o
+ .data          0x0007a144        0x0 build/w_main.o
+ .data          0x0007a144        0x0 build/w_wad.o
+ .data          0x0007a144        0x0 build/z_zone.o
+ .data          0x0007a144        0xc build/w_file_stdc.o
+                0x0007a144                stdc_wad_file
+ .data          0x0007a150        0x0 build/i_input.o
+ .data          0x0007a150        0x0 build/i_video.o
+ .data          0x0007a150        0x0 build/doomgeneric.o
+ .data          0x0007a150        0x0 build/doomgeneric_jane_cpu.o
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(atof.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(atoi.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(errno.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(exit.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(fake_files.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(fclose.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(fflush.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(fprintf.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(fwrite.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(isdigit.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(malloc.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(memcpy.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(memset.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(mkdir.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(mmap.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(mprotect.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(munmap.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(printf.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(putchar.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(puts.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(snprintf.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(stdio_values.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strcasecmp.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strcmp.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strdup.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strlen.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strncmp.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strncpy.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strrchr.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(strstr.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(tolower.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(toupper.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(vfprintf.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(vsnprintf.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(abort.o)
+ .data          0x0007a150        0x0 ../minlibc//libminlibc.a(bzero.o)
+ .data          0x0007a150   0x1d7dac ../minlibc//libminlibc.a(doom1.o)
+                0x0007a150                DOOM1_WAD
+ .data          0x00251efc        0x0 ../minlibc//libminlibc.a(fputc.o)
+ .data          0x00251efc        0x0 ../minlibc//libminlibc.a(isspace.o)
+ .data          0x00251efc        0x0 ../minlibc//libminlibc.a(strchr.o)
+ .data          0x00251efc        0x0 ../minlibc//libminlibc.a(strnlen.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(adddf3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(ledf2.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldf3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subdf3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsidf.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixunsdfdi.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatundidf.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(mulsf3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subsf3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixsfsi.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsisf.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(extendsfdf2.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(truncdfsf2.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldi3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(div.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_lshrdi3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_ashldi3.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
+ .data          0x00251efc        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clzsi2.o)
+                0x00251efc                        _end = .
 OUTPUT(doomgeneric elf32-littleriscv)
 
-.sdata          0x0047d508      0x288
- .sdata         0x0047d508       0x14 build/am_map.o
- .sdata         0x0047d51c        0x8 build/doomstat.o
-                0x0047d51c                gameversion
-                0x0047d520                gamemode
- .sdata         0x0047d524        0x4 build/d_loop.o
- .sdata         0x0047d528        0xc build/d_main.o
-                0x0047d52c                wipegamestate
-                0x0047d530                show_endoom
- .sdata         0x0047d534       0x1c build/g_game.o
-                0x0047d534                vanilla_demo_limit
-                0x0047d538                vanilla_savegame_limit
-                0x0047d53c                sidemove
-                0x0047d544                forwardmove
-                0x0047d54c                precache
- .sdata         0x0047d550        0xc build/i_joystick.o
- .sdata         0x0047d55c       0x18 build/i_sound.o
-                0x0047d55c                snd_sfxdevice
-                0x0047d560                snd_musicdevice
-                0x0047d564                snd_musiccmd
-                0x0047d568                snd_maxslicetime_ms
-                0x0047d56c                snd_cachesize
-                0x0047d570                snd_samplerate
- .sdata         0x0047d574        0x8 build/i_system.o
- .sdata         0x0047d57c      0x19c build/m_controls.o
-                0x0047d57c                dclick_use
-                0x0047d580                joybmenu
-                0x0047d584                joybnextweapon
-                0x0047d588                joybprevweapon
-                0x0047d58c                joybjump
-                0x0047d590                joybstraferight
-                0x0047d594                joybstrafeleft
-                0x0047d598                joybspeed
-                0x0047d59c                joybuse
-                0x0047d5a0                joybstrafe
-                0x0047d5a4                key_menu_decscreen
-                0x0047d5a8                key_menu_incscreen
-                0x0047d5ac                key_menu_gamma
-                0x0047d5b0                key_menu_quit
-                0x0047d5b4                key_menu_qload
-                0x0047d5b8                key_menu_messages
-                0x0047d5bc                key_menu_endgame
-                0x0047d5c0                key_menu_qsave
-                0x0047d5c4                key_menu_detail
-                0x0047d5c8                key_menu_volume
-                0x0047d5cc                key_menu_load
-                0x0047d5d0                key_menu_save
-                0x0047d5d4                key_menu_help
-                0x0047d5d8                key_menu_abort
-                0x0047d5dc                key_menu_confirm
-                0x0047d5e0                key_menu_forward
-                0x0047d5e4                key_menu_back
-                0x0047d5e8                key_menu_right
-                0x0047d5ec                key_menu_left
-                0x0047d5f0                key_menu_down
-                0x0047d5f4                key_menu_up
-                0x0047d5f8                key_menu_activate
-                0x0047d5fc                key_map_clearmark
-                0x0047d600                key_map_mark
-                0x0047d604                key_map_grid
-                0x0047d608                key_map_follow
-                0x0047d60c                key_map_maxzoom
-                0x0047d610                key_map_toggle
-                0x0047d614                key_map_zoomout
-                0x0047d618                key_map_zoomin
-                0x0047d61c                key_map_west
-                0x0047d620                key_map_east
-                0x0047d624                key_map_south
-                0x0047d628                key_map_north
-                0x0047d62c                key_weapon8
-                0x0047d630                key_weapon7
-                0x0047d634                key_weapon6
-                0x0047d638                key_weapon5
-                0x0047d63c                key_weapon4
-                0x0047d640                key_weapon3
-                0x0047d644                key_weapon2
-                0x0047d648                key_weapon1
-                0x0047d64c                key_multi_msg
-                0x0047d650                key_spy
-                0x0047d654                key_demo_quit
-                0x0047d658                key_pause
-                0x0047d65c                key_message_refresh
-                0x0047d660                mousebnextweapon
-                0x0047d664                mousebprevweapon
-                0x0047d668                mousebuse
-                0x0047d66c                mousebbackward
-                0x0047d670                mousebstraferight
-                0x0047d674                mousebstrafeleft
-                0x0047d678                mousebjump
-                0x0047d67c                mousebforward
-                0x0047d680                mousebstrafe
-                0x0047d684                key_invdrop
-                0x0047d688                key_invuse
-                0x0047d68c                key_invend
-                0x0047d690                key_invhome
-                0x0047d694                key_invkey
-                0x0047d698                key_invpop
-                0x0047d69c                key_mission
-                0x0047d6a0                key_invquery
-                0x0047d6a4                key_usehealth
-                0x0047d6a8                key_arti_invulnerability
-                0x0047d6ac                key_arti_egg
-                0x0047d6b0                key_arti_teleportother
-                0x0047d6b4                key_arti_teleport
-                0x0047d6b8                key_arti_blastradius
-                0x0047d6bc                key_arti_poisonbag
-                0x0047d6c0                key_arti_health
-                0x0047d6c4                key_arti_all
-                0x0047d6c8                key_jump
-                0x0047d6cc                key_useartifact
-                0x0047d6d0                key_invright
-                0x0047d6d4                key_invleft
-                0x0047d6d8                key_lookcenter
-                0x0047d6dc                key_lookdown
-                0x0047d6e0                key_lookup
-                0x0047d6e4                key_flycenter
-                0x0047d6e8                key_flydown
-                0x0047d6ec                key_flyup
-                0x0047d6f0                key_speed
-                0x0047d6f4                key_strafe
-                0x0047d6f8                key_use
-                0x0047d6fc                key_fire
-                0x0047d700                key_straferight
-                0x0047d704                key_strafeleft
-                0x0047d708                key_down
-                0x0047d70c                key_up
-                0x0047d710                key_left
-                0x0047d714                key_right
- .sdata         0x0047d718       0x14 build/m_menu.o
-                0x0047d718                skullName
-                0x0047d720                screenblocks
-                0x0047d724                showMessages
-                0x0047d728                mouseSensitivity
- .sdata         0x0047d72c        0x4 build/p_enemy.o
-                0x0047d72c                TRACEANGLE
- .sdata         0x0047d730        0x4 build/p_spec.o
- .sdata         0x0047d734        0x4 build/r_main.o
-                0x0047d734                validcount
- .sdata         0x0047d738       0x14 build/st_stuff.o
- .sdata         0x0047d74c        0xc build/s_sound.o
-                0x0047d74c                snd_channels
-                0x0047d750                musicVolume
-                0x0047d754                sfxVolume
- .sdata         0x0047d758        0x4 build/tables.o
-                0x0047d758                finecosine
- .sdata         0x0047d75c        0x4 build/i_input.o
-                0x0047d75c                vanilla_keyboard_mapping
- .sdata         0x0047d760        0xc build/i_video.o
-                0x0047d760                mouse_threshold
-                0x0047d764                mouse_acceleration
-                0x0047d768                fb_scaling
- .sdata         0x0047d76c        0x4 build/doomgeneric_jane_cpu.o
-                0x0047d76c                ARGS
- .sdata         0x0047d770        0xc ../minlibc//libminlibc.a(malloc.o)
-                0x0047d778                __progname
- .sdata         0x0047d77c        0x4 ../minlibc//libminlibc.a(printf.o)
-                0x0047d77c                mmap_start_address
- .sdata         0x0047d780        0xc ../minlibc//libminlibc.a(stdio_values.o)
-                0x0047d780                stdout
-                0x0047d784                stdin
-                0x0047d788                stderr
- .sdata         0x0047d78c        0x4 ../minlibc//libminlibc.a(doom1.o)
-                0x0047d78c                DOOM1_WAD_len
+.sdata          0x00251efc      0x288
+ .sdata         0x00251efc       0x14 build/am_map.o
+ .sdata         0x00251f10        0x8 build/doomstat.o
+                0x00251f10                gameversion
+                0x00251f14                gamemode
+ .sdata         0x00251f18        0x4 build/d_loop.o
+ .sdata         0x00251f1c        0xc build/d_main.o
+                0x00251f20                wipegamestate
+                0x00251f24                show_endoom
+ .sdata         0x00251f28       0x1c build/g_game.o
+                0x00251f28                vanilla_demo_limit
+                0x00251f2c                vanilla_savegame_limit
+                0x00251f30                sidemove
+                0x00251f38                forwardmove
+                0x00251f40                precache
+ .sdata         0x00251f44        0xc build/i_joystick.o
+ .sdata         0x00251f50       0x18 build/i_sound.o
+                0x00251f50                snd_sfxdevice
+                0x00251f54                snd_musicdevice
+                0x00251f58                snd_musiccmd
+                0x00251f5c                snd_maxslicetime_ms
+                0x00251f60                snd_cachesize
+                0x00251f64                snd_samplerate
+ .sdata         0x00251f68        0x8 build/i_system.o
+ .sdata         0x00251f70      0x19c build/m_controls.o
+                0x00251f70                dclick_use
+                0x00251f74                joybmenu
+                0x00251f78                joybnextweapon
+                0x00251f7c                joybprevweapon
+                0x00251f80                joybjump
+                0x00251f84                joybstraferight
+                0x00251f88                joybstrafeleft
+                0x00251f8c                joybspeed
+                0x00251f90                joybuse
+                0x00251f94                joybstrafe
+                0x00251f98                key_menu_decscreen
+                0x00251f9c                key_menu_incscreen
+                0x00251fa0                key_menu_gamma
+                0x00251fa4                key_menu_quit
+                0x00251fa8                key_menu_qload
+                0x00251fac                key_menu_messages
+                0x00251fb0                key_menu_endgame
+                0x00251fb4                key_menu_qsave
+                0x00251fb8                key_menu_detail
+                0x00251fbc                key_menu_volume
+                0x00251fc0                key_menu_load
+                0x00251fc4                key_menu_save
+                0x00251fc8                key_menu_help
+                0x00251fcc                key_menu_abort
+                0x00251fd0                key_menu_confirm
+                0x00251fd4                key_menu_forward
+                0x00251fd8                key_menu_back
+                0x00251fdc                key_menu_right
+                0x00251fe0                key_menu_left
+                0x00251fe4                key_menu_down
+                0x00251fe8                key_menu_up
+                0x00251fec                key_menu_activate
+                0x00251ff0                key_map_clearmark
+                0x00251ff4                key_map_mark
+                0x00251ff8                key_map_grid
+                0x00251ffc                key_map_follow
+                0x00252000                key_map_maxzoom
+                0x00252004                key_map_toggle
+                0x00252008                key_map_zoomout
+                0x0025200c                key_map_zoomin
+                0x00252010                key_map_west
+                0x00252014                key_map_east
+                0x00252018                key_map_south
+                0x0025201c                key_map_north
+                0x00252020                key_weapon8
+                0x00252024                key_weapon7
+                0x00252028                key_weapon6
+                0x0025202c                key_weapon5
+                0x00252030                key_weapon4
+                0x00252034                key_weapon3
+                0x00252038                key_weapon2
+                0x0025203c                key_weapon1
+                0x00252040                key_multi_msg
+                0x00252044                key_spy
+                0x00252048                key_demo_quit
+                0x0025204c                key_pause
+                0x00252050                key_message_refresh
+                0x00252054                mousebnextweapon
+                0x00252058                mousebprevweapon
+                0x0025205c                mousebuse
+                0x00252060                mousebbackward
+                0x00252064                mousebstraferight
+                0x00252068                mousebstrafeleft
+                0x0025206c                mousebjump
+                0x00252070                mousebforward
+                0x00252074                mousebstrafe
+                0x00252078                key_invdrop
+                0x0025207c                key_invuse
+                0x00252080                key_invend
+                0x00252084                key_invhome
+                0x00252088                key_invkey
+                0x0025208c                key_invpop
+                0x00252090                key_mission
+                0x00252094                key_invquery
+                0x00252098                key_usehealth
+                0x0025209c                key_arti_invulnerability
+                0x002520a0                key_arti_egg
+                0x002520a4                key_arti_teleportother
+                0x002520a8                key_arti_teleport
+                0x002520ac                key_arti_blastradius
+                0x002520b0                key_arti_poisonbag
+                0x002520b4                key_arti_health
+                0x002520b8                key_arti_all
+                0x002520bc                key_jump
+                0x002520c0                key_useartifact
+                0x002520c4                key_invright
+                0x002520c8                key_invleft
+                0x002520cc                key_lookcenter
+                0x002520d0                key_lookdown
+                0x002520d4                key_lookup
+                0x002520d8                key_flycenter
+                0x002520dc                key_flydown
+                0x002520e0                key_flyup
+                0x002520e4                key_speed
+                0x002520e8                key_strafe
+                0x002520ec                key_use
+                0x002520f0                key_fire
+                0x002520f4                key_straferight
+                0x002520f8                key_strafeleft
+                0x002520fc                key_down
+                0x00252100                key_up
+                0x00252104                key_left
+                0x00252108                key_right
+ .sdata         0x0025210c       0x14 build/m_menu.o
+                0x0025210c                skullName
+                0x00252114                screenblocks
+                0x00252118                showMessages
+                0x0025211c                mouseSensitivity
+ .sdata         0x00252120        0x4 build/p_enemy.o
+                0x00252120                TRACEANGLE
+ .sdata         0x00252124        0x4 build/p_spec.o
+ .sdata         0x00252128        0x4 build/r_main.o
+                0x00252128                validcount
+ .sdata         0x0025212c       0x14 build/st_stuff.o
+ .sdata         0x00252140        0xc build/s_sound.o
+                0x00252140                snd_channels
+                0x00252144                musicVolume
+                0x00252148                sfxVolume
+ .sdata         0x0025214c        0x4 build/tables.o
+                0x0025214c                finecosine
+ .sdata         0x00252150        0x4 build/i_input.o
+                0x00252150                vanilla_keyboard_mapping
+ .sdata         0x00252154        0xc build/i_video.o
+                0x00252154                mouse_threshold
+                0x00252158                mouse_acceleration
+                0x0025215c                fb_scaling
+ .sdata         0x00252160        0x4 build/doomgeneric_jane_cpu.o
+                0x00252160                ARGS
+ .sdata         0x00252164        0xc ../minlibc//libminlibc.a(malloc.o)
+                0x0025216c                __progname
+ .sdata         0x00252170        0x4 ../minlibc//libminlibc.a(printf.o)
+                0x00252170                mmap_start_address
+ .sdata         0x00252174        0xc ../minlibc//libminlibc.a(stdio_values.o)
+                0x00252174                stdout
+                0x00252178                stdin
+                0x0025217c                stderr
+ .sdata         0x00252180        0x4 ../minlibc//libminlibc.a(doom1.o)
+                0x00252180                DOOM1_WAD_len
 
-.bss            0x0047d790    0x3bf74
- .bss           0x0047d790        0x0 entry.o
- .bss           0x0047d790        0x0 build/dummy.o
- .bss           0x0047d790       0xac build/am_map.o
- .bss           0x0047d83c        0x0 build/doomdef.o
- .bss           0x0047d83c        0x0 build/doomstat.o
- .bss           0x0047d83c        0x0 build/dstrings.o
- .bss           0x0047d83c      0x500 build/d_event.o
- .bss           0x0047dd3c        0x0 build/d_items.o
- .bss           0x0047dd3c      0x200 build/d_iwad.o
- .bss           0x0047df3c     0x5030 build/d_loop.o
- .bss           0x00482f6c      0x880 build/d_main.o
-                0x00482f6c                title
-                0x00482fec                mapdir
-                0x004833ec                wadfile
- .bss           0x004837ec        0x0 build/d_mode.o
- .bss           0x004837ec       0x50 build/d_net.o
- .bss           0x0048383c        0x0 build/f_finale.o
- .bss           0x0048383c        0x0 build/f_wipe.o
- .bss           0x0048383c      0xde0 build/g_game.o
-                0x0048383c                consistancy
-                0x00483eb4                players
-                0x00484334                turbodetected
-                0x00484344                playeringame
-                0x00484354                bodyque
-                0x004843d4                wminfo
-                0x0048449c                savename
- .bss           0x0048461c        0x0 build/hu_lib.o
- .bss           0x0048461c      0x651 build/hu_stuff.o
-                0x0048461c                hu_font
- .bss           0x00484c6d        0x0 build/info.o
- .bss           0x00484c6d        0x0 build/i_cdmus.o
- .bss           0x00484c6d        0x0 build/i_endoom.o
- .bss           0x00484c6d        0x0 build/i_joystick.o
- .bss           0x00484c6d        0x0 build/i_scale.o
- .bss           0x00484c6d        0x0 build/i_sound.o
- *fill*         0x00484c6d        0x3 
- .bss           0x00484c70        0xa build/i_system.o
- .bss           0x00484c7a        0x0 build/i_timer.o
- .bss           0x00484c7a        0x0 build/memio.o
- .bss           0x00484c7a        0x0 build/m_argv.o
- .bss           0x00484c7a        0x0 build/m_bbox.o
- .bss           0x00484c7a        0x0 build/m_cheat.o
- .bss           0x00484c7a        0x0 build/m_config.o
- *fill*         0x00484c7a        0x2 
- .bss           0x00484c7c       0x20 build/m_controls.o
-                0x00484c7c                key_multi_msgplayer
- .bss           0x00484c9c        0x0 build/m_fixed.o
- .bss           0x00484c9c      0x1f8 build/m_menu.o
-                0x00484c9c                savegamestrings
-                0x00484d8c                saveOldString
-                0x00484da4                endstring
-                0x00484e44                tempstring
- .bss           0x00484e94        0x0 build/m_misc.o
- .bss           0x00484e94        0x0 build/m_random.o
- .bss           0x00484e94       0x78 build/p_ceilng.o
-                0x00484e94                activeceilings
- .bss           0x00484f0c        0x0 build/p_doors.o
- .bss           0x00484f0c       0x80 build/p_enemy.o
-                0x00484f0c                braintargets
- .bss           0x00484f8c        0x0 build/p_floor.o
- .bss           0x00484f8c        0x0 build/p_inter.o
- .bss           0x00484f8c        0x0 build/p_lights.o
- .bss           0x00484f8c       0x60 build/p_map.o
-                0x00484f8c                tmbbox
-                0x00484f9c                spechit
- .bss           0x00484fec      0x8ec build/p_maputl.o
-                0x00484fec                trace
-                0x00484ffc                intercepts
- .bss           0x004858d8      0x79c build/p_mobj.o
-                0x004858d8                itemrespawnque
-                0x00485dd8                itemrespawntime
- .bss           0x00486074       0x78 build/p_plats.o
-                0x00486074                activeplats
- .bss           0x004860ec        0x0 build/p_pspr.o
- .bss           0x004860ec        0x0 build/p_saveg.o
- .bss           0x004860ec       0xe4 build/p_setup.o
-                0x00486144                deathmatchstarts
-                0x004861a8                playerstarts
- .bss           0x004861d0       0x10 build/p_sight.o
-                0x004861d0                strace
- .bss           0x004861e0      0x380 build/p_spec.o
-                0x004861e0                anims
-                0x00486460                linespeciallist
- .bss           0x00486560      0x2d0 build/p_switch.o
-                0x00486560                switchlist
-                0x004866f0                buttonlist
- .bss           0x00486830        0x0 build/p_telept.o
- .bss           0x00486830        0xc build/p_tick.o
-                0x00486830                thinkercap
- .bss           0x0048683c        0x0 build/p_user.o
- .bss           0x0048683c     0x3100 build/r_bsp.o
-                0x0048683c                solidsegs
-                0x0048693c                drawsegs
- .bss           0x0048993c        0x0 build/r_data.o
- .bss           0x0048993c     0x2180 build/r_draw.o
-                0x0048993c                translations
-                0x00489c3c                columnofs
-                0x0048adbc                ylookup
- .bss           0x0048babc     0x71c4 build/r_main.o
-                0x0048babc                xtoviewangle
-                0x0048bfc0                scalelightfixed
-                0x0048c080                zlight
-                0x0048e080                scalelight
-                0x0048ec80                viewangletox
- .bss           0x00492c80    0x20be0 build/r_plane.o
-                0x00492c80                cachedheight
-                0x00492fa0                yslope
-                0x004932c0                cacheddistance
-                0x004935e0                cachedxstep
-                0x00493900                cachedystep
-                0x00493c20                distscale
-                0x00494120                floorclip
-                0x004943a0                ceilingclip
-                0x00494620                spanstart
-                0x00494940                spanstop
-                0x00494c60                openings
-                0x0049ec60                visplanes
- .bss           0x004b3860        0x0 build/r_segs.o
- .bss           0x004b3860        0x0 build/r_sky.o
- .bss           0x004b3860     0x2ba4 build/r_things.o
-                0x004b3860                sprtemp
-                0x004b3b8c                negonearray
-                0x004b3e0c                overflowsprite
-                0x004b3e48                screenheightarray
-                0x004b40c8                vsprsortedhead
-                0x004b4604                vissprites
- .bss           0x004b6404        0x0 build/sha1.o
- .bss           0x004b6404        0x0 build/sounds.o
- .bss           0x004b6404     0x1900 build/statdump.o
- .bss           0x004b7d04        0x0 build/st_lib.o
- .bss           0x004b7d04      0x460 build/st_stuff.o
- .bss           0x004b8164        0x0 build/s_sound.o
- .bss           0x004b8164        0x0 build/tables.o
- .bss           0x004b8164       0x10 build/v_video.o
-                0x004b8164                dirtybox
- .bss           0x004b8174       0xe4 build/wi_stuff.o
- .bss           0x004b8258        0x0 build/w_checksum.o
- .bss           0x004b8258        0x0 build/w_file.o
- .bss           0x004b8258        0x0 build/w_main.o
- .bss           0x004b8258        0x0 build/w_wad.o
- .bss           0x004b8258        0x0 build/z_zone.o
- .bss           0x004b8258        0x0 build/w_file_stdc.o
- .bss           0x004b8258        0x0 build/i_input.o
- .bss           0x004b8258      0x434 build/i_video.o
- .bss           0x004b868c        0x0 build/doomgeneric.o
- .bss           0x004b868c        0x0 build/doomgeneric_jane_cpu.o
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(atof.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(atoi.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(errno.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(exit.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(fake_files.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(fclose.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(fflush.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(fprintf.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(fwrite.o)
- .bss           0x004b868c        0x0 ../minlibc//libminlibc.a(isdigit.o)
- .bss           0x004b868c       0x78 ../minlibc//libminlibc.a(malloc.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(memcpy.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(memset.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(mkdir.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(mmap.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(mprotect.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(munmap.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(printf.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(putchar.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(puts.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(snprintf.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(stdio_values.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strcasecmp.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strcmp.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strdup.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strlen.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strncmp.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strncpy.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strrchr.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(strstr.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(tolower.o)
- .bss           0x004b8704        0x0 ../minlibc//libminlibc.a(toupper.o)
- .bss           0x004b8704     0x1000 ../minlibc//libminlibc.a(vfprintf.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(vsnprintf.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(abort.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(bzero.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(doom1.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(fputc.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(isspace.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(strchr.o)
- .bss           0x004b9704        0x0 ../minlibc//libminlibc.a(strnlen.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(adddf3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(ledf2.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldf3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subdf3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsidf.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixunsdfdi.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatundidf.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(mulsf3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subsf3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixsfsi.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsisf.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(extendsfdf2.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(truncdfsf2.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldi3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(div.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_lshrdi3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_ashldi3.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
- .bss           0x004b9704        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clzsi2.o)
+.bss            0x00252184    0x3bf74
+ .bss           0x00252184        0x0 entry.o
+ .bss           0x00252184        0x0 build/dummy.o
+ .bss           0x00252184       0xac build/am_map.o
+ .bss           0x00252230        0x0 build/doomdef.o
+ .bss           0x00252230        0x0 build/doomstat.o
+ .bss           0x00252230        0x0 build/dstrings.o
+ .bss           0x00252230      0x500 build/d_event.o
+ .bss           0x00252730        0x0 build/d_items.o
+ .bss           0x00252730      0x200 build/d_iwad.o
+ .bss           0x00252930     0x5030 build/d_loop.o
+ .bss           0x00257960      0x880 build/d_main.o
+                0x00257960                title
+                0x002579e0                mapdir
+                0x00257de0                wadfile
+ .bss           0x002581e0        0x0 build/d_mode.o
+ .bss           0x002581e0       0x50 build/d_net.o
+ .bss           0x00258230        0x0 build/f_finale.o
+ .bss           0x00258230        0x0 build/f_wipe.o
+ .bss           0x00258230      0xde0 build/g_game.o
+                0x00258230                consistancy
+                0x002588a8                players
+                0x00258d28                turbodetected
+                0x00258d38                playeringame
+                0x00258d48                bodyque
+                0x00258dc8                wminfo
+                0x00258e90                savename
+ .bss           0x00259010        0x0 build/hu_lib.o
+ .bss           0x00259010      0x651 build/hu_stuff.o
+                0x00259010                hu_font
+ .bss           0x00259661        0x0 build/info.o
+ .bss           0x00259661        0x0 build/i_cdmus.o
+ .bss           0x00259661        0x0 build/i_endoom.o
+ .bss           0x00259661        0x0 build/i_joystick.o
+ .bss           0x00259661        0x0 build/i_scale.o
+ .bss           0x00259661        0x0 build/i_sound.o
+ *fill*         0x00259661        0x3 
+ .bss           0x00259664        0xa build/i_system.o
+ .bss           0x0025966e        0x0 build/i_timer.o
+ .bss           0x0025966e        0x0 build/memio.o
+ .bss           0x0025966e        0x0 build/m_argv.o
+ .bss           0x0025966e        0x0 build/m_bbox.o
+ .bss           0x0025966e        0x0 build/m_cheat.o
+ .bss           0x0025966e        0x0 build/m_config.o
+ *fill*         0x0025966e        0x2 
+ .bss           0x00259670       0x20 build/m_controls.o
+                0x00259670                key_multi_msgplayer
+ .bss           0x00259690        0x0 build/m_fixed.o
+ .bss           0x00259690      0x1f8 build/m_menu.o
+                0x00259690                savegamestrings
+                0x00259780                saveOldString
+                0x00259798                endstring
+                0x00259838                tempstring
+ .bss           0x00259888        0x0 build/m_misc.o
+ .bss           0x00259888        0x0 build/m_random.o
+ .bss           0x00259888       0x78 build/p_ceilng.o
+                0x00259888                activeceilings
+ .bss           0x00259900        0x0 build/p_doors.o
+ .bss           0x00259900       0x80 build/p_enemy.o
+                0x00259900                braintargets
+ .bss           0x00259980        0x0 build/p_floor.o
+ .bss           0x00259980        0x0 build/p_inter.o
+ .bss           0x00259980        0x0 build/p_lights.o
+ .bss           0x00259980       0x60 build/p_map.o
+                0x00259980                tmbbox
+                0x00259990                spechit
+ .bss           0x002599e0      0x8ec build/p_maputl.o
+                0x002599e0                trace
+                0x002599f0                intercepts
+ .bss           0x0025a2cc      0x79c build/p_mobj.o
+                0x0025a2cc                itemrespawnque
+                0x0025a7cc                itemrespawntime
+ .bss           0x0025aa68       0x78 build/p_plats.o
+                0x0025aa68                activeplats
+ .bss           0x0025aae0        0x0 build/p_pspr.o
+ .bss           0x0025aae0        0x0 build/p_saveg.o
+ .bss           0x0025aae0       0xe4 build/p_setup.o
+                0x0025ab38                deathmatchstarts
+                0x0025ab9c                playerstarts
+ .bss           0x0025abc4       0x10 build/p_sight.o
+                0x0025abc4                strace
+ .bss           0x0025abd4      0x380 build/p_spec.o
+                0x0025abd4                anims
+                0x0025ae54                linespeciallist
+ .bss           0x0025af54      0x2d0 build/p_switch.o
+                0x0025af54                switchlist
+                0x0025b0e4                buttonlist
+ .bss           0x0025b224        0x0 build/p_telept.o
+ .bss           0x0025b224        0xc build/p_tick.o
+                0x0025b224                thinkercap
+ .bss           0x0025b230        0x0 build/p_user.o
+ .bss           0x0025b230     0x3100 build/r_bsp.o
+                0x0025b230                solidsegs
+                0x0025b330                drawsegs
+ .bss           0x0025e330        0x0 build/r_data.o
+ .bss           0x0025e330     0x2180 build/r_draw.o
+                0x0025e330                translations
+                0x0025e630                columnofs
+                0x0025f7b0                ylookup
+ .bss           0x002604b0     0x71c4 build/r_main.o
+                0x002604b0                xtoviewangle
+                0x002609b4                scalelightfixed
+                0x00260a74                zlight
+                0x00262a74                scalelight
+                0x00263674                viewangletox
+ .bss           0x00267674    0x20be0 build/r_plane.o
+                0x00267674                cachedheight
+                0x00267994                yslope
+                0x00267cb4                cacheddistance
+                0x00267fd4                cachedxstep
+                0x002682f4                cachedystep
+                0x00268614                distscale
+                0x00268b14                floorclip
+                0x00268d94                ceilingclip
+                0x00269014                spanstart
+                0x00269334                spanstop
+                0x00269654                openings
+                0x00273654                visplanes
+ .bss           0x00288254        0x0 build/r_segs.o
+ .bss           0x00288254        0x0 build/r_sky.o
+ .bss           0x00288254     0x2ba4 build/r_things.o
+                0x00288254                sprtemp
+                0x00288580                negonearray
+                0x00288800                overflowsprite
+                0x0028883c                screenheightarray
+                0x00288abc                vsprsortedhead
+                0x00288ff8                vissprites
+ .bss           0x0028adf8        0x0 build/sha1.o
+ .bss           0x0028adf8        0x0 build/sounds.o
+ .bss           0x0028adf8     0x1900 build/statdump.o
+ .bss           0x0028c6f8        0x0 build/st_lib.o
+ .bss           0x0028c6f8      0x460 build/st_stuff.o
+ .bss           0x0028cb58        0x0 build/s_sound.o
+ .bss           0x0028cb58        0x0 build/tables.o
+ .bss           0x0028cb58       0x10 build/v_video.o
+                0x0028cb58                dirtybox
+ .bss           0x0028cb68       0xe4 build/wi_stuff.o
+ .bss           0x0028cc4c        0x0 build/w_checksum.o
+ .bss           0x0028cc4c        0x0 build/w_file.o
+ .bss           0x0028cc4c        0x0 build/w_main.o
+ .bss           0x0028cc4c        0x0 build/w_wad.o
+ .bss           0x0028cc4c        0x0 build/z_zone.o
+ .bss           0x0028cc4c        0x0 build/w_file_stdc.o
+ .bss           0x0028cc4c        0x0 build/i_input.o
+ .bss           0x0028cc4c      0x434 build/i_video.o
+ .bss           0x0028d080        0x0 build/doomgeneric.o
+ .bss           0x0028d080        0x0 build/doomgeneric_jane_cpu.o
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(atof.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(atoi.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(errno.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(exit.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(fake_files.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(fclose.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(fflush.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(fprintf.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(fwrite.o)
+ .bss           0x0028d080        0x0 ../minlibc//libminlibc.a(isdigit.o)
+ .bss           0x0028d080       0x78 ../minlibc//libminlibc.a(malloc.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(memcpy.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(memset.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(mkdir.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(mmap.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(mprotect.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(munmap.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(printf.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(putchar.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(puts.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(snprintf.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(stdio_values.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strcasecmp.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strcmp.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strdup.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strlen.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strncmp.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strncpy.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strrchr.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(strstr.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(tolower.o)
+ .bss           0x0028d0f8        0x0 ../minlibc//libminlibc.a(toupper.o)
+ .bss           0x0028d0f8     0x1000 ../minlibc//libminlibc.a(vfprintf.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(vsnprintf.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(abort.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(bzero.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(doom1.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(fputc.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(isspace.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(strchr.o)
+ .bss           0x0028e0f8        0x0 ../minlibc//libminlibc.a(strnlen.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_divdi3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_udivdi3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_umoddi3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(adddf3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(ledf2.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldf3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subdf3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsidf.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixunsdfdi.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatundidf.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(divsf3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(mulsf3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(subsf3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(fixsfsi.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(floatsisf.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(extendsfdf2.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(truncdfsf2.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(muldi3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(div.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_lshrdi3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_ashldi3.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clz.o)
+ .bss           0x0028e0f8        0x0 /home/ubuntu/gcc-riscv/lib/gcc/riscv32-unknown-elf/15.1.0/libgcc.a(_clzsi2.o)
 
-.sbss           0x004b9704      0x8f8
- .sbss          0x004b9704        0x8 build/dummy.o
-                0x004b9704                drone
-                0x004b9708                net_client_connected
- .sbss          0x004b970c       0xa0 build/am_map.o
-                0x004b97a0                automapactive
- .sbss          0x004b97ac        0xc build/doomstat.o
-                0x004b97ac                modifiedgame
-                0x004b97b0                gamedescription
-                0x004b97b4                gamemission
- .sbss          0x004b97b8        0x8 build/d_event.o
- .sbss          0x004b97c0        0x4 build/d_iwad.o
- .sbss          0x004b97c4       0x34 build/d_loop.o
-                0x004b97d0                lasttime
-                0x004b97dc                offsetms
-                0x004b97e0                ticdup
-                0x004b97e8                singletics
-                0x004b97ec                gametic
- .sbss          0x004b97f8       0x5c build/d_main.o
-                0x004b980c                pagename
-                0x004b9810                pagetic
-                0x004b9814                demosequence
-                0x004b9818                main_loop_started
-                0x004b981c                bfgedition
-                0x004b9820                storedemo
-                0x004b9824                advancedemo
-                0x004b9828                startloadgame
-                0x004b982c                autostart
-                0x004b9830                startmap
-                0x004b9834                startepisode
-                0x004b9838                startskill
-                0x004b983c                fastparm
-                0x004b9840                respawnparm
-                0x004b9844                nomonsters
-                0x004b9848                devparm
-                0x004b984c                iwadfile
-                0x004b9850                savegamedir
- .sbss          0x004b9854        0x4 build/d_net.o
-                0x004b9854                netcmds
- .sbss          0x004b9858       0x30 build/f_finale.o
-                0x004b985c                castattacking
-                0x004b9860                castonmelee
-                0x004b9864                castframes
-                0x004b9868                castdeath
-                0x004b986c                caststate
-                0x004b9870                casttics
-                0x004b9874                castnum
-                0x004b9878                finaleflat
-                0x004b987c                finaletext
-                0x004b9880                finalecount
-                0x004b9884                finalestage
- .sbss          0x004b9888       0x14 build/f_wipe.o
- .sbss          0x004b989c       0xe4 build/g_game.o
-                0x004b98a0                defdemoname
-                0x004b98a4                d_map
-                0x004b98a8                d_episode
-                0x004b98ac                d_skill
-                0x004b98b0                secretexit
-                0x004b98b4                bodyqueslot
-                0x004b98e0                mousey
-                0x004b98e4                mousex
-                0x004b98f0                testcontrols_mousespeed
-                0x004b98f4                testcontrols
-                0x004b98f8                singledemo
-                0x004b98fc                demoend
-                0x004b9900                demo_p
-                0x004b9904                demobuffer
-                0x004b9908                netdemo
-                0x004b990c                demoplayback
-                0x004b9910                lowres_turn
-                0x004b9914                longtics
-                0x004b9918                demorecording
-                0x004b991c                demoname
-                0x004b9920                totalsecret
-                0x004b9924                totalitems
-                0x004b9928                totalkills
-                0x004b992c                levelstarttic
-                0x004b9930                displayplayer
-                0x004b9934                consoleplayer
-                0x004b9938                netgame
-                0x004b993c                deathmatch
-                0x004b9940                viewactive
-                0x004b9944                starttime
-                0x004b9948                nodrawers
-                0x004b994c                timingdemo
-                0x004b9950                usergame
-                0x004b9954                sendsave
-                0x004b9958                sendpause
-                0x004b995c                paused
-                0x004b9960                timelimit
-                0x004b9964                gamemap
-                0x004b9968                gameepisode
-                0x004b996c                respawnmonsters
-                0x004b9970                gameskill
-                0x004b9974                gamestate
-                0x004b9978                gameaction
-                0x004b997c                oldgamestate
- .sbss          0x004b9980       0x35 build/hu_stuff.o
-                0x004b999c                message_dontfuckwithme
-                0x004b99ac                chat_on
-                0x004b99b4                chat_char
- *fill*         0x004b99b5        0x3 
- .sbss          0x004b99b8        0x4 build/i_cdmus.o
-                0x004b99b8                cd_Error
- .sbss          0x004b99bc       0x14 build/i_joystick.o
- .sbss          0x004b99d0       0x18 build/i_scale.o
- .sbss          0x004b99e8       0x14 build/i_sound.o
- .sbss          0x004b99fc        0x8 build/i_system.o
- .sbss          0x004b9a04        0x4 build/i_timer.o
- .sbss          0x004b9a08        0x8 build/m_argv.o
-                0x004b9a08                myargv
-                0x004b9a0c                myargc
- .sbss          0x004b9a10        0xc build/m_config.o
-                0x004b9a18                configdir
- .sbss          0x004b9a1c       0x14 build/m_controls.o
-                0x004b9a1c                joybfire
-                0x004b9a20                key_menu_screenshot
-                0x004b9a24                key_nextweapon
-                0x004b9a28                key_prevweapon
-                0x004b9a2c                mousebfire
- .sbss          0x004b9a30       0x88 build/m_menu.o
-                0x004b9a4c                epi
-                0x004b9a50                load_e
-                0x004b9a54                sound_e
-                0x004b9a58                read_e2
-                0x004b9a5c                read_e
-                0x004b9a60                options_e
-                0x004b9a64                newgame_e
-                0x004b9a68                episodes_e
-                0x004b9a6c                main_e
-                0x004b9a70                currentMenu
-                0x004b9a74                whichSkull
-                0x004b9a76                skullAnimCounter
-                0x004b9a78                itemOn
-                0x004b9a7c                menuactive
-                0x004b9a80                inhelpscreens
-                0x004b9a84                saveCharIndex
-                0x004b9a88                saveSlot
-                0x004b9a8c                saveStringEnter
-                0x004b9a90                messageRoutine
-                0x004b9a94                messageNeedsInput
-                0x004b9a98                messageLastMenuActive
-                0x004b9a9c                messy
-                0x004b9aa0                messx
-                0x004b9aa4                messageString
-                0x004b9aa8                messageToPrint
-                0x004b9aac                quickSaveSlot
-                0x004b9ab0                screenSize
-                0x004b9ab4                detailLevel
- .sbss          0x004b9ab8        0x8 build/m_random.o
-                0x004b9ab8                prndindex
-                0x004b9abc                rndindex
- .sbss          0x004b9ac0       0x20 build/p_enemy.o
-                0x004b9ac4                braintargeton
-                0x004b9ac8                numbraintargets
-                0x004b9acc                viletryy
-                0x004b9ad0                viletryx
-                0x004b9ad4                vileobj
-                0x004b9ad8                corpsehit
-                0x004b9adc                soundtarget
- .sbss          0x004b9ae0       0x78 build/p_map.o
-                0x004b9ae4                nofit
-                0x004b9ae8                crushchange
-                0x004b9aec                bombdamage
-                0x004b9af0                bombspot
-                0x004b9af4                bombsource
-                0x004b9af8                usething
-                0x004b9afc                aimslope
-                0x004b9b00                attackrange
-                0x004b9b04                la_damage
-                0x004b9b08                shootz
-                0x004b9b0c                shootthing
-                0x004b9b10                linetarget
-                0x004b9b14                tmymove
-                0x004b9b18                tmxmove
-                0x004b9b1c                slidemo
-                0x004b9b20                secondslideline
-                0x004b9b24                bestslideline
-                0x004b9b28                secondslidefrac
-                0x004b9b2c                bestslidefrac
-                0x004b9b30                numspechit
-                0x004b9b34                ceilingline
-                0x004b9b38                tmdropoffz
-                0x004b9b3c                tmceilingz
-                0x004b9b40                tmfloorz
-                0x004b9b44                floatok
-                0x004b9b48                tmy
-                0x004b9b4c                tmx
-                0x004b9b50                tmflags
-                0x004b9b54                tmthing
- .sbss          0x004b9b58       0x1c build/p_maputl.o
-                0x004b9b58                ptflags
-                0x004b9b5c                earlyout
-                0x004b9b60                intercept_p
-                0x004b9b64                lowfloor
-                0x004b9b68                openrange
-                0x004b9b6c                openbottom
-                0x004b9b70                opentop
- .sbss          0x004b9b74        0xc build/p_mobj.o
-                0x004b9b74                iquetail
-                0x004b9b78                iquehead
-                0x004b9b7c                test
- .sbss          0x004b9b80        0xc build/p_pspr.o
-                0x004b9b80                bulletslope
-                0x004b9b84                swingy
-                0x004b9b88                swingx
- .sbss          0x004b9b8c       0x1c build/p_saveg.o
-                0x004b9b98                specials_e
-                0x004b9b9c                savegame_error
-                0x004b9ba0                savegamelength
-                0x004b9ba4                save_stream
- .sbss          0x004b9ba8       0x64 build/p_setup.o
-                0x004b9bac                deathmatch_p
-                0x004b9bb0                rejectmatrix
-                0x004b9bb4                blocklinks
-                0x004b9bb8                bmaporgy
-                0x004b9bbc                bmaporgx
-                0x004b9bc0                blockmaplump
-                0x004b9bc4                blockmap
-                0x004b9bc8                bmapheight
-                0x004b9bcc                bmapwidth
-                0x004b9bd4                sides
-                0x004b9bd8                numsides
-                0x004b9bdc                lines
-                0x004b9be0                numlines
-                0x004b9be4                nodes
-                0x004b9be8                numnodes
-                0x004b9bec                subsectors
-                0x004b9bf0                numsubsectors
-                0x004b9bf4                sectors
-                0x004b9bf8                numsectors
-                0x004b9bfc                segs
-                0x004b9c00                numsegs
-                0x004b9c04                vertexes
-                0x004b9c08                numvertexes
- .sbss          0x004b9c0c       0x1c build/p_sight.o
-                0x004b9c0c                sightcounts
-                0x004b9c14                t2y
-                0x004b9c18                t2x
-                0x004b9c1c                bottomslope
-                0x004b9c20                topslope
-                0x004b9c24                sightzstart
- .sbss          0x004b9c28       0x18 build/p_spec.o
-                0x004b9c30                numlinespecials
-                0x004b9c34                levelTimeCount
-                0x004b9c38                levelTimer
-                0x004b9c3c                lastanim
- .sbss          0x004b9c40        0x4 build/p_switch.o
-                0x004b9c40                numswitches
- .sbss          0x004b9c44        0x4 build/p_tick.o
-                0x004b9c44                leveltime
- .sbss          0x004b9c48        0x4 build/p_user.o
-                0x004b9c48                onground
- .sbss          0x004b9c4c       0x1c build/r_bsp.o
-                0x004b9c4c                newend
-                0x004b9c50                ds_p
-                0x004b9c54                backsector
-                0x004b9c58                frontsector
-                0x004b9c5c                linedef
-                0x004b9c60                sidedef
-                0x004b9c64                curline
- .sbss          0x004b9c68       0x6c build/r_data.o
-                0x004b9c68                spritememory
-                0x004b9c6c                texturememory
-                0x004b9c70                flatmemory
-                0x004b9c74                colormaps
-                0x004b9c78                spritetopoffset
-                0x004b9c7c                spriteoffset
-                0x004b9c80                spritewidth
-                0x004b9c84                texturetranslation
-                0x004b9c88                flattranslation
-                0x004b9c8c                texturecomposite
-                0x004b9c90                texturecolumnofs
-                0x004b9c94                texturecolumnlump
-                0x004b9c98                texturecompositesize
-                0x004b9c9c                textureheight
-                0x004b9ca0                texturewidthmask
-                0x004b9ca4                textures_hashtable
-                0x004b9ca8                textures
-                0x004b9cac                numtextures
-                0x004b9cb0                numspritelumps
-                0x004b9cb4                lastspritelump
-                0x004b9cb8                firstspritelump
-                0x004b9cbc                numpatches
-                0x004b9cc0                lastpatch
-                0x004b9cc4                firstpatch
-                0x004b9cc8                numflats
-                0x004b9ccc                lastflat
-                0x004b9cd0                firstflat
- .sbss          0x004b9cd4       0x70 build/r_draw.o
-                0x004b9cd4                dscount
-                0x004b9cd8                ds_source
-                0x004b9cdc                ds_ystep
-                0x004b9ce0                ds_xstep
-                0x004b9ce4                ds_yfrac
-                0x004b9ce8                ds_xfrac
-                0x004b9cec                ds_colormap
-                0x004b9cf0                ds_x2
-                0x004b9cf4                ds_x1
-                0x004b9cf8                ds_y
-                0x004b9cfc                translationtables
-                0x004b9d00                dc_translation
-                0x004b9d04                fuzzpos
-                0x004b9d08                dccount
-                0x004b9d0c                dc_source
-                0x004b9d10                dc_texturemid
-                0x004b9d14                dc_iscale
-                0x004b9d18                dc_yh
-                0x004b9d1c                dc_yl
-                0x004b9d20                dc_x
-                0x004b9d24                dc_colormap
-                0x004b9d2c                viewwindowy
-                0x004b9d30                viewwindowx
-                0x004b9d34                viewheight
-                0x004b9d38                scaledviewwidth
-                0x004b9d3c                viewwidth
-                0x004b9d40                viewimage
- .sbss          0x004b9d44       0x74 build/r_main.o
-                0x004b9d44                setdetail
-                0x004b9d48                setblocks
-                0x004b9d4c                setsizeneeded
-                0x004b9d50                spanfunc
-                0x004b9d54                transcolfunc
-                0x004b9d58                fuzzcolfunc
-                0x004b9d5c                basecolfunc
-                0x004b9d60                colfunc
-                0x004b9d64                extralight
-                0x004b9d68                clipangle
-                0x004b9d6c                detailshift
-                0x004b9d70                viewplayer
-                0x004b9d74                viewsin
-                0x004b9d78                viewcos
-                0x004b9d7c                viewangle
-                0x004b9d80                viewz
-                0x004b9d84                viewy
-                0x004b9d88                viewx
-                0x004b9d8c                loopcount
-                0x004b9d90                linecount
-                0x004b9d94                sscount
-                0x004b9d98                framecount
-                0x004b9d9c                projection
-                0x004b9da0                centeryfrac
-                0x004b9da4                centerxfrac
-                0x004b9da8                centery
-                0x004b9dac                centerx
-                0x004b9db0                fixedcolormap
-                0x004b9db4                viewangleoffset
- .sbss          0x004b9db8       0x28 build/r_plane.o
-                0x004b9db8                baseyscale
-                0x004b9dbc                basexscale
-                0x004b9dc0                planeheight
-                0x004b9dc4                planezlight
-                0x004b9dc8                lastopening
-                0x004b9dcc                ceilingplane
-                0x004b9dd0                floorplane
-                0x004b9dd4                lastvisplane
-                0x004b9dd8                ceilingfunc
-                0x004b9ddc                floorfunc
- .sbss          0x004b9de0       0x84 build/r_segs.o
-                0x004b9de0                maskedtexturecol
-                0x004b9de4                walllights
-                0x004b9de8                bottomstep
-                0x004b9dec                bottomfrac
-                0x004b9df0                topstep
-                0x004b9df4                topfrac
-                0x004b9df8                pixlowstep
-                0x004b9dfc                pixhighstep
-                0x004b9e00                pixlow
-                0x004b9e04                pixhigh
-                0x004b9e08                worldlow
-                0x004b9e0c                worldhigh
-                0x004b9e10                worldbottom
-                0x004b9e14                worldtop
-                0x004b9e18                rw_bottomtexturemid
-                0x004b9e1c                rw_toptexturemid
-                0x004b9e20                rw_midtexturemid
-                0x004b9e24                rw_scalestep
-                0x004b9e28                rw_scale
-                0x004b9e2c                rw_distance
-                0x004b9e30                rw_offset
-                0x004b9e34                rw_centerangle
-                0x004b9e38                rw_stopx
-                0x004b9e3c                rw_x
-                0x004b9e40                rw_angle1
-                0x004b9e44                rw_normalangle
-                0x004b9e48                midtexture
-                0x004b9e4c                bottomtexture
-                0x004b9e50                toptexture
-                0x004b9e54                maskedtexture
-                0x004b9e58                markceiling
-                0x004b9e5c                markfloor
-                0x004b9e60                segtextured
- .sbss          0x004b9e64        0xc build/r_sky.o
-                0x004b9e64                skytexturemid
-                0x004b9e68                skytexture
-                0x004b9e6c                skyflatnum
- .sbss          0x004b9e70       0x34 build/r_things.o
-                0x004b9e70                sprtopscreen
-                0x004b9e74                spryscale
-                0x004b9e78                mceilingclip
-                0x004b9e7c                mfloorclip
-                0x004b9e80                newvissprite
-                0x004b9e84                vissprite_p
-                0x004b9e88                spritename
-                0x004b9e8c                maxframe
-                0x004b9e90                numsprites
-                0x004b9e94                sprites
-                0x004b9e98                spritelights
-                0x004b9e9c                pspriteiscale
-                0x004b9ea0                pspritescale
- .sbss          0x004b9ea4        0x4 build/statdump.o
- .sbss          0x004b9ea8        0x4 build/st_lib.o
-                0x004b9ea8                sttminus
- .sbss          0x004b9eac       0x58 build/st_stuff.o
-                0x004b9f00                st_backing_screen
- .sbss          0x004b9f04       0x10 build/s_sound.o
- .sbss          0x004b9f14       0x10 build/v_video.o
-                0x004b9f1c                xlatab
-                0x004b9f20                tinttable
- .sbss          0x004b9f24       0x98 build/wi_stuff.o
- .sbss          0x004b9fbc        0x8 build/w_checksum.o
- .sbss          0x004b9fc4        0xc build/w_wad.o
-                0x004b9fc8                numlumps
-                0x004b9fcc                lumpinfo
- .sbss          0x004b9fd0        0x4 build/z_zone.o
-                0x004b9fd0                mainzone
- .sbss          0x004b9fd4        0x4 build/i_input.o
- .sbss          0x004b9fd8       0x14 build/i_video.o
-                0x004b9fd8                usegamma
-                0x004b9fdc                screenvisible
-                0x004b9fe0                screensaver_mode
-                0x004b9fe4                I_VideoBuffer
-                0x004b9fe8                usemouse
- .sbss          0x004b9fec        0x4 build/doomgeneric.o
-                0x004b9fec                DG_ScreenBuffer
- .sbss          0x004b9ff0        0x4 ../minlibc//libminlibc.a(errno.o)
-                0x004b9ff0                errno
- .sbss          0x004b9ff4        0x4 ../minlibc//libminlibc.a(fake_files.o)
-                0x004b9ff4                CUR_POS
- .sbss          0x004b9ff8        0x4 ../minlibc//libminlibc.a(malloc.o)
-                0x004b9ff8                malloc_options
+.sbss           0x0028e0f8      0x8f8
+ .sbss          0x0028e0f8        0x8 build/dummy.o
+                0x0028e0f8                drone
+                0x0028e0fc                net_client_connected
+ .sbss          0x0028e100       0xa0 build/am_map.o
+                0x0028e194                automapactive
+ .sbss          0x0028e1a0        0xc build/doomstat.o
+                0x0028e1a0                modifiedgame
+                0x0028e1a4                gamedescription
+                0x0028e1a8                gamemission
+ .sbss          0x0028e1ac        0x8 build/d_event.o
+ .sbss          0x0028e1b4        0x4 build/d_iwad.o
+ .sbss          0x0028e1b8       0x34 build/d_loop.o
+                0x0028e1c4                lasttime
+                0x0028e1d0                offsetms
+                0x0028e1d4                ticdup
+                0x0028e1dc                singletics
+                0x0028e1e0                gametic
+ .sbss          0x0028e1ec       0x5c build/d_main.o
+                0x0028e200                pagename
+                0x0028e204                pagetic
+                0x0028e208                demosequence
+                0x0028e20c                main_loop_started
+                0x0028e210                bfgedition
+                0x0028e214                storedemo
+                0x0028e218                advancedemo
+                0x0028e21c                startloadgame
+                0x0028e220                autostart
+                0x0028e224                startmap
+                0x0028e228                startepisode
+                0x0028e22c                startskill
+                0x0028e230                fastparm
+                0x0028e234                respawnparm
+                0x0028e238                nomonsters
+                0x0028e23c                devparm
+                0x0028e240                iwadfile
+                0x0028e244                savegamedir
+ .sbss          0x0028e248        0x4 build/d_net.o
+                0x0028e248                netcmds
+ .sbss          0x0028e24c       0x30 build/f_finale.o
+                0x0028e250                castattacking
+                0x0028e254                castonmelee
+                0x0028e258                castframes
+                0x0028e25c                castdeath
+                0x0028e260                caststate
+                0x0028e264                casttics
+                0x0028e268                castnum
+                0x0028e26c                finaleflat
+                0x0028e270                finaletext
+                0x0028e274                finalecount
+                0x0028e278                finalestage
+ .sbss          0x0028e27c       0x14 build/f_wipe.o
+ .sbss          0x0028e290       0xe4 build/g_game.o
+                0x0028e294                defdemoname
+                0x0028e298                d_map
+                0x0028e29c                d_episode
+                0x0028e2a0                d_skill
+                0x0028e2a4                secretexit
+                0x0028e2a8                bodyqueslot
+                0x0028e2d4                mousey
+                0x0028e2d8                mousex
+                0x0028e2e4                testcontrols_mousespeed
+                0x0028e2e8                testcontrols
+                0x0028e2ec                singledemo
+                0x0028e2f0                demoend
+                0x0028e2f4                demo_p
+                0x0028e2f8                demobuffer
+                0x0028e2fc                netdemo
+                0x0028e300                demoplayback
+                0x0028e304                lowres_turn
+                0x0028e308                longtics
+                0x0028e30c                demorecording
+                0x0028e310                demoname
+                0x0028e314                totalsecret
+                0x0028e318                totalitems
+                0x0028e31c                totalkills
+                0x0028e320                levelstarttic
+                0x0028e324                displayplayer
+                0x0028e328                consoleplayer
+                0x0028e32c                netgame
+                0x0028e330                deathmatch
+                0x0028e334                viewactive
+                0x0028e338                starttime
+                0x0028e33c                nodrawers
+                0x0028e340                timingdemo
+                0x0028e344                usergame
+                0x0028e348                sendsave
+                0x0028e34c                sendpause
+                0x0028e350                paused
+                0x0028e354                timelimit
+                0x0028e358                gamemap
+                0x0028e35c                gameepisode
+                0x0028e360                respawnmonsters
+                0x0028e364                gameskill
+                0x0028e368                gamestate
+                0x0028e36c                gameaction
+                0x0028e370                oldgamestate
+ .sbss          0x0028e374       0x35 build/hu_stuff.o
+                0x0028e390                message_dontfuckwithme
+                0x0028e3a0                chat_on
+                0x0028e3a8                chat_char
+ *fill*         0x0028e3a9        0x3 
+ .sbss          0x0028e3ac        0x4 build/i_cdmus.o
+                0x0028e3ac                cd_Error
+ .sbss          0x0028e3b0       0x14 build/i_joystick.o
+ .sbss          0x0028e3c4       0x18 build/i_scale.o
+ .sbss          0x0028e3dc       0x14 build/i_sound.o
+ .sbss          0x0028e3f0        0x8 build/i_system.o
+ .sbss          0x0028e3f8        0x4 build/i_timer.o
+ .sbss          0x0028e3fc        0x8 build/m_argv.o
+                0x0028e3fc                myargv
+                0x0028e400                myargc
+ .sbss          0x0028e404        0xc build/m_config.o
+                0x0028e40c                configdir
+ .sbss          0x0028e410       0x14 build/m_controls.o
+                0x0028e410                joybfire
+                0x0028e414                key_menu_screenshot
+                0x0028e418                key_nextweapon
+                0x0028e41c                key_prevweapon
+                0x0028e420                mousebfire
+ .sbss          0x0028e424       0x88 build/m_menu.o
+                0x0028e440                epi
+                0x0028e444                load_e
+                0x0028e448                sound_e
+                0x0028e44c                read_e2
+                0x0028e450                read_e
+                0x0028e454                options_e
+                0x0028e458                newgame_e
+                0x0028e45c                episodes_e
+                0x0028e460                main_e
+                0x0028e464                currentMenu
+                0x0028e468                whichSkull
+                0x0028e46a                skullAnimCounter
+                0x0028e46c                itemOn
+                0x0028e470                menuactive
+                0x0028e474                inhelpscreens
+                0x0028e478                saveCharIndex
+                0x0028e47c                saveSlot
+                0x0028e480                saveStringEnter
+                0x0028e484                messageRoutine
+                0x0028e488                messageNeedsInput
+                0x0028e48c                messageLastMenuActive
+                0x0028e490                messy
+                0x0028e494                messx
+                0x0028e498                messageString
+                0x0028e49c                messageToPrint
+                0x0028e4a0                quickSaveSlot
+                0x0028e4a4                screenSize
+                0x0028e4a8                detailLevel
+ .sbss          0x0028e4ac        0x8 build/m_random.o
+                0x0028e4ac                prndindex
+                0x0028e4b0                rndindex
+ .sbss          0x0028e4b4       0x20 build/p_enemy.o
+                0x0028e4b8                braintargeton
+                0x0028e4bc                numbraintargets
+                0x0028e4c0                viletryy
+                0x0028e4c4                viletryx
+                0x0028e4c8                vileobj
+                0x0028e4cc                corpsehit
+                0x0028e4d0                soundtarget
+ .sbss          0x0028e4d4       0x78 build/p_map.o
+                0x0028e4d8                nofit
+                0x0028e4dc                crushchange
+                0x0028e4e0                bombdamage
+                0x0028e4e4                bombspot
+                0x0028e4e8                bombsource
+                0x0028e4ec                usething
+                0x0028e4f0                aimslope
+                0x0028e4f4                attackrange
+                0x0028e4f8                la_damage
+                0x0028e4fc                shootz
+                0x0028e500                shootthing
+                0x0028e504                linetarget
+                0x0028e508                tmymove
+                0x0028e50c                tmxmove
+                0x0028e510                slidemo
+                0x0028e514                secondslideline
+                0x0028e518                bestslideline
+                0x0028e51c                secondslidefrac
+                0x0028e520                bestslidefrac
+                0x0028e524                numspechit
+                0x0028e528                ceilingline
+                0x0028e52c                tmdropoffz
+                0x0028e530                tmceilingz
+                0x0028e534                tmfloorz
+                0x0028e538                floatok
+                0x0028e53c                tmy
+                0x0028e540                tmx
+                0x0028e544                tmflags
+                0x0028e548                tmthing
+ .sbss          0x0028e54c       0x1c build/p_maputl.o
+                0x0028e54c                ptflags
+                0x0028e550                earlyout
+                0x0028e554                intercept_p
+                0x0028e558                lowfloor
+                0x0028e55c                openrange
+                0x0028e560                openbottom
+                0x0028e564                opentop
+ .sbss          0x0028e568        0xc build/p_mobj.o
+                0x0028e568                iquetail
+                0x0028e56c                iquehead
+                0x0028e570                test
+ .sbss          0x0028e574        0xc build/p_pspr.o
+                0x0028e574                bulletslope
+                0x0028e578                swingy
+                0x0028e57c                swingx
+ .sbss          0x0028e580       0x1c build/p_saveg.o
+                0x0028e58c                specials_e
+                0x0028e590                savegame_error
+                0x0028e594                savegamelength
+                0x0028e598                save_stream
+ .sbss          0x0028e59c       0x64 build/p_setup.o
+                0x0028e5a0                deathmatch_p
+                0x0028e5a4                rejectmatrix
+                0x0028e5a8                blocklinks
+                0x0028e5ac                bmaporgy
+                0x0028e5b0                bmaporgx
+                0x0028e5b4                blockmaplump
+                0x0028e5b8                blockmap
+                0x0028e5bc                bmapheight
+                0x0028e5c0                bmapwidth
+                0x0028e5c8                sides
+                0x0028e5cc                numsides
+                0x0028e5d0                lines
+                0x0028e5d4                numlines
+                0x0028e5d8                nodes
+                0x0028e5dc                numnodes
+                0x0028e5e0                subsectors
+                0x0028e5e4                numsubsectors
+                0x0028e5e8                sectors
+                0x0028e5ec                numsectors
+                0x0028e5f0                segs
+                0x0028e5f4                numsegs
+                0x0028e5f8                vertexes
+                0x0028e5fc                numvertexes
+ .sbss          0x0028e600       0x1c build/p_sight.o
+                0x0028e600                sightcounts
+                0x0028e608                t2y
+                0x0028e60c                t2x
+                0x0028e610                bottomslope
+                0x0028e614                topslope
+                0x0028e618                sightzstart
+ .sbss          0x0028e61c       0x18 build/p_spec.o
+                0x0028e624                numlinespecials
+                0x0028e628                levelTimeCount
+                0x0028e62c                levelTimer
+                0x0028e630                lastanim
+ .sbss          0x0028e634        0x4 build/p_switch.o
+                0x0028e634                numswitches
+ .sbss          0x0028e638        0x4 build/p_tick.o
+                0x0028e638                leveltime
+ .sbss          0x0028e63c        0x4 build/p_user.o
+                0x0028e63c                onground
+ .sbss          0x0028e640       0x1c build/r_bsp.o
+                0x0028e640                newend
+                0x0028e644                ds_p
+                0x0028e648                backsector
+                0x0028e64c                frontsector
+                0x0028e650                linedef
+                0x0028e654                sidedef
+                0x0028e658                curline
+ .sbss          0x0028e65c       0x6c build/r_data.o
+                0x0028e65c                spritememory
+                0x0028e660                texturememory
+                0x0028e664                flatmemory
+                0x0028e668                colormaps
+                0x0028e66c                spritetopoffset
+                0x0028e670                spriteoffset
+                0x0028e674                spritewidth
+                0x0028e678                texturetranslation
+                0x0028e67c                flattranslation
+                0x0028e680                texturecomposite
+                0x0028e684                texturecolumnofs
+                0x0028e688                texturecolumnlump
+                0x0028e68c                texturecompositesize
+                0x0028e690                textureheight
+                0x0028e694                texturewidthmask
+                0x0028e698                textures_hashtable
+                0x0028e69c                textures
+                0x0028e6a0                numtextures
+                0x0028e6a4                numspritelumps
+                0x0028e6a8                lastspritelump
+                0x0028e6ac                firstspritelump
+                0x0028e6b0                numpatches
+                0x0028e6b4                lastpatch
+                0x0028e6b8                firstpatch
+                0x0028e6bc                numflats
+                0x0028e6c0                lastflat
+                0x0028e6c4                firstflat
+ .sbss          0x0028e6c8       0x70 build/r_draw.o
+                0x0028e6c8                dscount
+                0x0028e6cc                ds_source
+                0x0028e6d0                ds_ystep
+                0x0028e6d4                ds_xstep
+                0x0028e6d8                ds_yfrac
+                0x0028e6dc                ds_xfrac
+                0x0028e6e0                ds_colormap
+                0x0028e6e4                ds_x2
+                0x0028e6e8                ds_x1
+                0x0028e6ec                ds_y
+                0x0028e6f0                translationtables
+                0x0028e6f4                dc_translation
+                0x0028e6f8                fuzzpos
+                0x0028e6fc                dccount
+                0x0028e700                dc_source
+                0x0028e704                dc_texturemid
+                0x0028e708                dc_iscale
+                0x0028e70c                dc_yh
+                0x0028e710                dc_yl
+                0x0028e714                dc_x
+                0x0028e718                dc_colormap
+                0x0028e720                viewwindowy
+                0x0028e724                viewwindowx
+                0x0028e728                viewheight
+                0x0028e72c                scaledviewwidth
+                0x0028e730                viewwidth
+                0x0028e734                viewimage
+ .sbss          0x0028e738       0x74 build/r_main.o
+                0x0028e738                setdetail
+                0x0028e73c                setblocks
+                0x0028e740                setsizeneeded
+                0x0028e744                spanfunc
+                0x0028e748                transcolfunc
+                0x0028e74c                fuzzcolfunc
+                0x0028e750                basecolfunc
+                0x0028e754                colfunc
+                0x0028e758                extralight
+                0x0028e75c                clipangle
+                0x0028e760                detailshift
+                0x0028e764                viewplayer
+                0x0028e768                viewsin
+                0x0028e76c                viewcos
+                0x0028e770                viewangle
+                0x0028e774                viewz
+                0x0028e778                viewy
+                0x0028e77c                viewx
+                0x0028e780                loopcount
+                0x0028e784                linecount
+                0x0028e788                sscount
+                0x0028e78c                framecount
+                0x0028e790                projection
+                0x0028e794                centeryfrac
+                0x0028e798                centerxfrac
+                0x0028e79c                centery
+                0x0028e7a0                centerx
+                0x0028e7a4                fixedcolormap
+                0x0028e7a8                viewangleoffset
+ .sbss          0x0028e7ac       0x28 build/r_plane.o
+                0x0028e7ac                baseyscale
+                0x0028e7b0                basexscale
+                0x0028e7b4                planeheight
+                0x0028e7b8                planezlight
+                0x0028e7bc                lastopening
+                0x0028e7c0                ceilingplane
+                0x0028e7c4                floorplane
+                0x0028e7c8                lastvisplane
+                0x0028e7cc                ceilingfunc
+                0x0028e7d0                floorfunc
+ .sbss          0x0028e7d4       0x84 build/r_segs.o
+                0x0028e7d4                maskedtexturecol
+                0x0028e7d8                walllights
+                0x0028e7dc                bottomstep
+                0x0028e7e0                bottomfrac
+                0x0028e7e4                topstep
+                0x0028e7e8                topfrac
+                0x0028e7ec                pixlowstep
+                0x0028e7f0                pixhighstep
+                0x0028e7f4                pixlow
+                0x0028e7f8                pixhigh
+                0x0028e7fc                worldlow
+                0x0028e800                worldhigh
+                0x0028e804                worldbottom
+                0x0028e808                worldtop
+                0x0028e80c                rw_bottomtexturemid
+                0x0028e810                rw_toptexturemid
+                0x0028e814                rw_midtexturemid
+                0x0028e818                rw_scalestep
+                0x0028e81c                rw_scale
+                0x0028e820                rw_distance
+                0x0028e824                rw_offset
+                0x0028e828                rw_centerangle
+                0x0028e82c                rw_stopx
+                0x0028e830                rw_x
+                0x0028e834                rw_angle1
+                0x0028e838                rw_normalangle
+                0x0028e83c                midtexture
+                0x0028e840                bottomtexture
+                0x0028e844                toptexture
+                0x0028e848                maskedtexture
+                0x0028e84c                markceiling
+                0x0028e850                markfloor
+                0x0028e854                segtextured
+ .sbss          0x0028e858        0xc build/r_sky.o
+                0x0028e858                skytexturemid
+                0x0028e85c                skytexture
+                0x0028e860                skyflatnum
+ .sbss          0x0028e864       0x34 build/r_things.o
+                0x0028e864                sprtopscreen
+                0x0028e868                spryscale
+                0x0028e86c                mceilingclip
+                0x0028e870                mfloorclip
+                0x0028e874                newvissprite
+                0x0028e878                vissprite_p
+                0x0028e87c                spritename
+                0x0028e880                maxframe
+                0x0028e884                numsprites
+                0x0028e888                sprites
+                0x0028e88c                spritelights
+                0x0028e890                pspriteiscale
+                0x0028e894                pspritescale
+ .sbss          0x0028e898        0x4 build/statdump.o
+ .sbss          0x0028e89c        0x4 build/st_lib.o
+                0x0028e89c                sttminus
+ .sbss          0x0028e8a0       0x58 build/st_stuff.o
+                0x0028e8f4                st_backing_screen
+ .sbss          0x0028e8f8       0x10 build/s_sound.o
+ .sbss          0x0028e908       0x10 build/v_video.o
+                0x0028e910                xlatab
+                0x0028e914                tinttable
+ .sbss          0x0028e918       0x98 build/wi_stuff.o
+ .sbss          0x0028e9b0        0x8 build/w_checksum.o
+ .sbss          0x0028e9b8        0xc build/w_wad.o
+                0x0028e9bc                numlumps
+                0x0028e9c0                lumpinfo
+ .sbss          0x0028e9c4        0x4 build/z_zone.o
+                0x0028e9c4                mainzone
+ .sbss          0x0028e9c8        0x4 build/i_input.o
+ .sbss          0x0028e9cc       0x14 build/i_video.o
+                0x0028e9cc                usegamma
+                0x0028e9d0                screenvisible
+                0x0028e9d4                screensaver_mode
+                0x0028e9d8                I_VideoBuffer
+                0x0028e9dc                usemouse
+ .sbss          0x0028e9e0        0x4 build/doomgeneric.o
+                0x0028e9e0                DG_ScreenBuffer
+ .sbss          0x0028e9e4        0x4 ../minlibc//libminlibc.a(errno.o)
+                0x0028e9e4                errno
+ .sbss          0x0028e9e8        0x4 ../minlibc//libminlibc.a(fake_files.o)
+                0x0028e9e8                CUR_POS
+ .sbss          0x0028e9ec        0x4 ../minlibc//libminlibc.a(malloc.o)
+                0x0028e9ec                malloc_options
 
 .riscv.attributes
                 0x00000000       0x25

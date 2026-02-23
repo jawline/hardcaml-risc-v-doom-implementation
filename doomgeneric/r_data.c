@@ -490,11 +490,13 @@ void R_InitTextures (void)
     nummappatches = LONG ( *((int *)names) );
     name_p = names + 4;
     patchlookup = Z_Malloc(nummappatches*sizeof(*patchlookup), PU_STATIC, NULL);
+    printf("Allocating num patches: %i\n", nummappatches);
 
     for (i = 0; i < nummappatches; i++)
     {
         M_StringCopy(name, name_p + i * 8, sizeof(name));
         patchlookup[i] = W_CheckNumForName(name);
+        printf("%.8s -> %i (%i)\n", name, i, patchlookup[i]);
     }
     W_ReleaseLumpName(DEH_String("PNAMES"));
 
@@ -584,13 +586,14 @@ void R_InitTextures (void)
 
 	for (j=0 ; j<texture->patchcount ; j++, mpatch++, patch++)
 	{
+      printf("Texture patch %i\n", j);
 	    patch->originx = SHORT(mpatch->originx);
 	    patch->originy = SHORT(mpatch->originy);
 	    patch->patch = patchlookup[SHORT(mpatch->patch)];
 	    if (patch->patch == -1)
 	    {
-		I_Error ("R_InitTextures: Missing patch in texture %s",
-			 texture->name);
+		I_Error ("R_InitTextures: Missing patch in texture %s %i %i",
+			 texture->name, mpatch->patch, patch->patch);
 	    }
 	}		
 	texturecolumnlump[i] = Z_Malloc (texture->width*sizeof(**texturecolumnlump), PU_STATIC,0);

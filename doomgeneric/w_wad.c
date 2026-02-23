@@ -270,6 +270,7 @@ int W_CheckNumForName (char* name)
 
     if (lumphash != NULL)
     {
+        printf("Lump hash table lookup for %s\n", name);
         int hash;
         
         // We do! Excellent.
@@ -567,6 +568,7 @@ void W_GenerateHashTable(void)
             unsigned int hash;
 
             hash = W_LumpNameHash(lumpinfo[i].name) % numlumps;
+            printf("Lump name for hash table: %.8s\n", lumpinfo[i].name);
 
             // Hook into the hash table
 

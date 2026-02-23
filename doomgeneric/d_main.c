@@ -1736,6 +1736,8 @@ void D_DoomMain (void)
 			D_StartTitle ();                // start up intro loop
     }
 
+    printf("Loaded - entering DoomLoop\n");
+
     D_DoomLoop ();
 }
 

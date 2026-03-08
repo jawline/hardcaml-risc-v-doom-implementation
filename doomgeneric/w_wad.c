@@ -567,8 +567,6 @@ void W_GenerateHashTable(void)
             unsigned int hash;
 
             hash = W_LumpNameHash(lumpinfo[i].name) % numlumps;
-            printf("Lump name for hash table: %.8s\n", lumpinfo[i].name);
-
             // Hook into the hash table
 
             lumpinfo[i].next = lumphash[hash];

@@ -114,8 +114,6 @@ int             startloadgame;
 
 boolean		advancedemo;
 
-// Store demo, do not accept any inputs
-boolean         storedemo;
 
 // "BFG Edition" version of doom2.wad does not include TITLEPIC.
 boolean         bfgedition;
@@ -139,11 +137,7 @@ void D_CheckNetGame(void);
 //
 void D_ProcessEvents (void)
 {
-    event_t*	ev;
-	
-    // IF STORE DEMO, DO NOT ACCEPT INPUT
-    if (storedemo)
-        return;
+    event_t*	ev;	
 	
     while ((ev = D_PopEvent()) != NULL)
     {
@@ -1680,8 +1674,8 @@ void D_DoomMain (void)
     // Moved this here so that MAP01 isn't constantly looked up
     // in the main loop.
 
-    if (gamemode == commercial && W_CheckNumForName("map01") < 0)
-        storedemo = true;
+    //if (gamemode == commercial && W_CheckNumForName("map01") < 0)
+    // TODO: Flag this
 
     if (M_CheckParmWithArgs("-statdump", 1))
     {

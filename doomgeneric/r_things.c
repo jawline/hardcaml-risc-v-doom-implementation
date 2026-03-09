@@ -298,6 +298,7 @@ void R_InitSprites (char** namelist)
 	negonearray[i] = -1;
     }
 	
+    printf("Init sprite defs\n");
     R_InitSpriteDefs (namelist);
 }
 

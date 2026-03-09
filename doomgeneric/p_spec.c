@@ -144,6 +144,7 @@ void P_InitPicAnims (void)
 {
     int		i;
 
+    printf("Init Animation\n");
     
     //	Init animation
     lastanim = anims;

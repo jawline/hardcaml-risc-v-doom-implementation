@@ -114,6 +114,7 @@ void P_InitSwitchList(void)
 		
     for (index = 0,i = 0;i < MAXSWITCHES;i++)
     {
+            printf("Init switch %i\n", index);
 	if (!alphSwitchList[i].episode)
 	{
 	    numswitches = index/2;
@@ -123,18 +124,6 @@ void P_InitSwitchList(void)
 		
 	if (alphSwitchList[i].episode <= episode)
 	{
-#if 0	// UNUSED - debug?
-	    int		value;
-			
-	    if (R_CheckTextureNumForName(alphSwitchList[i].name1) < 0)
-	    {
-		I_Error("Can't find switch texture '%s'!",
-			alphSwitchList[i].name1);
-		continue;
-	    }
-	    
-	    value = R_TextureNumForName(alphSwitchList[i].name1);
-#endif
 	    switchlist[index++] = R_TextureNumForName(DEH_String(alphSwitchList[i].name1));
 	    switchlist[index++] = R_TextureNumForName(DEH_String(alphSwitchList[i].name2));
 	}

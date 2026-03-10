@@ -142,4 +142,5 @@ void send_dma_l(char* msg, int len) {
 
 void runtime_write(size_t len, char *buffer) {
   send_dma_l(buffer, len);
+  send_dma_l(buffer, 0); // The zero write makes sure we've flushed
 }

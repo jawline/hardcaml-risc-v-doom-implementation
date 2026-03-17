@@ -163,6 +163,7 @@ void R_ExecuteSetViewSize (void);
 
 void D_Display (void)
 {
+    //printf("Call to D_Display\n");
     static  boolean		viewactivestate = false;
     static  boolean		menuactivestate = false;
     static  boolean		inhelpscreensstate = false;
@@ -297,6 +298,7 @@ void D_Display (void)
     if (!wipe)
     {
 	I_FinishUpdate ();              // page flip or blit buffer
+         //printf("Normal update, early return\n");
 	return;
     }
     
@@ -307,12 +309,16 @@ void D_Display (void)
 
     do
     {
+            //printf("Do loop !done start\n", !done);
 	do
 	{
 	    nowtime = I_GetTime ();
 	    tics = nowtime - wipestart;
-            I_Sleep(1);
+      //printf("Tics check %i\n", tics);
+      I_Sleep(1);
+      //printf("Exit I_Sleep\n");
 	} while (tics <= 0);
+  //printf("Start draw\n");
         
 	wipestart = nowtime;
 	done = wipe_ScreenWipe(wipe_Melt
@@ -399,6 +405,7 @@ boolean D_GrabMouseCallback(void)
 
 void doomgeneric_Tick()
 {
+    //printf("Start of tick function\n");
     // frame syncronous IO operations
     I_StartFrame ();
 
@@ -411,6 +418,8 @@ void doomgeneric_Tick()
     {
         D_Display ();
     }
+
+    //printf("Tick finished\n");
 }
 
 //
@@ -427,12 +436,17 @@ void D_DoomLoop (void)
                " may cause demos and network games to get out of sync.\n");
     }
 
+    printf("Started D_DoomLoop\n");
+
     if (demorecording)
     	G_BeginRecording ();
 
     main_loop_started = true;
 
+    printf("TryRunTics\n");
     TryRunTics();
+
+    printf("SetWindowTitle\n");
 
     I_SetWindowTitle(gamedescription);
     I_GraphicsCheckCommandLine();
@@ -450,7 +464,11 @@ void D_DoomLoop (void)
         wipegamestate = gamestate;
     }
 
+    printf("First tick\n");
+
     doomgeneric_Tick();
+
+    printf("End of first tick\n");
 }
 
 
@@ -722,77 +740,27 @@ void D_IdentifyVersion(void)
     // any known IWAD name, we may have a dilemma.  Try to 
     // identify by its contents.
 
-    if (gamemission == none)
-    {
-        unsigned int i;
-
-        for (i=0; i<numlumps; ++i)
-        {
-            if (!strncasecmp(lumpinfo[i].name, "MAP01", 8))
-            {
-                gamemission = doom2;
-                break;
-            } 
-            else if (!strncasecmp(lumpinfo[i].name, "E1M1", 8))
-            {
-                gamemission = doom;
-                break;
-            }
-        }
-
-        if (gamemission == none)
-        {
-            // Still no idea.  I don't think this is going to work.
-
-            I_Error("Unknown or invalid IWAD file.");
-        }
-    }
+    gamemission = doom;
+    
 
     // Make sure gamemode is set up correctly
 
-    if (logical_gamemission == doom)
+    // Doom 1.  But which version?
+
+    if (W_CheckNumForName("E4M1") > 0)
     {
-        // Doom 1.  But which version?
+        // Ultimate Doom
 
-        if (W_CheckNumForName("E4M1") > 0)
-        {
-            // Ultimate Doom
-
-            gamemode = retail;
-        } 
-        else if (W_CheckNumForName("E3M1") > 0)
-        {
-            gamemode = registered;
-        }
-        else
-        {
-            gamemode = shareware;
-        }
+        gamemode = retail;
+    } 
+    else if (W_CheckNumForName("E3M1") > 0)
+    {
+        gamemode = registered;
     }
     else
     {
-        int p;
-
-        // Doom 2 of some kind.
-        gamemode = commercial;
-
-        // We can manually override the gamemission that we got from the
-        // IWAD detection code. This allows us to eg. play Plutonia 2
-        // with Freedoom and get the right level names.
-
-        //!
-        // @arg <pack>
-        //
-        // Explicitly specify a Doom II "mission pack" to run as, instead of
-        // detecting it based on the filename. Valid values are: "doom2",
-        // "tnt" and "plutonia".
-        //
-        p = M_CheckParmWithArgs("-pack", 1);
-        if (p > 0)
-        {
-            SetMissionForPackName(myargv[p + 1]);
-        }
-    }
+        gamemode = shareware;
+    } 
 }
 
 // Set the gamedescription string
@@ -1169,37 +1137,19 @@ void D_DoomMain (void)
 
     DEH_printf("Z_Init: Init zone memory allocation daemon. \n");
     Z_Init ();
+
+    printf("Done with zone init\n");
 	
     nomonsters = M_CheckParm ("-nomonsters");
     respawnparm = M_CheckParm ("-respawn");
     fastparm = M_CheckParm ("-fast");
     devparm = M_CheckParm ("-devparm");
 
+    printf("Done with check parms\n");
+
     I_DisplayFPSDots(devparm);
 
-    //!
-    // @category net
-    // @vanilla
-    //
-    // Start a deathmatch game.
-    //
-
-    if (M_CheckParm ("-deathmatch"))
-	deathmatch = 1;
-
-    //!
-    // @category net
-    // @vanilla
-    //
-    // Start a deathmatch 2.0 game.  Weapons do not stay in place and
-    // all items respawn after 30 seconds.
-    //
-
-    if (M_CheckParm ("-altdeath"))
-	deathmatch = 2;
-
-    if (devparm)
-	DEH_printf(D_DEVSTR);
+    printf("Done with DisplayFPSDots\n");
     
     // find which dir to use for config files
     {
@@ -1208,6 +1158,8 @@ void D_DoomMain (void)
         M_SetConfigDir(NULL);
     }
 
+    printf("Done with M_SetConfigDir\n");
+
     //!
     // @arg <x>
     // @vanilla
@@ -1215,6 +1167,8 @@ void D_DoomMain (void)
     // Turbo mode.  The player's speed is multiplied by x%.  If unspecified,
     // x defaults to 200.  Values are rounded up to 10 and down to 400.
     //
+    
+
 
     if ( (p=M_CheckParm ("-turbo")) )
     {
@@ -1234,6 +1188,8 @@ void D_DoomMain (void)
 	sidemove[0] = sidemove[0]*scale/100;
 	sidemove[1] = sidemove[1]*scale/100;
     }
+
+    printf("Done with turbo check\n");
     
     // init subsystems
     DEH_printf("V_Init: allocate screens.\n");
@@ -1501,13 +1457,8 @@ void D_DoomMain (void)
     I_CheckIsScreensaver();
     I_InitTimer();
     I_InitJoystick();
-    I_InitSound(true);
+    I_InitSound(false);
     I_InitMusic();
-
-#ifdef FEATURE_MULTIPLAYER
-    printf ("NET_Init: Init network subsystem.\n");
-    NET_Init ();
-#endif
 
     // Initial netgame startup. Connect to server etc.
     D_ConnectNetGame();
@@ -1589,10 +1540,12 @@ void D_DoomMain (void)
     // (Doom 2)
     //
 
+    printf("Checking warp command\n");
     p = M_CheckParmWithArgs("-warp", 1);
 
     if (p)
     {
+        printf("Got warp command!\n");
         if (gamemode == commercial)
             startmap = atoi (myargv[p+1]);
         else
@@ -1733,5 +1686,7 @@ void D_DoomMain (void)
     printf("Loaded - entering DoomLoop\n");
 
     D_DoomLoop ();
+
+    printf("Exit D_DoomLoop\n");
 }
 

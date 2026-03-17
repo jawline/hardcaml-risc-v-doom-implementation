@@ -6,6 +6,7 @@
  */
 #include <ctype.h>
 #include <strings.h>
+#include <stdio.h>
 
 int strcasecmp(const char *s1, const char *s2)
 {

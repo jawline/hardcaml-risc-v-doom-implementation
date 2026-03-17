@@ -261,10 +261,12 @@ void I_UpdateNoBlit (void)
 
 //
 // I_FinishUpdate
-//
+pixel_t* DG_ScreenBuffer = (pixel_t*) 134217728;
 
 void I_FinishUpdate (void)
 {
+    //printf("Starting call to I_FinishUpdate\n");
+
     int y;
     int x_offset, y_offset, x_offset_end;
     unsigned char *line_in, *line_out;
@@ -281,6 +283,7 @@ void I_FinishUpdate (void)
     /* DRAW SCREEN */
     line_in  = (unsigned char *) I_VideoBuffer;
     line_out = (unsigned char *) DG_ScreenBuffer;
+    printf("Screen: %p\n", DG_ScreenBuffer);
 
     y = SCREENHEIGHT;
 
@@ -312,6 +315,8 @@ void I_FinishUpdate (void)
     }
 
 	DG_DrawFrame();
+
+  //printf("Ending call to I_FinishUpdate\n");
 }
 
 //

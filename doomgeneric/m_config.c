@@ -2043,9 +2043,11 @@ float M_GetFloatVariable(char *name)
 static char *GetDefaultConfigDir(void)
 {
     char *result = (char *)malloc(2);
+    printf("Malloc Returned\n");
     result[0] = '.';
     result[1] = '\0';
 
+    printf("Returning result\n");
     return result;
 }
 
@@ -2060,13 +2062,16 @@ void M_SetConfigDir(char *dir)
 {
     // Use the directory that was passed, or find the default.
 
+    printf("Start of M_SetConfigDir\n");
     if (dir != NULL)
     {
         configdir = dir;
     }
     else
     {
+        printf("Call to GetDefaultConfigDir\n");
         configdir = GetDefaultConfigDir();
+        printf("Done\n");
     }
 
     if (strcmp(configdir, "") != 0)
@@ -2076,6 +2081,7 @@ void M_SetConfigDir(char *dir)
 
     // Make the directory if it doesn't already exist:
 
+    printf("Call to M_MakeDirectory\n");
     M_MakeDirectory(configdir);
 }
 

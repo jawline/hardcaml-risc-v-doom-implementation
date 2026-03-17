@@ -637,6 +637,8 @@ void G_DoLoadLevel (void)
         skytexture = R_TextureNumForName(skytexturename);
     }
 
+    printf("After sky flat naem lookup\n");
+
     levelstarttic = gametic;        // for time calculation
     
     if (wipegamestate == GS_LEVEL) 
@@ -651,6 +653,8 @@ void G_DoLoadLevel (void)
 	    players[i].playerstate = PST_REBORN; 
 	memset (players[i].frags,0,sizeof(players[i].frags)); 
     } 
+
+    printf("Prior to P_SetupLevel\n");
 		 
     P_SetupLevel (gameepisode, gamemap, 0, gameskill);    
     displayplayer = consoleplayer;		// view the guy you are playing    
@@ -670,6 +674,8 @@ void G_DoLoadLevel (void)
     {
         players[consoleplayer].message = "Press escape to quit.";
     }
+
+    printf("here at the end\n");
 } 
 
 static void SetJoyButtons(unsigned int buttons_mask)

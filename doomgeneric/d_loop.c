@@ -135,17 +135,27 @@ static int GetAdjustedTime(void)
 
 static boolean BuildNewTic(void)
 {
+    //printf("BuildNewTic\n");
     int	gameticdiv;
     ticcmd_t cmd;
 
     gameticdiv = gametic/ticdup;
 
+    //printf("I_StartTic\n");
+
     I_StartTic ();
+
+    //printf("Processing Events\n");
     loop_interface->ProcessEvents();
+
+
+    //printf("RunMenu\n");
 
     // Always run the menu
 
     loop_interface->RunMenu();
+
+    //printf("Rest\n");
 
     if (drone)
     {
@@ -176,15 +186,6 @@ static boolean BuildNewTic(void)
     //printf ("mk:%i ",maketic);
     memset(&cmd, 0, sizeof(ticcmd_t));
     loop_interface->BuildTiccmd(&cmd, maketic);
-
-#ifdef FEATURE_MULTIPLAYER
-
-    if (net_client_connected)
-    {
-        NET_CL_SendTiccmd(&cmd, maketic);
-    }
-
-#endif
     ticdata[maketic % BACKUPTICS].cmds[localplayer] = cmd;
     ticdata[maketic % BACKUPTICS].ingame[localplayer] = true;
 
@@ -202,6 +203,7 @@ int      lasttime;
 
 void NetUpdate (void)
 {
+    //printf("Start of NetUpdate\n");
     int nowtime;
     int newtics;
     int	i;
@@ -212,14 +214,7 @@ void NetUpdate (void)
     if (singletics)
         return;
 
-#ifdef FEATURE_MULTIPLAYER
-
-    // Run network subsystems
-
-    NET_CL_Run();
-    NET_SV_Run();
-
-#endif
+    //printf("CheckTime\n");
 
     // check time
     nowtime = GetAdjustedTime() / ticdup;
@@ -240,13 +235,17 @@ void NetUpdate (void)
 
     // build new ticcmds for console player
 
+    //printf("NewTics: %i\n", newtics);
     for (i=0 ; i<newtics ; i++)
     {
+        //printf("Tic\n");
         if (!BuildNewTic())
         {
             break;
         }
     }
+
+    //printf("End of NetUpdate\n");
 }
 
 static void D_Disconnected(void)
@@ -315,6 +314,7 @@ void D_StartGameLoop(void)
 static void BlockUntilStart(net_gamesettings_t *settings,
                             netgame_startup_callback_t callback)
 {
+    printf("BlockUntilStart\n");
     while (!NET_CL_GetSettings(settings))
     {
         NET_CL_Run();
@@ -730,6 +730,8 @@ void TryRunTics (void)
         NetUpdate ();
     }
 
+    //printf("Past the NetUpdate\n");
+
     lowtic = GetLowTic();
 
     availabletics = lowtic - gametic/ticdup;
@@ -759,6 +761,8 @@ void TryRunTics (void)
         }
     }
 
+    //printf("Past the tics to run\n");
+
     if (counts < 1)
 	counts = 1;
 
@@ -766,27 +770,44 @@ void TryRunTics (void)
 
     while (!PlayersInGame() || lowtic < gametic/ticdup + counts)
     {
+        //printf("Start of loop\n");
+
+        //printf("Going to do NetUpdate\n");
 	NetUpdate ();
+
+  //printf("Get low tic\n");
 
         lowtic = GetLowTic();
 
-	if (lowtic < gametic/ticdup)
+        //printf("Got low tic\n");
+
+	if (lowtic < gametic/ticdup) {
+         // printf("LowTic Error\n");
 	    I_Error ("TryRunTics: lowtic < gametic");
+  }
 
         // Don't stay in this loop forever.  The menu is still running,
         // so return to update the screen
 
-	if (I_GetTime() / ticdup - entertic > 0)
+  //printf("HERE!\n");
+  uint32_t time = I_GetTime();
+  //printf("GOT TIME\n");
+	if (time / ticdup - entertic > 0)
 	{
+      //printf("Exiting out - waited too long\n");
 	    return;
 	}
 
-        I_Sleep(1);
+       // printf("PlayersInGame loop\n");
+        I_Sleep(20);
     }
+
+    //printf("After PlayersInGame %i\n", counts);
 
     // run the count * ticdup dics
     while (counts--)
     {
+        //printf("Logic\n");
         ticcmd_set_t *set;
 
         if (!PlayersInGame())
@@ -803,6 +824,7 @@ void TryRunTics (void)
 
 	for (i=0 ; i<ticdup ; i++)
 	{
+         // printf("Ticdup\n");
             if (gametic/ticdup > lowtic)
                 I_Error ("gametic>lowtic");
 
@@ -816,7 +838,9 @@ void TryRunTics (void)
             TicdupSquash(set);
 	}
 
+  //printf("NetUpdate\n");
 	NetUpdate ();	// check for new console commands
+                //printf("Finished with NetUpdate\n");
     }
 }
 

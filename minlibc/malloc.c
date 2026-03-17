@@ -286,8 +286,6 @@ static caddr_t	malloc_brk;
 /* One location cache for free-list holders. */
 static struct pgfree *px;
 
-/* Compile-time options. */
-char		*malloc_options;
 
 /* Name of the current public function. */
 static char	*malloc_func;
@@ -643,35 +641,25 @@ malloc_init(void)
 	char		*p; // , b[64];
 	int		i, j, save_errno = errno;
 
+  printf("Malloc lock init\n");
+
 	_MALLOC_LOCK_INIT();
+
+  printf("took lock\n");
 
 #ifdef MALLOC_EXTRA_SANITY
 	malloc_junk = 1;
 #endif /* MALLOC_EXTRA_SANITY */
 
 	for (i = 0; i < 3; i++) {
+    printf("i loop: %i\n", i);
 		switch (i) {
-	/*	case 0:
-			j = readlink("/etc/malloc.conf", b, sizeof b - 1);
-			if (j <= 0)
-				continue;
-			b[j] = '\0';
-			p = b;
-			break;
-		case 1:
-			if (issetugid() == 0)
-				p = getenv("MALLOC_OPTIONS");
-			else
-				continue;
-			break;
-	*/	case 2:
-			p = malloc_options;
-			break;
 		default:
 			p = NULL;
 		}
 
 		for (; p != NULL && *p != '\0'; p++) {
+      printf("p: %p\n", p);
 			switch (*p) {
 			case '>':
 				malloc_cache <<= 1;
@@ -765,29 +753,34 @@ malloc_init(void)
 		}
 	}
 
+  printf("utrace call\n");
+
 	UTRACE(0, 0, 0);
 
 	/*
 	 * We want junk in the entire allocation, and zero only in the part
 	 * the user asked for.
 	 */
-	if (malloc_zero)
+	if (malloc_zero) {
 		malloc_junk = 1;
+    printf("malloc junk\n");
+  }
 
-#ifdef MALLOC_STATS
-	if (malloc_stats && (atexit(malloc_exit) == -1))
-		wrtwarning("atexit(2) failed."
-		    "  Will not be able to dump malloc stats on exit");
-#endif /* MALLOC_STATS */
+  printf("malloc page_dir\n");
 
 	/* Allocate one page for the page directory. */
 	page_dir = (struct pginfo **)MMAP(malloc_pagesize);
+
+  printf("mmap done\n");
 
 	if (page_dir == MAP_FAILED) {
 		wrterror("mmap(2) failed, check limits");
 		errno = ENOMEM;
 		return;
 	}
+
+  printf("doing PDI off stuff\n");
+
 	pdi_off = (malloc_pagesize - sizeof(struct pdinfo)) & ~(malloc_minsize - 1);
 	pdi_mod = pdi_off / sizeof(struct pginfo *);
 
@@ -804,6 +797,7 @@ malloc_init(void)
 		malloc_cache++;
 	malloc_cache <<= malloc_pageshift;
 	errno = save_errno;
+  printf("Done with malloc init\n");
 }
 
 /*
@@ -1198,11 +1192,16 @@ imalloc(size_t size)
 	void   *result;
 	int		ptralloc = 0;
 
-	if (!malloc_started)
+  printf ("imalloc entry\n");
+	if (!malloc_started) {
+    printf("first time malloc is run - malloc init\n");
 		malloc_init();
+  }
 
-	if (suicide)
+	if (suicide) {
+     printf("suicide\n");
 		abort();
+  }
 
 	/* does not matter if malloc_bytes fails */
 	if (px == NULL)
@@ -1213,17 +1212,22 @@ imalloc(size_t size)
 		size = malloc_pagesize;
 	}
 	if ((size + malloc_pagesize) < size) {	/* Check for overflow */
+    printf("malloc overflow\n");
 		result = NULL;
 		errno = ENOMEM;
-	} else if (size <= malloc_maxsize)
+	} else if (size <= malloc_maxsize) 
 		result = malloc_bytes(size);
 	else
 		result = malloc_pages(size);
 
-	if (malloc_abort == 1 && result == NULL)
+	if (malloc_abort == 1 && result == NULL) {
+    printf("allocation failed\n");
 		wrterror("allocation failed");
-	if (malloc_zero && result != NULL)
+  }
+
+	if (malloc_zero && result != NULL) {
 		memset(result, 0, size);
+  }
 
 	if (result && ptralloc)
 		return ((char *) result + PTR_GAP);
@@ -1864,12 +1868,14 @@ malloc(size_t size)
   printf("imalloc-\n");
 	UTRACE(0, size, r);
 	malloc_active--;
+  printf("malloc unlock\n");
 	_MALLOC_UNLOCK();
 	if (malloc_xmalloc && r == NULL) {
-		wrterror("out of memory");
+		printf("out of memory");
 		errno = ENOMEM;
 	}
-	return (r);
+  printf("malloc finished\n");
+	return r;
 }
 
 void

@@ -750,6 +750,8 @@ P_SetupLevel
     int		i;
     char	lumpname[9];
     int		lumpnum;
+
+    printf("Start of PSETUPLEVEL\n");
 	
     totalkills = totalitems = totalsecret = wminfo.maxfrags = 0;
     wminfo.partime = 180;
@@ -764,33 +766,30 @@ P_SetupLevel
     players[consoleplayer].viewz = 1; 
 
     // Make sure all sounds are stopped before Z_FreeTags.
-    S_Start ();			
+    //printf("call to S_Start\n");
+    //S_Start ();			
 
     Z_FreeTags (PU_LEVEL, PU_PURGELEVEL-1);
+    printf("After Z_FreeTags\n");
 
     // UNUSED W_Profile ();
     P_InitThinkers ();
+
+    printf("P_InitThinkers\n");
 	   
-    // find map name
-    if ( gamemode == commercial)
-    {
-	if (map<10)
-	    DEH_snprintf(lumpname, 9, "map0%i", map);
-	else
-	    DEH_snprintf(lumpname, 9, "map%i", map);
-    }
-    else
-    {
-	lumpname[0] = 'E';
-	lumpname[1] = '0' + episode;
-	lumpname[2] = 'M';
-	lumpname[3] = '0' + map;
-	lumpname[4] = 0;
-    }
+	  lumpname[0] = 'E';
+	  lumpname[1] = '0' + episode;
+	  lumpname[2] = 'M';
+	  lumpname[3] = '0' + map;
+	  lumpname[4] = 0;
+
+    printf("Getting lump for name here: %s\n", lumpname);
 
     lumpnum = W_GetNumForName (lumpname);
 	
     leveltime = 0;
+
+    printf("Actual load bit\n");
 	
     // note: most of this ordering is important	
     P_LoadBlockMap (lumpnum+ML_BLOCKMAP);

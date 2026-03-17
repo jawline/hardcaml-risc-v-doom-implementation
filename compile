@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euvx
 cd minlibc
+./regenerate_wad
 make clean
 make
 cd ../doomgeneric

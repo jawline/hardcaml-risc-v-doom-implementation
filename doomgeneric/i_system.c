@@ -105,6 +105,7 @@ static byte *AutoAllocMemory(int *size, int default_ram, int min_ram)
 
     while (zonemem == NULL)
     {
+        printf("SPIN trying to malloc\n");
         // We need a reasonable minimum amount of RAM to start.
 
         if (default_ram < min_ram)
@@ -336,6 +337,7 @@ static boolean already_quitting = false;
 
 void I_Error (char *error, ...)
 {
+    printf("Enter I_Error %b\n", already_quitting);
     char msgbuf[512];
     va_list argptr;
     atexit_listentry_t *entry;
@@ -350,6 +352,7 @@ void I_Error (char *error, ...)
     }
     else
     {
+        printf("Set already quitting to TRUE\n");
         already_quitting = true;
     }
 

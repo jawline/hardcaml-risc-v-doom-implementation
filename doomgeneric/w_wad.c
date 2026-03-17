@@ -276,9 +276,12 @@ int W_CheckNumForName (char* name)
         // We do! Excellent.
 
         hash = W_LumpNameHash(name) % numlumps;
+
+        printf("Hash key for name %s %i\n", name, hash);
         
         for (lump_p = lumphash[hash]; lump_p != NULL; lump_p = lump_p->next)
         {
+            printf("Test: %s %s\n", lump_p->name, name);
             if (!strncasecmp(lump_p->name, name, 8))
             {
                 return lump_p - lumpinfo;
@@ -553,6 +556,7 @@ void W_GenerateHashTable(void)
 
     if (lumphash != NULL)
     {
+        printf("Lump hash already existed?\n");
         Z_Free(lumphash);
     }
 
@@ -561,6 +565,8 @@ void W_GenerateHashTable(void)
     {
         lumphash = Z_Malloc(sizeof(lumpinfo_t *) * numlumps, PU_STATIC, NULL);
         memset(lumphash, 0, sizeof(lumpinfo_t *) * numlumps);
+        
+        printf("ZMalloc for hash table\n");
 
         for (i=0; i<numlumps; ++i)
         {
@@ -568,6 +574,7 @@ void W_GenerateHashTable(void)
 
             hash = W_LumpNameHash(lumpinfo[i].name) % numlumps;
             // Hook into the hash table
+            printf("Adding lump %s hash %i\n", lumpinfo[i].name, hash);
 
             lumpinfo[i].next = lumphash[hash];
             lumphash[hash] = &lumpinfo[i];

@@ -107,15 +107,18 @@ int     runtime_memprotect(void *addr, size_t length, int prot) {
         printf("mprotect ignored - this CPU does not support it\n");
 }
 
-void* mmap_start_address = (void*) 67108864;
+extern unsigned int _program_end;
+void* mmap_start_address = (void*) &_program_end;
 
 void   *runtime_alloc(void *start, size_t length, int prot) {
-        printf("runtime alloc called\n");
+  printf("runtime alloc called\n");
   void* last = mmap_start_address;
-  memset(last, 0, length);
-  mmap_start_address += length;
 
-        printf("runtime alloc end\n");
+  printf("Zeroing %i\n", length);
+  memset(last, 0, length);
+
+  mmap_start_address += length;
+  printf("runtime alloc end\n");
   return last;
 }
 

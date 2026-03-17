@@ -27,8 +27,8 @@
 #include "m_misc.h"
 #include "m_argv.h"  // haleyjd 20110212: warning fix
 
-int		myargc;
-char**		myargv;
+int		myargc = 3;
+char*		myargv[] = { "FAKE_EXE_PATH" , "-warp", "01", 0};
 
 
 
@@ -44,13 +44,19 @@ char**		myargv;
 int M_CheckParmWithArgs(char *check, int num_args)
 {
     int i;
+    printf ("Check parm with args %i %i\n", myargc, num_args);
 
     for (i = 1; i < myargc - num_args; i++)
     {
-	if (!strcasecmp(check, myargv[i]))
+           
+            printf("Check %i %s %s\n", i, check, myargv[i]);
+	if (!strcasecmp(check, myargv[i])) {
+      printf("hit\n");
 	    return i;
+  }
     }
 
+    printf("Not hit\n");
     return 0;
 }
 
@@ -212,8 +218,8 @@ static void LoadResponseFile(int argv_index)
         ++newargc;
     }
 
-    myargv = newargv;
-    myargc = newargc;
+    //myargv = newargv;
+    //myargc = newargc;
 
 #if 0
     // Disabled - Vanilla Doom does not do this.

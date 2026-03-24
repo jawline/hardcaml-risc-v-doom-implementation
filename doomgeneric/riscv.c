@@ -13,40 +13,44 @@ void DG_Init()
   printf("Init called\n");  
 }
 
+uint64_t get_time_ms(void) {
+    uint32_t low, high, temp;
+    
+    __asm__ __volatile__ (
+        "1:\n"
+        "rdtimeh %0\n"   
+        "rdtime  %1\n"   
+        "rdtimeh %2\n"   
+        "bne %0, %2, 1b\n" 
+        : "=&r"(high), "=&r"(low), "=&r"(temp)
+        : /* no inputs */
+        : "memory" 
+    );
+
+    uint64_t ns = ((uint64_t)high << 32) | low;
+    uint64_t ms = ns / 1000000;
+    return ms;
+}
+
 
 uint32_t* framebuffer_ptr = (uint32_t*) 134217728;
 
-void DG_DrawFrame()
-{ 
-        printf("DG_DrawFrame\n");
-  // Since we hard code DG_ScreenBuffer to our frame buffer address we do not need to memcpy, saves some cache thrashing.
-  //memcpy(framebuffer_ptr, DG_ScreenBuffer, DOOMGENERIC_RESX * DOOMGENERIC_RESY * sizeof(uint32_t));
-}
-
+uint32_t draws  = 0;
 uint32_t last = 0;
 
-uint64_t get_time_ms(void) {
-    last += 250;
-
-    return last;
-    //uint32_t low, high, temp;
-
-    //printf("Enter get_time_ms\n");
-
-    //__asm__ __volatile__ (
-    //    "1:\n"
-    //    "rdtimeh %0\n"   // Read upper 32 bits
-    //    "rdtime  %1\n"   // Read lower 32 bits
-    //    "rdtimeh %2\n"   // Read upper 32 bits again
-    //    "bne %0, %2, 1b"  // If high word changed during read, retry
-    //    : "=&r"(high), "=&r"(low), "=&r"(temp)
-    //);
-
-    //printf("Leave get_time_ms\n");
-
-    //uint64_t ns = ((uint64_t)high << 32) | low;
-    //return ns / 1000000; // Convert nanoseconds to milliseconds
+void DG_DrawFrame()
+{ 
+  // Since we hard code DG_ScreenBuffer to our frame buffer address we do not need to memcpy, saves some cache thrashing.
+  //memcpy(framebuffer_ptr, DG_ScreenBuffer, DOOMGENERIC_RESX * DOOMGENERIC_RESY * sizeof(uint32_t));
+  uint32_t next = get_time_ms();
+  draws++;
+  if (next - last > 1000) {
+          printf("FPS: %i\n", draws);
+          draws = 0;
+          last = next;
+  }
 }
+
 
 void DG_SleepMs(uint32_t ms)
 {
@@ -56,6 +60,7 @@ void DG_SleepMs(uint32_t ms)
  //while (get_time_ms() < end) {
  //}
  //printf("Exit DG_SleepMs\n");
+ printf("sleep %i\n", ms);
  return;
 }
 
@@ -66,9 +71,15 @@ uint32_t DG_GetTicksMs()
   return get_time_ms();
 }
 
+bool flip = false;
+
+
 int DG_GetKey(int* pressed, unsigned char* doomKey)
 {
-  return 0;
+  flip = !flip;
+  *doomKey = KEY_UPARROW;
+  *pressed = 1;
+  return flip;
 }
 
 void DG_SetWindowTitle(const char * title)

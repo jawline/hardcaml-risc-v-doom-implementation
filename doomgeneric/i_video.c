@@ -283,7 +283,7 @@ void I_FinishUpdate (void)
     /* DRAW SCREEN */
     line_in  = (unsigned char *) I_VideoBuffer;
     line_out = (unsigned char *) DG_ScreenBuffer;
-    printf("Screen: %p\n", DG_ScreenBuffer);
+    //printf("Screen: %p\n", DG_ScreenBuffer);
 
     y = SCREENHEIGHT;
 

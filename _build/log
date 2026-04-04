@@ -1,0 +1,16 @@
+# dune exec ./bin/simulate_cpu.exe --release -- sim -path /var/home/blake/hardcaml-risc-v-doom-implementation/doomgeneric/doomgeneric.bin -print-frames false -raw-mode false
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /var/home/blake/.cache/dune/db
+# Workspace root: /var/home/blake/hardcaml-risc-v-doom-implementation
+# Auto-detected concurrency: 16
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Release
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /var/home/blake/.opam/5.2.0/bin/ocamlc.opt -config > /tmp/dune_f8da99_output

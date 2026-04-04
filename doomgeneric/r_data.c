@@ -496,7 +496,7 @@ void R_InitTextures (void)
     {
         M_StringCopy(name, name_p + i * 8, sizeof(name));
         patchlookup[i] = W_CheckNumForName(name);
-        printf("%.8s -> %i (%i)\n", name, i, patchlookup[i]);
+        printf("PATCH %i: %.8s -> %i\n", i, name, patchlookup[i]);
     }
     W_ReleaseLumpName(DEH_String("PNAMES"));
 
@@ -558,6 +558,7 @@ void R_InitTextures (void)
 
 	if (i == numtextures1)
 	{
+      printf("Started looking in second texture file\n");
 	    // Start looking in second texture file.
 	    maptex = maptex2;
 	    maxoff = maxoff2;
@@ -566,7 +567,7 @@ void R_InitTextures (void)
 		
 	offset = LONG(*directory);
 
-	if (offset > maxoff)
+	if (offset > maxoff) 
 	    I_Error ("R_InitTextures: bad texture directory");
 	
 	mtexture = (maptexture_t *) ( (byte *)maptex + offset);
@@ -586,7 +587,7 @@ void R_InitTextures (void)
 
 	for (j=0 ; j<texture->patchcount ; j++, mpatch++, patch++)
 	{
-      printf("Texture patch %i\n", j);
+      printf("Texture patch %s %i\n", texture->name, j);
 	    patch->originx = SHORT(mpatch->originx);
 	    patch->originy = SHORT(mpatch->originy);
 	    patch->patch = patchlookup[SHORT(mpatch->patch)];

@@ -1590,8 +1590,8 @@ void G_DoLoadGame (void)
 
     fclose(save_stream);
     
-    if (setsizeneeded)
-    	R_ExecuteSetViewSize ();
+    //if (setsizeneeded)
+    R_ExecuteSetViewSize ();
     
     // draw the pattern into the back screen
     R_FillBackScreen (); 

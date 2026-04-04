@@ -86,6 +86,7 @@
 //
 void D_DoomLoop (void);
 
+extern int DG_GetTicksMs();
 // Location where savegames are stored
 
 char *          savegamedir;
@@ -161,6 +162,13 @@ extern  boolean setsizeneeded;
 extern  int             showMessages;
 void R_ExecuteSetViewSize (void);
 
+//#define DEBUG_PRINTF 1
+#ifdef DEBUG_PRINTF
+#define dprintf printf
+#else
+int dprintf(const char *format, ...) {}
+#endif
+
 void D_Display (void)
 {
     //printf("Call to D_Display\n");
@@ -177,6 +185,8 @@ void D_Display (void)
     boolean			done;
     boolean			wipe;
     boolean			redrawsbar;
+
+    int start = DG_GetTicksMs();
 
     if (nodrawers)
     	return;                    // for comparative timing / profiling
@@ -231,20 +241,31 @@ void D_Display (void)
 		D_PageDrawer ();
 		break;
     }
+
+dprintf("Before UpdateNotBlit %i\n", DG_GetTicksMs() - start);
     
     // draw buffered stuff to screen
     I_UpdateNoBlit ();
+
+dprintf("After UpdateNotBlit %i\n", DG_GetTicksMs() - start);
     
     // draw the view directly
     if (gamestate == GS_LEVEL && !automapactive && gametic)
     	R_RenderPlayerView (&players[displayplayer]);
 
+
+dprintf("After PlayerView %i\n", DG_GetTicksMs() - start);
+
     if (gamestate == GS_LEVEL && gametic)
     	HU_Drawer ();
+
+dprintf("After HU_Drawer %i\n", DG_GetTicksMs() - start);
     
     // clean up border stuff
     if (gamestate != oldgamestate && gamestate != GS_LEVEL)
     	I_SetPalette (W_CacheLumpName (DEH_String("PLAYPAL"),PU_CACHE));
+
+dprintf("After I_SetPalette %i\n", DG_GetTicksMs() - start);
 
     // see if the border needs to be initially drawn
     if (gamestate == GS_LEVEL && oldgamestate != GS_LEVEL)
@@ -252,6 +273,9 @@ void D_Display (void)
 		viewactivestate = false;        // view was not active
 		R_FillBackScreen ();    // draw the pattern into the back screen
     }
+
+
+dprintf("After R_FillBackScreen %i\n", DG_GetTicksMs() - start);
 
     // see if the border needs to be updated to the screen
     if (gamestate == GS_LEVEL && !automapactive && scaledviewwidth != 320)
@@ -265,17 +289,13 @@ void D_Display (void)
 		}
     }
 
-    if (testcontrols)
-    {
-        // Box showing current mouse speed
-
-        V_DrawMouseSpeedBox(testcontrols_mousespeed);
-    }
-
     menuactivestate = menuactive;
     viewactivestate = viewactive;
     inhelpscreensstate = inhelpscreens;
     oldgamestate = wipegamestate = gamestate;
+
+
+dprintf("After Border Stuff %i\n", DG_GetTicksMs() - start);
     
     // draw pause pic
     if (paused)
@@ -291,13 +311,16 @@ void D_Display (void)
 
     // menus go directly to the screen
     M_Drawer ();          // menu is drawn even on top of everything
-    NetUpdate ();         // send out any new accumulation
+    dprintf("After Drawer stuff %i\n", DG_GetTicksMs() - start);
+    //NetUpdate ();         // send out any new accumulation
+    dprintf("After NetUpdate stuff %i\n", DG_GetTicksMs() - start);
 
 
     // normal update
     if (!wipe)
     {
-	I_FinishUpdate ();              // page flip or blit buffer
+	       I_FinishUpdate ();              // page flip or blit buffer
+         dprintf("After I_FinishUpdate %i\n", DG_GetTicksMs() - start);
          //printf("Normal update, early return\n");
 	return;
     }
@@ -409,8 +432,10 @@ void doomgeneric_Tick()
     // frame syncronous IO operations
     I_StartFrame ();
 
-    TryRunTics (); // will run at least one tic
 
+    
+    TryRunTics (); // will run at least one tic
+                   
     //S_UpdateSounds (players[consoleplayer].mo);// move positional sounds
 
     // Update display, next frame, with current state.

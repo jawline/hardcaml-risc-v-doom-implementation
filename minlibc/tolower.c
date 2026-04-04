@@ -8,8 +8,8 @@
 
 int tolower(int c)
 {
-  if (c >= 'A' && c <= 'Z')
-    return c - 'A';
-  else
-    return c;
+    if (c >= 'A' && c <= 'Z')
+        return c + ('a' - 'A'); // Add the difference to move from 'A' to 'a'
+    else
+        return c;
 }

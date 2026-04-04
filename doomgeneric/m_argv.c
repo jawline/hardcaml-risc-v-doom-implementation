@@ -27,9 +27,11 @@
 #include "m_misc.h"
 #include "m_argv.h"  // haleyjd 20110212: warning fix
 
-int		myargc = 3;
-char*		myargv[] = { "FAKE_EXE_PATH" , "-warp", "01", 0};
-
+//int		myargc = 3;
+int myargc = 1;
+//char*		myargv[] = { "FAKE_EXE_PATH" , "-warp", "01", 0};
+//char*		myargv[] = { "FAKE_EXE_PATH" , "-playdemo", "demo1", 0};
+char*		myargv[] = { "FAKE_EXE_PATH" , 0};
 
 
 

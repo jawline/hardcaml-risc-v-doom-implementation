@@ -685,8 +685,10 @@ void R_ExecuteSetViewSize (void)
 	scaledviewwidth = setblocks*32;
 	viewheight = (setblocks*168/10)&~7;
     }
+
     
-    detailshift = setdetail;
+    detailshift = 1; //setdetail;
+    printf("EXECUTE VIEW SIZE %i\n");
     viewwidth = scaledviewwidth>>detailshift;
 	
     centery = viewheight/2;
@@ -704,6 +706,7 @@ void R_ExecuteSetViewSize (void)
     }
     else
     {
+            printf("SET DETAIL LOW\n");
 	colfunc = basecolfunc = R_DrawColumnLow;
 	fuzzcolfunc = R_DrawFuzzColumnLow;
 	transcolfunc = R_DrawTranslatedColumnLow;
@@ -871,21 +874,21 @@ void R_RenderPlayerView (player_t* player)
     R_ClearSprites ();
     
     // check for new console commands.
-    NetUpdate ();
+    //NetUpdate ();
 
     // The head node is the last node output.
     R_RenderBSPNode (numnodes-1);
     
     // Check for new console commands.
-    NetUpdate ();
+    //NetUpdate ();
     
     R_DrawPlanes ();
     
     // Check for new console commands.
-    NetUpdate ();
+    //NetUpdate ();
     
     R_DrawMasked ();
 
     // Check for new console commands.
-    NetUpdate ();				
+    //NetUpdate ();				
 }

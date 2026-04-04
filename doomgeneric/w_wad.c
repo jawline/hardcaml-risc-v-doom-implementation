@@ -81,6 +81,8 @@ unsigned int W_LumpNameHash(const char *s)
         result = ((result << 5) ^ result ) ^ toupper((int)s[i]);
     }
 
+    printf("LumpNameHash INPUT %s RESULT %i\n", s, result);
+
     return result;
 }
 

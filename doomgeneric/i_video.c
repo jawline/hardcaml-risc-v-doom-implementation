@@ -47,7 +47,6 @@ rcsid[] = "$Id: i_x.c,v 1.6 1997/02/03 22:45:10 b1 Exp $";
 
 #include <sys/types.h>
 
-//#define CMAP256
 
 struct FB_BitField
 {
@@ -76,17 +75,8 @@ int fb_scaling = 1;
 int usemouse = 0;
 
 
-#ifdef CMAP256
-
-boolean palette_changed;
-struct color colors[256];
-
-#else  // CMAP256
-
 static struct color colors[256];
 
-
-#endif  // CMAP256
 
 
 void I_GetEvent(void);
@@ -104,18 +94,6 @@ boolean screensaver_mode = false;
 
 boolean screenvisible;
 
-// Mouse acceleration
-//
-// This emulates some of the behavior of DOS mouse drivers by increasing
-// the speed when the mouse is moved fast.
-//
-// The mouse input values are input directly to the game, but when
-// the values exceed the value of mouse_threshold, they are multiplied
-// by mouse_acceleration to increase the speed.
-
-float mouse_acceleration = 2.0;
-int mouse_threshold = 10;
-
 // Gamma correction level to use
 
 int usegamma = 0;
@@ -131,28 +109,7 @@ typedef struct
 
 static uint16_t rgb565_palette[256];
 
-void cmap_to_rgb565(uint16_t * out, uint8_t * in, int in_pixels)
-{
-    int i, j;
-    struct color c;
-    uint16_t r, g, b;
-
-    for (i = 0; i < in_pixels; i++)
-    {
-        c = colors[*in]; 
-        r = ((uint16_t)(c.r >> 3)) << 11;
-        g = ((uint16_t)(c.g >> 2)) << 5;
-        b = ((uint16_t)(c.b >> 3)) << 0;
-        *out = (r | g | b);
-
-        in++;
-        for (j = 0; j < fb_scaling; j++) {
-            out++;
-        }
-    }
-}
-
-void cmap_to_fb(uint8_t * out, uint8_t * in, int in_pixels)
+void cmap_to_fb(uint32_t* out, uint8_t * in, int in_pixels)
 {
     int i, j, k;
     struct color c;
@@ -162,19 +119,8 @@ void cmap_to_fb(uint8_t * out, uint8_t * in, int in_pixels)
     for (i = 0; i < in_pixels; i++)
     {
         c = colors[*in];  /* R:8 G:8 B:8 format! */
-        r = (uint16_t)(c.r >> (8 - s_Fb.red.length));
-        g = (uint16_t)(c.g >> (8 - s_Fb.green.length));
-        b = (uint16_t)(c.b >> (8 - s_Fb.blue.length));
-        pix = r << s_Fb.red.offset;
-        pix |= g << s_Fb.green.offset;
-        pix |= b << s_Fb.blue.offset;
-
-        for (k = 0; k < fb_scaling; k++) {
-            for (j = 0; j < s_Fb.bits_per_pixel/8; j++) {
-                *out = (pix >> (j*8));
-                out++;
-            }
-        }
+        *out = (c.r << 16) | (c.g << 8) | c.b;
+        out++;
         in++;
     }
 }
@@ -189,12 +135,6 @@ void I_InitGraphics (void)
 	s_Fb.xres_virtual = s_Fb.xres;
 	s_Fb.yres_virtual = s_Fb.yres;
 
-#ifdef CMAP256
-
-	s_Fb.bits_per_pixel = 8;
-
-#else  // CMAP256
-
 	s_Fb.bits_per_pixel = 32;
 
 	s_Fb.blue.length = 8;
@@ -207,7 +147,6 @@ void I_InitGraphics (void)
 	s_Fb.red.offset = 16;
 	s_Fb.transp.offset = 24;
 	
-#endif  // CMAP256
 
     printf("I_InitGraphics: framebuffer: x_res: %d, y_res: %d, x_virtual: %d, y_virtual: %d, bpp: %d\n",
             s_Fb.xres, s_Fb.yres, s_Fb.xres_virtual, s_Fb.yres_virtual, s_Fb.bits_per_pixel);
@@ -284,35 +223,15 @@ void I_FinishUpdate (void)
     line_in  = (unsigned char *) I_VideoBuffer;
     line_out = (unsigned char *) DG_ScreenBuffer;
     //printf("Screen: %p\n", DG_ScreenBuffer);
-
-    y = SCREENHEIGHT;
-
-    while (y--)
-    {
-        int i;
-        for (i = 0; i < fb_scaling; i++) {
-            line_out += x_offset;
-#ifdef CMAP256
-            if (fb_scaling == 1) {
-                memcpy(line_out, line_in, SCREENWIDTH); /* fb_width is bigger than Doom SCREENWIDTH... */
-            } else {
-                int j;
-
-                for (j = 0; j < SCREENWIDTH; j++) {
-                    int k;
-                    for (k = 0; k < fb_scaling; k++) {
-                        line_out[j * fb_scaling + k] = line_in[j];
-                    }
-                }
-            }
-#else
-            //cmap_to_rgb565((void*)line_out, (void*)line_in, SCREENWIDTH);
-            cmap_to_fb((void*)line_out, (void*)line_in, SCREENWIDTH);
-#endif
-            line_out += (SCREENWIDTH * fb_scaling * (s_Fb.bits_per_pixel/8)) + x_offset_end;
-        }
-        line_in += SCREENWIDTH;
-    }
+ 
+    cmap_to_fb((void*) line_out, (void*) line_in, SCREENWIDTH * SCREENHEIGHT);
+    //for (int y = SCREENHEIGHT - 1; y >= 0; y--) {
+    //    int i;
+    //    line_out += x_offset;
+    //    cmap_to_fb((void*)line_out, (void*)line_in, SCREENWIDTH);
+    //    line_out += (SCREENWIDTH * 4) + x_offset_end;
+    //    line_in += SCREENWIDTH;
+    //}
 
 	DG_DrawFrame();
 
@@ -362,11 +281,6 @@ void I_SetPalette (byte* palette)
         colors[i].b = gammatable[usegamma][*palette++];
     }
 
-#ifdef CMAP256
-
-    palette_changed = true;
-
-#endif  // CMAP256
 }
 
 // Given an RGB value, find the closest matching palette index.

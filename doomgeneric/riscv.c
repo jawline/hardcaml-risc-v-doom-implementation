@@ -76,10 +76,11 @@ bool flip = false;
 
 int DG_GetKey(int* pressed, unsigned char* doomKey)
 {
-  flip = !flip;
-  *doomKey = KEY_UPARROW;
-  *pressed = 1;
-  return flip;
+  //flip = !flip;
+  //*doomKey = KEY_UPARROW;
+  //*pressed = 1;
+  //return flip;
+  return false;
 }
 
 void DG_SetWindowTitle(const char * title)

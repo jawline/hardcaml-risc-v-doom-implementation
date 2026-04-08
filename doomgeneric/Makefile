@@ -1,5 +1,5 @@
 CC=riscv32-unknown-elf-gcc # gcc or g++
-CFLAGS+=-O3 -fstrict-overflow -ffast-math -fomit-frame-pointer -flto -I./ -ffreestanding -nostdlib -nostartfiles -march=rv32i_zba_zmmul -L../minlibc/ -Wall -DNORMALUNIX -DLINUX -DSNDSERV -D_DEFAULT_SOURCE -I../minlibc/include -DDOOMGENERIC_RESX=320 -DDOOMGENERIC_RESY=200
+CFLAGS+=-O3 -ffast-math -fomit-frame-pointer -fno-builtin-malloc -I./ -ffreestanding -nostdlib -nostartfiles -march=rv32i_zba_zmmul -L../minlibc/ -Wall -DNORMALUNIX -DLINUX -DSNDSERV -D_DEFAULT_SOURCE -I../minlibc/include -DDOOMGENERIC_RESX=320 -DDOOMGENERIC_RESY=200
 
 LIBS=-lminlibc -lgcc -lm 
 

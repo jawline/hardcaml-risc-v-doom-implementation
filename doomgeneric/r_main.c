@@ -687,7 +687,7 @@ void R_ExecuteSetViewSize (void)
     }
 
     
-    detailshift = 1; //setdetail;
+    detailshift = 0; //setdetail;
     printf("EXECUTE VIEW SIZE %i\n");
     viewwidth = scaledviewwidth>>detailshift;
 	

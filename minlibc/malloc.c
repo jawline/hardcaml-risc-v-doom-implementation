@@ -1855,7 +1855,7 @@ malloc(size_t size)
 {
 	void		*r;
 
-  printf("malloc_lock\n");
+  printf("malloc_lock %i\n", malloc_active);
 	_MALLOC_LOCK();
   printf("malloc_locked\n");
 	malloc_func = " in malloc():";
@@ -1874,7 +1874,7 @@ malloc(size_t size)
 		printf("out of memory");
 		errno = ENOMEM;
 	}
-  printf("malloc finished\n");
+  printf("malloc finished %i\n", malloc_active);
 	return r;
 }
 

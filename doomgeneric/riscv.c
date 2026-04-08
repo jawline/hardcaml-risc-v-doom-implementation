@@ -73,14 +73,34 @@ uint32_t DG_GetTicksMs()
 
 bool flip = false;
 
+#define KEYMAP_PTR 134216704
+#define KEYMAP_SIZE 128
+
+// This is a simple event ring that allows us to process up to four events a frame. If we miss an event it's gone forever.
+static size_t keymap_i= 0;
 
 int DG_GetKey(int* pressed, unsigned char* doomKey)
 {
-  //flip = !flip;
-  //*doomKey = KEY_UPARROW;
-  //*pressed = 1;
-  //return flip;
-  return false;
+  
+  uint32_t* keymap_cur = (((uint32_t*) KEYMAP_PTR) + keymap_i);
+  uint32_t val = *keymap_cur;
+
+  bool event_occured = val != 0;
+  uint8_t key_in_event = val;
+  bool key_is_pressed = (val & 0b100000000) != 0;
+
+  if (event_occured) {
+    printf("Key event detected I: %i V: %p KEY: %i PRESSED:%i U32:%p UP:%i DN:%i L:%i R:%i\n", keymap_i, val, key_in_event, key_is_pressed, keymap_cur, KEY_UPARROW, KEY_DOWNARROW, KEY_LEFTARROW, KEY_RIGHTARROW);
+    keymap_i = (keymap_i + 1) % KEYMAP_SIZE;
+
+    *doomKey = key_in_event;
+    *pressed = key_is_pressed;
+    *keymap_cur = 0;
+
+    return true;
+  } else { 
+    return false;
+  }
 }
 
 void DG_SetWindowTitle(const char * title)
@@ -89,24 +109,15 @@ void DG_SetWindowTitle(const char * title)
   return;
 }
 
-extern uint32_t _sbss;
-extern uint32_t _ebss;
-
-void clear_bss(void) {
-    uint32_t *dest = &_sbss;
-
-    while (dest < &_ebss) {
-        *dest++ = 0;
-    }
-}
-
-
 void main() {
-  clear_bss();
   printf("Entering Create\n");
 
   doomgeneric_Create();
   printf("Done with create\n");
+
+  printf("Clearing key event buffer\n");
+
+  memset((void*) KEYMAP_PTR, 0, sizeof(uint32_t) * KEYMAP_SIZE);
 
   while(1) {
     doomgeneric_Tick(); 

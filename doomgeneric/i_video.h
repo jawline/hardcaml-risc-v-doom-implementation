@@ -139,11 +139,11 @@ void I_EnableLoadingDisk(void);
 void I_EndRead (void);
 
 struct color {
-    uint32_t b:8;
-    uint32_t g:8;
-    uint32_t r:8;
-    uint32_t a:8;
-};
+    uint8_t b:8;
+    uint8_t g:8;
+    uint8_t r:8;
+    uint8_t a:8;
+} __attribute__((packed));
 
 
 extern char *video_driver;

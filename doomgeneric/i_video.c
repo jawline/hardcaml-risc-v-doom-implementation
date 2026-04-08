@@ -111,15 +111,13 @@ static uint16_t rgb565_palette[256];
 
 void cmap_to_fb(uint32_t* out, uint8_t * in, int in_pixels)
 {
-    int i, j, k;
-    struct color c;
+    int i, j; 
     uint32_t pix;
-    uint16_t r, g, b;
 
     for (i = 0; i < in_pixels; i++)
     {
-        c = colors[*in];  /* R:8 G:8 B:8 format! */
-        *out = (c.r << 16) | (c.g << 8) | c.b;
+        /* I have reworked the color type to be r g b alignment in the color struct so this becomes an indexed memcpy. */
+        *out = *((uint32_t*) &colors[*in]);
         out++;
         in++;
     }
@@ -275,10 +273,10 @@ void I_SetPalette (byte* palette)
      * map to the right pixel format over here! */
 
     for (i=0; i<256; ++i ) {
-        colors[i].a = 0;
         colors[i].r = gammatable[usegamma][*palette++];
         colors[i].g = gammatable[usegamma][*palette++];
         colors[i].b = gammatable[usegamma][*palette++];
+        colors[i].a = 0;
     }
 
 }

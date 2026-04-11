@@ -90,7 +90,7 @@ int DG_GetKey(int* pressed, unsigned char* doomKey)
   bool key_is_pressed = (val & 0b100000000) != 0;
 
   if (event_occured) {
-    printf("Key event detected I: %i V: %p KEY: %i PRESSED:%i U32:%p UP:%i DN:%i L:%i R:%i\n", keymap_i, val, key_in_event, key_is_pressed, keymap_cur, KEY_UPARROW, KEY_DOWNARROW, KEY_LEFTARROW, KEY_RIGHTARROW);
+    //printf("Key event detected I: %i V: %p KEY: %i PRESSED:%i U32:%p UP:%i DN:%i L:%i R:%i\n", keymap_i, val, key_in_event, key_is_pressed, keymap_cur, KEY_UPARROW, KEY_DOWNARROW, KEY_LEFTARROW, KEY_RIGHTARROW);
     keymap_i = (keymap_i + 1) % KEYMAP_SIZE;
 
     *doomKey = key_in_event;

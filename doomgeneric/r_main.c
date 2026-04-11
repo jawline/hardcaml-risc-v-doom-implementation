@@ -687,7 +687,7 @@ void R_ExecuteSetViewSize (void)
     }
 
     
-    detailshift = 0; //setdetail;
+    detailshift = setdetail;
     printf("EXECUTE VIEW SIZE %i\n");
     viewwidth = scaledviewwidth>>detailshift;
 	
@@ -777,7 +777,7 @@ void R_Init (void)
     // viewwidth / viewheight / detailLevel are set by the defaults
     printf (".");
 
-    R_SetViewSize (screenblocks, detailLevel);
+    R_SetViewSize (screenblocks, 1 /* Lo detail default */ );
     R_InitPlanes ();
     printf (".");
     R_InitLightTables ();

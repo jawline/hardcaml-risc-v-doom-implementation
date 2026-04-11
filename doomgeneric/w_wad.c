@@ -81,7 +81,7 @@ unsigned int W_LumpNameHash(const char *s)
         result = ((result << 5) ^ result ) ^ toupper((int)s[i]);
     }
 
-    printf("LumpNameHash INPUT %s RESULT %i\n", s, result);
+    //printf("LumpNameHash INPUT %s RESULT %i\n", s, result);
 
     return result;
 }
@@ -272,18 +272,18 @@ int W_CheckNumForName (char* name)
 
     if (lumphash != NULL)
     {
-        printf("Lump hash table lookup for %s\n", name);
+        //printf("Lump hash table lookup for %s\n", name);
         int hash;
         
         // We do! Excellent.
 
         hash = W_LumpNameHash(name) % numlumps;
 
-        printf("Hash key for name %s %i\n", name, hash);
+        //printf("Hash key for name %s %i\n", name, hash);
         
         for (lump_p = lumphash[hash]; lump_p != NULL; lump_p = lump_p->next)
         {
-            printf("Test: %s %s\n", lump_p->name, name);
+            //printf("Test: %s %s\n", lump_p->name, name);
             if (!strncasecmp(lump_p->name, name, 8))
             {
                 return lump_p - lumpinfo;

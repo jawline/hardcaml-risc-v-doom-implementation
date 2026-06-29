@@ -1,6 +1,6 @@
 .global _start
 _start:
-  lui sp, 0x10000
+  lui  sp, 25600 
 
   # 2. Clear the BSS section
   la t0, _sbss       # Start of BSS (from linker script)

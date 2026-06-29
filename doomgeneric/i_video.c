@@ -198,7 +198,7 @@ void I_UpdateNoBlit (void)
 
 //
 // I_FinishUpdate
-pixel_t* DG_ScreenBuffer = (pixel_t*) 134217728;
+pixel_t* DG_ScreenBuffer = (pixel_t*) 104857600;
 
 void I_FinishUpdate (void)
 {
